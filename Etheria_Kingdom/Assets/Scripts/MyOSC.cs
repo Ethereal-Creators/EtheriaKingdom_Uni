@@ -8,54 +8,47 @@ public class MyOSC : MonoBehaviour
 
     public extOSC.OSCReceiver oscReceiver;
     public extOSC.OSCTransmitter oscTransmitter;
+    public GameObject myTarget;
 
     public static float ScaleValue(float value, float inputMin, float inputMax, float outputMin, float outputMax)
     {
         return Mathf.Clamp(((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin), outputMin, outputMax);
     }
 
-    void MessageReceived(OSCMessage oscMessage)
+    void TraiterMessageOSC(OSCMessage oscMessage)
     {
-        
-        // We will store the value in a float even if we get an int
+        // Récupérer une valeur numérique en tant que float
+        // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int)
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
         {
             value = oscMessage.Values[0].IntValue;
-        }
-        else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        }
-        else
+        } else
         {
-            // If message is neither Int or Float do nothing
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-
-        /*
-        float rotation = ScaleValue(value, 0, 4095, 45, 315);
-        potGameObject.transform.eulerAngles = new Vector3(0, 0, rotation);
-        */
-        //targetRigidbody2D.AddTorque(value * torqueMultiplier);
+        
+        // Changer l'échelle de la valeur pour l'appliquer à la rotation :
+        float rotation = ScaleValue(value, 0, 360, 45, 315);
+        
+        // Appliquer la rotation au GameObject ciblé :
+        target.transform.eulerAngles = new Vector3(0,0,value);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //targetRigidbody2D = targetGameObject.GetComponent<Rigidbody2D>();
-        /*for (int i = 0; i <= 35; i++) 
-        {
-            string text = "id" + i + "_0";
-            int val = oscReceiver.Bind(text, MessageReceived);
-            Debug.Log(val);
-        }*/
+        // Mettre cette ligne dans la méthode start()
+        oscReceiver.Bind("/angle10_0", TraiterMessageOSC);
         
-        oscReceiver.Bind("id10_0", MessageReceived);
-
-        //oscReceiver.Bind("/but", MessageReceived);
 
     }
+
+    
 
     // Update is called once per frame
     void Update()
