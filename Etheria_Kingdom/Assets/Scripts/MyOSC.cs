@@ -41,9 +41,10 @@ public class MyOSC : MonoBehaviour
         
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
+        float negatedValue = value - (value * 2);
         
         // Appliquer la rotation au GameObject ciblé :
-        myTarget.transform.eulerAngles = new Vector3(0,0,value);
+        myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
     }
 
     void YTraiterMessageOSC(OSCMessage oscMessage)
