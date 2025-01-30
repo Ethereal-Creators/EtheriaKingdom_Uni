@@ -9,6 +9,13 @@ public class MyOSC : MonoBehaviour
     public extOSC.OSCReceiver oscReceiver;
     public extOSC.OSCTransmitter oscTransmitter;
     public GameObject myTarget;
+    public int multiplierXY;
+    public int removeFromX;
+    public int AddToX;
+    public int removeFromY;
+    public int AddToY;
+    public string idNumber;
+    private Vector3 newPosition;
 
     public static float ScaleValue(float value, float inputMin, float inputMax, float outputMin, float outputMax)
     {
@@ -36,14 +43,70 @@ public class MyOSC : MonoBehaviour
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         
         // Appliquer la rotation au GameObject ciblé :
-        target.transform.eulerAngles = new Vector3(0,0,value);
+        myTarget.transform.eulerAngles = new Vector3(0,0,value);
+    }
+
+    void YTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        // Récupérer une valeur numérique en tant que float
+        // même si elle est de type float ou int :
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+        } else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+        
+        // Changer l'échelle de la valeur pour l'appliquer à la rotation :
+        float rotation = ScaleValue(value, 0, 360, 45, 315);
+        float augmentedValue = value * multiplierXY - AddToY + removeFromY;
+        
+        // Appliquer la rotation au GameObject ciblé :
+        //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
+        newPosition[1] = augmentedValue;
+        myTarget.transform.position = newPosition;
+    }
+
+    void XTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        // Récupérer une valeur numérique en tant que float
+        // même si elle est de type float ou int :
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+        } else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+        
+        // Changer l'échelle de la valeur pour l'appliquer à la rotation :
+        float rotation = ScaleValue(value, 0, 360, 45, 315);
+        float augmentedValue = value * multiplierXY - removeFromX + AddToX;
+
+        // Appliquer la rotation au GameObject ciblé :
+         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
+        newPosition[0] = augmentedValue;
+        myTarget.transform.position = newPosition;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         // Mettre cette ligne dans la méthode start()
-        oscReceiver.Bind("/angle10_0", TraiterMessageOSC);
+        oscReceiver.Bind("/angle" + idNumber + "_0", TraiterMessageOSC);
+        oscReceiver.Bind("/x" + idNumber + "_0", XTraiterMessageOSC);
+        oscReceiver.Bind("/y" + idNumber + "_0", YTraiterMessageOSC);
         
 
     }
