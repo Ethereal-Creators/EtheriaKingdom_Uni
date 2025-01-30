@@ -22,6 +22,37 @@ public class MyOSC : MonoBehaviour
         return Mathf.Clamp(((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin), outputMin, outputMax);
     }
 
+    void IdTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        // Récupérer une valeur numérique en tant que float
+        // même si elle est de type float ou int :
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+            myTarget.gameObject.SetActive(true);
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+            myTarget.gameObject.SetActive(true);
+        } else if (oscMessage.Values[0] == null)
+        {
+            myTarget.gameObject.SetActive(false);
+        }
+        else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+        
+        // Changer l'échelle de la valeur pour l'appliquer à la rotation :
+        //float rotation = ScaleValue(value, 0, 360, 45, 315);
+        //float negatedValue = value - (value * 2);
+        
+        // Appliquer la rotation au GameObject ciblé :
+        //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
+    }
+
     void TraiterMessageOSC(OSCMessage oscMessage)
     {
         // Récupérer une valeur numérique en tant que float
@@ -61,6 +92,7 @@ public class MyOSC : MonoBehaviour
         } else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            newPosition[1] = 35;
             return;
         }
         
@@ -88,6 +120,7 @@ public class MyOSC : MonoBehaviour
         } else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            newPosition[0] = 35;
             return;
         }
         
@@ -105,6 +138,7 @@ public class MyOSC : MonoBehaviour
     void Start()
     {
         // Mettre cette ligne dans la méthode start()
+        oscReceiver.Bind("/id" + idNumber + "_0", IdTraiterMessageOSC);
         oscReceiver.Bind("/angle" + idNumber + "_0", TraiterMessageOSC);
         oscReceiver.Bind("/x" + idNumber + "_0", XTraiterMessageOSC);
         oscReceiver.Bind("/y" + idNumber + "_0", YTraiterMessageOSC);
