@@ -267,7 +267,7 @@ MonoBehaviour:
   _autoConnect: 1
   _closeOnPause: 0
   _mapBundle: {fileID: 0}
-  _workInEditor: 0
+  _workInEditor: 1
   _localHostMode: 0
   _localHost: 127.0.0.1
   _localPort: 8001
