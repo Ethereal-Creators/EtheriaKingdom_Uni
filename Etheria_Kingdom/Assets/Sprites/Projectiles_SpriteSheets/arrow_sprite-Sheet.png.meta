@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf9d5d5795333884f9bf7c5319438145
+guid: 98928c1df73331c479636a16a4ee3d36
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +107,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: archer-Sheet_0
+      name: arrow_sprite-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 29
-        height: 20
+        x: 12
+        y: 2
+        width: 13
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6188ab44279be0b498baba91c7b0fe18
-      internalID: -72251507
+      spriteID: 41b9470a45c7658428e68739e43cfa19
+      internalID: -1022510812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer-Sheet_1
+      name: arrow_sprite-Sheet_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 3
-        width: 28
-        height: 20
+        x: 52
+        y: 2
+        width: 13
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f70c9344cb643554ca0002db74cb277f
-      internalID: 341127332
+      spriteID: 11ffdc07cc0787540822bc90c53d1f60
+      internalID: -1565410203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer-Sheet_2
+      name: arrow_sprite-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 3
-        width: 27
-        height: 20
+        x: 96
+        y: 2
+        width: 5
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e28dcb697764a6449c834a9d9a54b08
-      internalID: 1207323630
+      spriteID: caa3f0b3216e49b4a8c70bec54b0afc2
+      internalID: 804708073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer-Sheet_3
+      name: arrow_sprite-Sheet_3
       rect:
         serializedVersion: 2
-        x: 95
-        y: 3
-        width: 27
-        height: 20
+        x: 136
+        y: 2
+        width: 5
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57295a6b567300b449d934196ae65b69
-      internalID: -1226096650
+      spriteID: aad439c98d1f2d840a0d4b2dde4ed20c
+      internalID: 114806919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer-Sheet_4
+      name: arrow_sprite-Sheet_4
       rect:
         serializedVersion: 2
-        x: 126
-        y: 3
-        width: 27
-        height: 20
+        x: 172
+        y: 2
+        width: 13
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e494eca02f96b40abbab106cb70b57
-      internalID: -2050905004
+      spriteID: 6ac3e18ce84e6274e9ed61cb1045bd4d
+      internalID: 504187879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer-Sheet_5
+      name: arrow_sprite-Sheet_5
       rect:
         serializedVersion: 2
-        x: 157
-        y: 3
-        width: 25
-        height: 20
+        x: 212
+        y: 2
+        width: 13
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,50 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 923bb9f237eea884293d6db9e453bc41
-      internalID: -420465342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: archer-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 3
-        width: 25
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae3be43de58d9a34e9c1c33054a88c1a
-      internalID: 294958511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: archer-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 3
-        width: 25
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cfaeb51d952ee44eb44980dc28bffd6
-      internalID: -317197550
+      spriteID: 1b3ba4997753496429386719ae04f770
+      internalID: 214331450
       vertices: []
       indices: 
       edges: []
@@ -301,14 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      archer-Sheet_0: -72251507
-      archer-Sheet_1: 341127332
-      archer-Sheet_2: 1207323630
-      archer-Sheet_3: -1226096650
-      archer-Sheet_4: -2050905004
-      archer-Sheet_5: -420465342
-      archer-Sheet_6: 294958511
-      archer-Sheet_7: -317197550
+      arrow_sprite-Sheet_0: -1022510812
+      arrow_sprite-Sheet_1: -1565410203
+      arrow_sprite-Sheet_2: 804708073
+      arrow_sprite-Sheet_3: 114806919
+      arrow_sprite-Sheet_4: 504187879
+      arrow_sprite-Sheet_5: 214331450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
