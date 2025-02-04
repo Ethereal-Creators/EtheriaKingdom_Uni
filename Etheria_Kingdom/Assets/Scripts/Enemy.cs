@@ -5,16 +5,21 @@ public class Enemy : MonoBehaviour
 {
     public event Action<GameObject> OnEnemyDestroyed; // Event to notify the spawner
 
-    [SerializeField] float health = 2f;
-    [SerializeField] float moveSpeed = 3f;
+    [SerializeField] float health = 1f;
+    [SerializeField] float moveSpeed = 2f;
 
     private Transform target;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
+    private bool isDestroyed = false;
 
     private void Start()
     {
-        target = GameObject.Find("Player").transform;
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            target = player.transform;
+        }
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -40,8 +45,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        if (health <= 0)
+        if (health <= 0 && !isDestroyed)
         {
+            isDestroyed = true;
             OnEnemyDestroyed?.Invoke(gameObject); // Notify spawner
             Destroy(gameObject);
         }
@@ -49,6 +55,14 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        OnEnemyDestroyed?.Invoke(gameObject); // Safety check to remove enemy when destroyed
+        if (!isDestroyed)
+        {
+            OnEnemyDestroyed?.Invoke(gameObject); // Safety check to remove enemy when destroyed
+        }
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
     }
 }
