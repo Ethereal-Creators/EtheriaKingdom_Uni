@@ -13,6 +13,7 @@ public class MyOSC : MonoBehaviour
     public extOSC.OSCTransmitter oscTransmitter;
     public GameObject myTarget;
     public TextMeshProUGUI myTargetTextId;
+    public TextMeshProUGUI myTargetTextActive;
     public TextMeshProUGUI myTargetTextX;
     public TextMeshProUGUI myTargetTextY;
     public TextMeshProUGUI myTargetTextAngle;
@@ -35,17 +36,21 @@ public class MyOSC : MonoBehaviour
         return Mathf.Clamp(((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin), outputMin, outputMax);
     }
 
+    IEnumerator wait(){
+        yield return new WaitForSeconds(1);
+    }
+
     // Object #1
 
     void IdTraiterMessageOSC(OSCMessage oscMessage)
     {
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
-        if (oscMessage == null) {
+        /*if (oscMessage == null) {
             myTarget.gameObject.SetActive(false);
         } else {
             myTarget.gameObject.SetActive(true);
-        }
+        }*/
         
         float value;
         if (oscMessage.Values[0].Type == OSCValueType.Float)
@@ -75,13 +80,36 @@ public class MyOSC : MonoBehaviour
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
-        // Changer l'échelle de la valeur pour l'appliquer à la rotation :
-        //float rotation = ScaleValue(value, 0, 360, 45, 315);
-        //float negatedValue = value - (value * 2);
-        
-        // Appliquer la rotation au GameObject ciblé :
-        //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
+    }
+
+    void ActiveTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+        } else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+
+        if (value == 1) {
+            //StartCoroutine(wait());
+            myTarget.gameObject.SetActive(true);
+            
+            myTargetTextActive.text = value.ToString();
+            
+        } else if (value == 0) {
+            //StartCoroutine(wait());
+            myTarget.gameObject.SetActive(false);
+            //value = oscMessage.Values[0].IntValue;
+            myTargetTextActive.text = value.ToString();
+            
+        }
     }
 
     void TraiterMessageOSC(OSCMessage oscMessage)
@@ -215,6 +243,36 @@ public class MyOSC : MonoBehaviour
         //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
     }
 
+    void TwoActiveTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+        } else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+
+        if (value == 1) {
+            //StartCoroutine(wait());
+            myTargetTwo.gameObject.SetActive(true);
+            
+            //myTargetTextActive.text = value.ToString();
+            
+        } else if (value == 0) {
+            //StartCoroutine(wait());
+            myTargetTwo.gameObject.SetActive(false);
+            //value = oscMessage.Values[0].IntValue;
+            //myTargetTextActive.text = value.ToString();
+            
+        }
+    }
+
     void TwoTraiterMessageOSC(OSCMessage oscMessage)
     {
         // Récupérer une valeur numérique en tant que float
@@ -343,6 +401,36 @@ public class MyOSC : MonoBehaviour
         //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
     }
 
+    void ThreeActiveTraiterMessageOSC(OSCMessage oscMessage)
+    {
+        float value;
+        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        {
+            value = oscMessage.Values[0].IntValue;
+        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        {
+            value = oscMessage.Values[0].FloatValue;
+        } else
+        {
+            // Si la valeur n'est ni un foat ou int, on quitte la méthode :
+            return;
+        }
+
+        if (value == 1) {
+            //StartCoroutine(wait());
+            myTargetThree.gameObject.SetActive(true);
+            
+            //myTargetTextActive.text = value.ToString();
+            
+        } else if (value == 0) {
+            //StartCoroutine(wait());
+            myTargetThree.gameObject.SetActive(false);
+            //value = oscMessage.Values[0].IntValue;
+            //myTargetTextActive.text = value.ToString();
+            
+        }
+    }
+
     void ThreeTraiterMessageOSC(OSCMessage oscMessage)
     {
         // Récupérer une valeur numérique en tant que float
@@ -429,16 +517,19 @@ public class MyOSC : MonoBehaviour
     void Start()
     {
         // Mettre cette ligne dans la méthode start()
+        oscReceiver.Bind("/idactive" + idNumberOne, ActiveTraiterMessageOSC);
         oscReceiver.Bind("/id" + idNumberOne + "_0", IdTraiterMessageOSC);
         oscReceiver.Bind("/angle" + idNumberOne + "_0", TraiterMessageOSC);
         oscReceiver.Bind("/x" + idNumberOne + "_0", XTraiterMessageOSC);
         oscReceiver.Bind("/y" + idNumberOne + "_0", YTraiterMessageOSC);
 
+        oscReceiver.Bind("/idactive" + idNumberTwo, TwoActiveTraiterMessageOSC);
         oscReceiver.Bind("/id" + idNumberTwo + "_0", TwoIdTraiterMessageOSC);
         oscReceiver.Bind("/angle" + idNumberTwo + "_0", TwoTraiterMessageOSC);
         oscReceiver.Bind("/x" + idNumberTwo + "_0", TwoXTraiterMessageOSC);
         oscReceiver.Bind("/y" + idNumberTwo + "_0", TwoYTraiterMessageOSC);
 
+        oscReceiver.Bind("/idactive" + idNumberThree, ThreeActiveTraiterMessageOSC);
         oscReceiver.Bind("/id" + idNumberThree + "_0", ThreeIdTraiterMessageOSC);
         oscReceiver.Bind("/angle" + idNumberThree + "_0", ThreeTraiterMessageOSC);
         oscReceiver.Bind("/x" + idNumberThree + "_0", ThreeXTraiterMessageOSC);
