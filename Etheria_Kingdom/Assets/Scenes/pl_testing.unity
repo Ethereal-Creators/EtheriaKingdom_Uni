@@ -445,7 +445,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.23, y: 5.99, z: 0.10167443}
-  m_LocalScale: {x: 6.4761333, y: 5.549996, z: 1}
+  m_LocalScale: {x: 5.51095, y: 4.7228413, z: 0.85096306}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -588,6 +588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   moveSpeed: 3
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitColorDuration: 0.1
 --- !u!95 &659233633
 Animator:
   serializedVersion: 5
@@ -1032,7 +1034,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.98
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1084,9 +1086,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 5
-      minScalar: 5
+      minMaxState: 3
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5680,13 +5682,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573041693}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.3102937, y: 0.9864088, z: -0.13330394}
+  m_LocalRotation: {x: -0.5151412, y: 0.48438573, z: -0.48438573, w: 0.5151412}
+  m_LocalPosition: {x: -12.82, y: -0.99, z: -0.13330394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.525, y: 90, z: -90}
 --- !u!1 &1586268018
 GameObject:
   m_ObjectHideFlags: 0
