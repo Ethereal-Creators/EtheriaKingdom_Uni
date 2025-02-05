@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4804f04f3edc6b547a3c98afc0462fb1
+guid: 1b8270c3714b58e4a82e6030f8028cdf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: leaf-Sheet_0
+      name: fly-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
-        width: 24
-        height: 20
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c06da4df04bbf643813584c70568078
-      internalID: 564313474
+      spriteID: 914d22cfef7b4104bac5b98be54e6932
+      internalID: 1694405786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_1
+      name: fly-Sheet_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 20
-        width: 24
-        height: 20
+        x: 40
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eae824106eb42246935c10a37034d3c
-      internalID: -1096597741
+      spriteID: 77ee6bdd868189742b1632c2c7362628
+      internalID: 233900237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_2
+      name: fly-Sheet_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 20
-        width: 24
-        height: 20
+        x: 80
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,62 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 402e0e518e277ea418507b6183416e55
-      internalID: -539506063
+      spriteID: cefa71a58e935f2468f9a6f7ca5c03cb
+      internalID: -1129382602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 20
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 395c66748648a8647922fe0a8312e733
-      internalID: -810628340
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 20
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dfe6c6dbedc4984c9a8b9bc25ad38fd
-      internalID: -130430955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf-Sheet_5
+      name: fly-Sheet_3
       rect:
         serializedVersion: 2
         x: 120
-        y: 20
-        width: 24
-        height: 20
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,41 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c711fa262ffed9e45990b39c7129365d
-      internalID: -833853952
+      spriteID: e2bf6ecf78e87324896186ba06727df6
+      internalID: 1449223969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 20
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0e94129cb9aa50419426ba070f552ef
-      internalID: 432413900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf-Sheet_7
+      name: fly-Sheet_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6610c0d81e72304ebcbc01965917fdb
-      internalID: -1794483778
+      spriteID: 2c8b1beae3c09f6419d364f9ae2d8556
+      internalID: -2101135061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_8
+      name: fly-Sheet_5
       rect:
         serializedVersion: 2
-        x: 24
+        x: 40
         y: 0
-        width: 24
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c228473231cc4364d8b60ed28da20091
-      internalID: 1855423822
+      spriteID: 08c75f5854385594da873fdcf39c30d2
+      internalID: -1831957757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_9
+      name: fly-Sheet_6
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 0
-        width: 24
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,62 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19eda87e4a2beb248bfee20f9ac7ef99
-      internalID: 1831452752
+      spriteID: 59bd823a34c5a834c89e209aa98e7382
+      internalID: -1586302476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leaf-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27334d1ab606844449a7daaffe93a92d
-      internalID: 168146826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1463fb41b10d9f94abcd591703bff64b
-      internalID: -860935388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leaf-Sheet_12
+      name: fly-Sheet_7
       rect:
         serializedVersion: 2
         x: 120
         y: 0
-        width: 24
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62b0e6f61809d2e409248d8b7611ada3
-      internalID: 1553497584
+      spriteID: 7fcdd2a181ce7a34789c8d0e3bf3d3de
+      internalID: -541061501
       vertices: []
       indices: 
       edges: []
@@ -393,19 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      leaf-Sheet_0: 564313474
-      leaf-Sheet_1: -1096597741
-      leaf-Sheet_10: 168146826
-      leaf-Sheet_11: -860935388
-      leaf-Sheet_12: 1553497584
-      leaf-Sheet_2: -539506063
-      leaf-Sheet_3: -810628340
-      leaf-Sheet_4: -130430955
-      leaf-Sheet_5: -833853952
-      leaf-Sheet_6: 432413900
-      leaf-Sheet_7: -1794483778
-      leaf-Sheet_8: 1855423822
-      leaf-Sheet_9: 1831452752
+      fly-Sheet_0: 1694405786
+      fly-Sheet_1: 233900237
+      fly-Sheet_2: -1129382602
+      fly-Sheet_3: 1449223969
+      fly-Sheet_4: -2101135061
+      fly-Sheet_5: -1831957757
+      fly-Sheet_6: -1586302476
+      fly-Sheet_7: -541061501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

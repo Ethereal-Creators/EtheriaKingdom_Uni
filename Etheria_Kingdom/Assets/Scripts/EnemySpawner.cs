@@ -4,54 +4,27 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemyPrefab;
-    [SerializeField] float spawnInterval = 2f;
-    [SerializeField] float spawnTimeVariance = 1f;
-    [SerializeField] int maxEnemies = 10; // Maximum number of enemies allowed at a time
+    [SerializeField]
+    private GameObject swarmerPrefab;
+    [SerializeField]
+    private GameObject bigSwarmerPrefab;
 
-    private List<GameObject> activeEnemies = new List<GameObject>(); // Track spawned enemies
+    [SerializeField]
+    private float swarmerInterval = 3.5f;
+    [SerializeField]
+    private float bigSwarmerInterval = 10f;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(spawnEnemy(swarmerInterval, swarmerPrefab));
+        StartCoroutine(spawnEnemy(bigSwarmerInterval, bigSwarmerPrefab));
     }
 
-    private IEnumerator SpawnEnemies()
+    private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(spawnInterval, spawnInterval + spawnTimeVariance));
-
-            if (activeEnemies.Count < maxEnemies) // Check if limit is reached
-            {
-                SpawnEnemy();
-            }
-        }
-    }
-
-    private void SpawnEnemy()
-    {
-        float screenWidth = Camera.main.orthographicSize * Camera.main.aspect;
-        float screenHeight = Camera.main.orthographicSize;
-
-        Vector2 spawnPosition = new Vector2(
-            Random.Range(-screenWidth - 1f, screenWidth + 1f),
-            Random.Range(-screenHeight - 1f, screenHeight + 1f)
-        );
-
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-        activeEnemies.Add(newEnemy);
-
-        // Attach the enemy destruction event
-        Enemy enemyScript = newEnemy.GetComponent<Enemy>();
-        if (enemyScript != null)
-        {
-            enemyScript.OnEnemyDestroyed += RemoveEnemyFromList;
-        }
-    }
-
-    private void RemoveEnemyFromList(GameObject enemy)
-    {
-        activeEnemies.Remove(enemy);
+        yield return new WaitForSeconds(interval);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 10), Random.Range(-13f, 13f), 0), Quaternion.identity);
+        StartCoroutine(spawnEnemy(interval, enemy));
     }
 }
