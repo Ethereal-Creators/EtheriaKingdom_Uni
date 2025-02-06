@@ -36,7 +36,7 @@ using UnityEngine;
     }
 }*/
 
-public class DragAndDrop : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     Vector3 mousePosition;
 
