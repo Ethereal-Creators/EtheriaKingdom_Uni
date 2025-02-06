@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7390666059254498673}
   - component: {fileID: 4258135857231589691}
-  - component: {fileID: 471086045378376430}
+  - component: {fileID: 5402764252505855872}
+  - component: {fileID: -7048578218279404640}
   - component: {fileID: 3312556076419846430}
   - component: {fileID: 2504350856393742305}
   - component: {fileID: 4457222587086521111}
@@ -49,11 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005c07311135b8847bf68bb343f5fe5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  moveSpeed: 3
-  hitColor: {r: 1, g: 0, b: 0, a: 1}
-  hitColorDuration: 0.1
---- !u!114 &471086045378376430
+  _speed: 1
+  _rotationSpeed: 80
+--- !u!114 &5402764252505855872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,13 +61,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 7163088640835516832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6098e3030deece44957aa00c1e34b9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 10e01f940f683a243b452a81d7702bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swarmerPrefab: {fileID: 0}
-  bigSwarmerPrefab: {fileID: 0}
-  swarmerInterval: 3.5
-  bigSwarmerInterval: 10
+  _playerAwarenessDistance: 1000
+--- !u!114 &-7048578218279404640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163088640835516832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 0
+  _maximumHealth: 0
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9100000, guid: 09ae8f09f5c790349864f39d673d6517, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &3312556076419846430
 Rigidbody2D:
   serializedVersion: 4

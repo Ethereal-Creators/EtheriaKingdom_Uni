@@ -15,22 +15,65 @@ public class PlayerAwarenessController : MonoBehaviour
 
     private void Awake()
     {
-        _player = FindObjectOfType<PlayerMovement>().transform;
+        // Initialize player transform if necessary (but we can detect via trigger instead)
+        // _player = FindObjectOfType<PlayerMovement>().transform;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the GameObject that entered the trigger has the "Player" tag
+        if (other.CompareTag("Player"))
+        {
+            _player = other.transform;  // Get the player's transform
+            UpdateAwareness();          // Update the awareness as soon as player enters the trigger
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // If the player leaves the trigger zone, we reset awareness
+        if (other.CompareTag("Player"))
+        {
+            _player = null; // No player in range
+            AwareOfPlayer = false; // Reset awareness when player is out of range
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 enemyToPlayerVector = _player.position - transform.position;
-        DirectionToPlayer = enemyToPlayerVector.normalized;
+        if (_player != null)
+        {
+            Vector2 enemyToPlayerVector = _player.position - transform.position;
+            DirectionToPlayer = enemyToPlayerVector.normalized;
 
-        if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance)
-        {
-            AwareOfPlayer = true;
+            if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance)
+            {
+                AwareOfPlayer = true;
+            }
+            else
+            {
+                AwareOfPlayer = false;
+            }
         }
-        else
+    }
+
+    // Method to handle awareness directly when needed
+    private void UpdateAwareness()
+    {
+        if (_player != null)
         {
-            AwareOfPlayer = false;
+            Vector2 enemyToPlayerVector = _player.position - transform.position;
+            DirectionToPlayer = enemyToPlayerVector.normalized;
+
+            if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance)
+            {
+                AwareOfPlayer = true;
+            }
+            else
+            {
+                AwareOfPlayer = false;
+            }
         }
     }
 }
