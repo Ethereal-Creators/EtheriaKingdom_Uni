@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControleurJoueur : MonoBehaviour
+/*public class ControleurJoueur : MonoBehaviour
 {
     public float vitesse = 5f;
     public Rigidbody2D rb;
@@ -34,4 +34,36 @@ public class ControleurJoueur : MonoBehaviour
         float angleVisée = Mathf.Atan2(directionVise.y, directionVise.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angleVisée;
     }
+}*/
+
+public class DragAndDrop : MonoBehaviour
+{
+    Vector3 mousePosition;
+
+    private Vector3 GetMousePos()
+    {
+        return Camera.main.WorldToScreenPoint(transform.position);
+    }
+
+    private void OnMouseDown()
+    {
+        mousePosition = Input.mousePosition - GetMousePos();
+    }
+
+    private void OnMouseDrag()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
+    }
+
+private void Update()
+    {
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scrollInput != 0f)
+        {
+            float vitesserotation = 150f;
+            transform.Rotate(Vector3.forward, scrollInput * vitesserotation);
+        }
+    }
 }
+
