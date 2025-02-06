@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2504350856393742305}
   - component: {fileID: 4457222587086521111}
   - component: {fileID: 8621968674193786777}
+  - component: {fileID: -2686608345214024682}
   m_Layer: 0
   m_Name: EnemySkeleton
   m_TagString: ennemie
@@ -77,18 +78,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
-  _maximumHealth: 0
+  _currentHealth: 10
+  _maximumHealth: 10
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9100000, guid: 09ae8f09f5c790349864f39d673d6517, type: 2}
+      - m_Target: {fileID: 8621968674193786777}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnDied
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2504350856393742305}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -2686608345214024682}
+        m_TargetAssemblyTypeName: EnemyScoreAllocator, Assembly-CSharp
+        m_MethodName: AllocateScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -245,3 +270,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2686608345214024682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163088640835516832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a812bdb1216554c91f477c58dac7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killScore: 100
