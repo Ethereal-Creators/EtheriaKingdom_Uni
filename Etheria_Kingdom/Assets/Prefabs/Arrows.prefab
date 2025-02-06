@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 836453154772878112}
-  shootInterval: 3
+  shootInterval: 10
 --- !u!114 &164239492820503452
 MonoBehaviour:
   m_ObjectHideFlags: 0
