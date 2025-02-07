@@ -393,6 +393,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
+      propertyPath: AddToY
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: myTarget
       value: 
       objectReference: {fileID: 1100589503}
@@ -400,6 +404,14 @@ PrefabInstance:
       propertyPath: myTargetTwo
       value: 
       objectReference: {fileID: 119607482}
+    - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
+      propertyPath: removeFromX
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
+      propertyPath: idNumberThree
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: myTargetTextX
       value: 
@@ -734,6 +746,10 @@ PrefabInstance:
     - target: {fileID: 8001766464676002079, guid: 50f29cc298385514e9deac306ac67e93, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001766464676002079, guid: 50f29cc298385514e9deac306ac67e93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

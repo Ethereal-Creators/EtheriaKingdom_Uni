@@ -159,11 +159,12 @@ public class MyOSC : MonoBehaviour
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - AddToY + removeFromY;
-        myTargetTextY.text = augmentedValue.ToString();
+        float negatedValue = augmentedValue - (augmentedValue * 2);
+        myTargetTextY.text = negatedValue.ToString();
         
         // Appliquer la rotation au GameObject ciblé :
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
-        newPosition[1] = augmentedValue;
+        newPosition[1] = negatedValue;
         myTarget.transform.position = newPosition;
     }
 
@@ -319,10 +320,11 @@ public class MyOSC : MonoBehaviour
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - AddToY + removeFromY;
-        
+        float negatedValue = augmentedValue - (augmentedValue * 2);
+        //myTargetTextY.text = negatedValue.ToString();
         // Appliquer la rotation au GameObject ciblé :
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
-        newPositionTwo[1] = augmentedValue;
+        newPositionTwo[1] = negatedValue;
         myTargetTwo.transform.position = newPositionTwo;
     }
 
@@ -477,10 +479,11 @@ public class MyOSC : MonoBehaviour
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - AddToY + removeFromY;
-        
+        float negatedValue = augmentedValue - (augmentedValue * 2);
+        //myTargetTextY.text = negatedValue.ToString();
         // Appliquer la rotation au GameObject ciblé :
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
-        newPositionThree[1] = augmentedValue;
+        newPositionThree[1] = negatedValue;
         myTargetThree.transform.position = newPositionThree;
     }
 
