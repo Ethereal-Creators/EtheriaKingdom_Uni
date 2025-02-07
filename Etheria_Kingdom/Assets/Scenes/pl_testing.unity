@@ -516,10 +516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e06b719a5698414999455caa448c05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 836453154772878112, guid: b27c0c51145ecb445a027895328c883d, type: 3}
-  _bulletSpeed: 3
+  _bulletPrefab: {fileID: 377076157462125739, guid: 26282c7384497624db64e0603ff2f3ef, type: 3}
+  _bulletSpeed: 6.97
   _gunOffset: {fileID: 1828815730}
-  _timeBetweenShots: 6.84
+  _timeBetweenShots: 1
 --- !u!1 &345080155
 GameObject:
   m_ObjectHideFlags: 0

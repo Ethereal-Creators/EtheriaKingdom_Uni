@@ -41,6 +41,7 @@ public class Bullet : MonoBehaviour
     private Camera _camera;
     public GameObject bulletPrefab;  // Reference to the bullet prefab
     public float shootInterval = 0.5f; // Time interval between shots (in seconds)
+    public float bulletLifetime = 3f; // Lifetime of the bullet before it disappears
 
     private void Awake()
     {
@@ -49,8 +50,8 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        // Start shooting automatically
-        StartCoroutine(ShootAutomatically());
+        // Destroy bullet after a set time
+        Destroy(gameObject, bulletLifetime);
     }
 
     private void Update()
@@ -93,3 +94,4 @@ public class Bullet : MonoBehaviour
         }
     }
 }
+
