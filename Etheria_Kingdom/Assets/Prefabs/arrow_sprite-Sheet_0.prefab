@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7437323595405124286}
   - component: {fileID: 1823342559559173685}
   - component: {fileID: 7851887449115609146}
+  - component: {fileID: -3705429115771274497}
   m_Layer: 0
   m_Name: arrow_sprite-Sheet_0
   m_TagString: Untagged
@@ -193,3 +194,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdc6f9918c63d8498bd3cf64d75636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3705429115771274497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377076157462125739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268fd462fbd78b34b979a438227f0b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 377076157462125739}
+  shootInterval: 0.5
+  bulletLifetime: 3
