@@ -19,11 +19,12 @@ public class MyOSC : MonoBehaviour
     public TextMeshProUGUI myTargetTextAngle;
     public GameObject myTargetTwo;
     public GameObject myTargetThree;
-    public int multiplierXY;
-    public int removeFromX;
-    public int AddToX;
-    public int removeFromY;
-    public int AddToY;
+    public float multiplierXY;
+    public float multiplierY;
+    public float removeFromX;
+    public float AddToX;
+    public float removeFromY;
+    public float AddToY;
     public int idNumberOne;
     public int idNumberTwo;
     public int idNumberThree;
@@ -135,7 +136,7 @@ public class MyOSC : MonoBehaviour
         myTargetTextAngle.text = negatedValue.ToString();
         
         // Appliquer la rotation au GameObject ciblé :
-        myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
+        myTarget.transform.eulerAngles = new Vector3(0,0,value);
     }
 
     void YTraiterMessageOSC(OSCMessage oscMessage)
@@ -158,7 +159,7 @@ public class MyOSC : MonoBehaviour
         
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
-        float augmentedValue = value * multiplierXY - AddToY + removeFromY;
+        float augmentedValue = value * multiplierY - AddToY + removeFromY;
         float negatedValue = augmentedValue - (augmentedValue * 2);
         myTargetTextY.text = negatedValue.ToString();
         
@@ -296,7 +297,7 @@ public class MyOSC : MonoBehaviour
         float negatedValue = value - (value * 2);
         
         // Appliquer la rotation au GameObject ciblé :
-        myTargetTwo.transform.eulerAngles = new Vector3(0,0,negatedValue);
+        myTargetTwo.transform.eulerAngles = new Vector3(0,0,value);
     }
 
     void TwoYTraiterMessageOSC(OSCMessage oscMessage)
@@ -319,7 +320,7 @@ public class MyOSC : MonoBehaviour
         
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
-        float augmentedValue = value * multiplierXY - AddToY + removeFromY;
+        float augmentedValue = value * multiplierY - AddToY + removeFromY;
         float negatedValue = augmentedValue - (augmentedValue * 2);
         //myTargetTextY.text = negatedValue.ToString();
         // Appliquer la rotation au GameObject ciblé :
@@ -455,7 +456,7 @@ public class MyOSC : MonoBehaviour
         float negatedValue = value - (value * 2);
         
         // Appliquer la rotation au GameObject ciblé :
-        myTargetThree.transform.eulerAngles = new Vector3(0,0,negatedValue);
+        myTargetThree.transform.eulerAngles = new Vector3(0,0,value);
     }
 
     void ThreeYTraiterMessageOSC(OSCMessage oscMessage)
@@ -478,7 +479,7 @@ public class MyOSC : MonoBehaviour
         
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
-        float augmentedValue = value * multiplierXY - AddToY + removeFromY;
+        float augmentedValue = value * multiplierY - AddToY + removeFromY;
         float negatedValue = augmentedValue - (augmentedValue * 2);
         //myTargetTextY.text = negatedValue.ToString();
         // Appliquer la rotation au GameObject ciblé :
