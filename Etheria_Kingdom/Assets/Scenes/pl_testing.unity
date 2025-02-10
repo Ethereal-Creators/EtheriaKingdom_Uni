@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 319731903}
   - component: {fileID: 319731897}
   - component: {fileID: 319731901}
+  - component: {fileID: 319731904}
   - component: {fileID: 319731899}
   - component: {fileID: 319731900}
   - component: {fileID: 319731902}
@@ -476,10 +477,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 319731900}
-        m_TargetAssemblyTypeName: InvincibilityController, Assembly-CSharp
-        m_MethodName: StartInvincibility
-        m_Mode: 4
+      - m_Target: {fileID: 319731902}
+        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+        m_MethodName: StopAllCoroutines
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -503,13 +504,13 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319731895}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 319731904}
+        m_TargetAssemblyTypeName: PlayerDamagedInvincibility, Assembly-CSharp
+        m_MethodName: StartInvincibility
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -620,6 +621,21 @@ CircleCollider2D:
   m_Offset: {x: 0.06, y: 0.09}
   serializedVersion: 2
   m_Radius: 0.41
+--- !u!114 &319731904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319731895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e76e3ce1223154791581e0523555bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _invincibilityDuration: 3
+  _flashColor: {r: 1, g: 1, b: 1, a: 0.5803922}
+  _numberOfFlashes: 10
 --- !u!1 &333909884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1370315086160374457, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
