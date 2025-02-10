@@ -9,11 +9,17 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerMovement>())
+        // Check if the collided object has the "Player" tag
+        if (collision.gameObject.CompareTag("Player"))
         {
+            // Get the HealthController of the player object
             var healthController = collision.gameObject.GetComponent<HealthController>();
 
-            healthController.TakeDamage(_damageAmount);
+            // If the player has a HealthController, apply the damage
+            if (healthController != null)
+            {
+                healthController.TakeDamage(_damageAmount);
+            }
         }
     }
 }

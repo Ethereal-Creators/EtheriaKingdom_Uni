@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1370315086160374457, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_Name
-      value: EnemyFly (1) Variant
+      value: EnemyDarkFly
       objectReference: {fileID: 0}
     - target: {fileID: 2001706683593485744, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_LocalScale.x
@@ -63,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 2001706683593485744, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253837283309624964, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      propertyPath: _currentHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253837283309624964, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      propertyPath: _maximumHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8991539849472809182, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_Color.b
