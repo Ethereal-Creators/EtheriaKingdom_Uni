@@ -17,6 +17,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4258135857231589691, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+      propertyPath: _screenBorder
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258135857231589691, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _rotationSpeed
       value: 100
       objectReference: {fileID: 0}

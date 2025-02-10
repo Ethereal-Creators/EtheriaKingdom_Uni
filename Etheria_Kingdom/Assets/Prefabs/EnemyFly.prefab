@@ -9,14 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2001706683593485744}
-  - component: {fileID: 4403082627296011818}
-  - component: {fileID: -5172109416236030228}
   - component: {fileID: 875824396301762940}
   - component: {fileID: 135759158681189212}
   - component: {fileID: 8991539849472809182}
   - component: {fileID: 353631120347757115}
+  - component: {fileID: 6903151702414026001}
+  - component: {fileID: 4403082627296011818}
+  - component: {fileID: -5172109416236030228}
   - component: {fileID: 6253837283309624964}
   - component: {fileID: 4105664023254028885}
+  - component: {fileID: 2083545627822398539}
   m_Layer: 0
   m_Name: EnemyFly
   m_TagString: ennemie
@@ -39,34 +41,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4403082627296011818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370315086160374457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005c07311135b8847bf68bb343f5fe5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 2
-  _rotationSpeed: 100
-  _screenBorder: 0
---- !u!114 &-5172109416236030228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370315086160374457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e01f940f683a243b452a81d7702bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 1000
 --- !u!50 &875824396301762940
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +97,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -212,6 +186,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6903151702414026001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370315086160374457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408daea35811c1040aab7aba323b5153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageAmount: 5
+--- !u!114 &4403082627296011818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370315086160374457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c07311135b8847bf68bb343f5fe5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
+  _rotationSpeed: 100
+  _screenBorder: 0
+--- !u!114 &-5172109416236030228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370315086160374457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e01f940f683a243b452a81d7702bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAwarenessDistance: 1000
 --- !u!114 &6253837283309624964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -2686608345214024682, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+      - m_Target: {fileID: 2083545627822398539}
         m_TargetAssemblyTypeName: EnemyScoreAllocator, Assembly-CSharp
         m_MethodName: AllocateScore
         m_Mode: 1
@@ -265,7 +280,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4258135857231589691, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+      - m_Target: {fileID: 4403082627296011818}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -277,10 +292,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4920611007640083047, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-        m_TargetAssemblyTypeName: EnemyDestroyController, Assembly-CSharp
-        m_MethodName: DestroyEnemy
-        m_Mode: 4
+      - m_Target: {fileID: 4105664023254028885}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -307,3 +322,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0c7ab6b50008748a542d22bc08f800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2083545627822398539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370315086160374457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a812bdb1216554c91f477c58dac7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killScore: 50
