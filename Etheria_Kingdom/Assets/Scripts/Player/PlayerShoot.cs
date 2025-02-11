@@ -21,18 +21,26 @@ public class PlayerShoot : MonoBehaviour
 
     private void Start()
     {
-        isAutoShootActive = false;
+        // Start the automatic shooting when the game starts
+        StartCoroutine(AutoShoot());
     }
 
     private void Update()
-    {   // Start the automatic shooting when the game starts
-        if (isAutoShootActive == false) {
-            StartCoroutine(AutoShoot());
-        } else {
-
-        }
+    {   
+        
         
         // Any additional logic you might need to check each frame
+    }
+
+    void OnEnable()
+    {
+        isAutoShootActive = false;
+        if (isAutoShootActive == false)
+        {
+            StartCoroutine(AutoShoot());
+            isAutoShootActive = true;
+        }
+        Debug.Log("Player activted.");
     }
 
     private void FireBullet()
@@ -46,7 +54,6 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator AutoShoot()
     {
         // Continuously fire bullets with a time delay between each shot
-        isAutoShootActive = true;
         while (true)
         {
             FireBullet();
