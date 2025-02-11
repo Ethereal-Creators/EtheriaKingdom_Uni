@@ -16,14 +16,22 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private float _timeBetweenShots; // Time between each shot (in seconds)
 
+    private bool isAutoShootActive = false;
+
+
     private void Start()
     {
-        // Start the automatic shooting when the game starts
-        StartCoroutine(AutoShoot());
+        isAutoShootActive = false;
     }
 
     private void Update()
-    {
+    {   // Start the automatic shooting when the game starts
+        if (isAutoShootActive == false) {
+            StartCoroutine(AutoShoot());
+        } else {
+
+        }
+        
         // Any additional logic you might need to check each frame
     }
 
@@ -38,6 +46,7 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator AutoShoot()
     {
         // Continuously fire bullets with a time delay between each shot
+        isAutoShootActive = true;
         while (true)
         {
             FireBullet();
