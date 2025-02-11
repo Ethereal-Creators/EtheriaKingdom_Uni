@@ -21,5 +21,17 @@ public class EnemyAttack : MonoBehaviour
                 healthController.TakeDamage(_damageAmount);
             }
         }
+
+        if (collision.gameObject.CompareTag("Crystal"))
+        {
+
+            var healthController = collision.gameObject.GetComponent<HealthController>();
+
+
+            if (healthController != null)
+            {
+                healthController.TakeDamage(_damageAmount);
+            }
+        }
     }
 }

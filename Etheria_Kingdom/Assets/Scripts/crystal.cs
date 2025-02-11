@@ -8,9 +8,8 @@ public class ContactCrystal : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ennemie"))
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject,0.05f);
         }
 
-        Destroy(gameObject);
     }
 }
