@@ -19,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
     private float _changeDirectionCooldown;
     private Camera _camera;
 
+    // pour detection du crystal//
+    Transform target;
+    Vector2 moveDirection;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -27,11 +31,34 @@ public class EnemyMovement : MonoBehaviour
         _camera = Camera.main;
     }
 
+    // pour detection du crystal//
+    private void Start()
+    {
+        target = GameObject.Find("Crystal").transform;
+    }
+
+       private void Update()
+    {
+    // pour detection du crystal//
+       if(target)
+       {
+        Vector3 direction = (target.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        _rigidbody.rotation = angle;
+        moveDirection = direction;
+       }
+    }
+
     private void FixedUpdate()
     {
         UpdateTargetDirection();
         RotateTowardsTarget();
         SetVelocity();
+        // pour detection du crystal//
+        if(target)
+        {
+            _rigidbody.velocity =new Vector2(moveDirection.x, moveDirection.y) * _speed;
+        }
     }
 
     private void UpdateTargetDirection()
