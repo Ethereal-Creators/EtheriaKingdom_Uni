@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -18,17 +19,46 @@ public class PlayerShoot : MonoBehaviour
 
     private bool isAutoShootActive = false;
 
+    private float bulletLastTime;
+    private bool bulletActive = false;
+
 
     private void Start()
     {
         // Start the automatic shooting when the game starts
-        StartCoroutine(AutoShoot());
+        // StartCoroutine(AutoShoot());
     }
 
     private void Update()
-    {   
+    {
+        if (isAutoShootActive == false) {
+            bulletActive = true;
+            if (bulletActive)
+            {
+                FireBullet();
+
+                Debug.Log("Shoot");
+
+                bulletLastTime = Time.time;
+            }
+            else
+            {
+
+                if (Time.time - bulletLastTime > 0.8f)
+                {
+                    Debug.Log("Don't shoot");
+                    bulletActive = false;
+                }
+                else
+                {
+                    Debug.Log("To be set incative");
+                    
+                }
+
+            }
+        }
         
-        
+
         // Any additional logic you might need to check each frame
     }
 
@@ -37,14 +67,20 @@ public class PlayerShoot : MonoBehaviour
         isAutoShootActive = false;
         if (isAutoShootActive == false)
         {
-            StartCoroutine(AutoShoot());
+
             isAutoShootActive = true;
+
         }
-        Debug.Log("Player activted.");
+    }
+
+    void OnDisable()
+    {
+        isAutoShootActive = false;
     }
 
     private void FireBullet()
     {
+        Debug.Log("Shoting!");
         GameObject bullet = Instantiate(_bulletPrefab, _gunOffset.position, transform.rotation);
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
 

@@ -34,10 +34,14 @@ public class EnemyMovement : MonoBehaviour
     // pour detection du crystal//
     private void Start()
     {
-        target = GameObject.Find("Crystal").transform;
+        if (GameObject.Find("Crystal") != null)
+        {
+            target = GameObject.Find("Crystal").transform;
+        }
+        
     }
 
-       private void Update()
+    private void Update()
     {
     // pour detection du crystal//
        if(target)

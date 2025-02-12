@@ -99,7 +99,7 @@ public class HealthController : MonoBehaviour
             OnDamaged.Invoke();
         }
     }
-
+ 
     private IEnumerator BlinkDamageEffect()
     {
         // Store the original color of the sprite
@@ -107,7 +107,7 @@ public class HealthController : MonoBehaviour
 
         // Change the sprite color to the damaged color
         spriteRenderer.color = damagedColor;
-
+        
         // Wait for the specified blink duration
         yield return new WaitForSeconds(blinkDuration);
 
@@ -143,7 +143,7 @@ public class HealthController : MonoBehaviour
         }
 
         // Start blinking before despawning
-        StartCoroutine(BlinkDeathEffect());
+        /*StartCoroutine(BlinkDeathEffect());*/
 
         // Additional death-related logic can go here (e.g., playing an animation or sound)
     }
