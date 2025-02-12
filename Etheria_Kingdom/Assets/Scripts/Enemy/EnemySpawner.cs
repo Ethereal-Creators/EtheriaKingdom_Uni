@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,21 +9,41 @@ public class EnemySpawner : MonoBehaviour
     private GameObject bigSwarmerPrefab;
 
     [SerializeField]
-    private float swarmerInterval = 3.5f;
+    private float minSwarmerInterval = 2f;
     [SerializeField]
-    private float bigSwarmerInterval = 10f;
+    private float maxSwarmerInterval = 5f; 
+    [SerializeField]
+    private float minBigSwarmerInterval = 7f; 
+    [SerializeField]
+    private float maxBigSwarmerInterval = 12f; 
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private int maxEnemies = 10; 
+    private int currentEnemyCount = 0;
+
     void Start()
     {
-        StartCoroutine(spawnEnemy(swarmerInterval, swarmerPrefab));
-        StartCoroutine(spawnEnemy(bigSwarmerInterval, bigSwarmerPrefab));
+        StartCoroutine(spawnEnemy(swarmerPrefab, minSwarmerInterval, maxSwarmerInterval));
+        StartCoroutine(spawnEnemy(bigSwarmerPrefab, minBigSwarmerInterval, maxBigSwarmerInterval));
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy)
+    private IEnumerator spawnEnemy(GameObject enemy, float minInterval, float maxInterval)
     {
+        float interval = Random.Range(minInterval, maxInterval);
+
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-7f, 7f), 0), Quaternion.identity);
-        StartCoroutine(spawnEnemy(interval, enemy));
+
+        if (currentEnemyCount < maxEnemies)
+        {
+            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5f), Random.Range(-7f, 7f), 0), Quaternion.identity);
+            currentEnemyCount++;
+
+        }
+        StartCoroutine(spawnEnemy(enemy, minInterval, maxInterval));
+    }
+
+    public void OnEnemyDestroyed()
+    {
+        currentEnemyCount--;
     }
 }

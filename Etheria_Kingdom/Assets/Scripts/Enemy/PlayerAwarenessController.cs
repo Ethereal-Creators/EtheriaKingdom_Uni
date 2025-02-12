@@ -22,7 +22,7 @@ public class PlayerAwarenessController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if the GameObject that entered the trigger has the "Player" tag
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Cryta"))
         {
             _player = other.transform;  // Get the player's transform
             UpdateAwareness();          // Update the awareness as soon as player enters the trigger
@@ -32,7 +32,7 @@ public class PlayerAwarenessController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // If the player leaves the trigger zone, we reset awareness
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Crystal"))
         {
             _player = null; // No player in range
             AwareOfPlayer = false; // Reset awareness when player is out of range

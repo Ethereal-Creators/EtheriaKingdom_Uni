@@ -1715,6 +1715,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1611172467}
     m_Modifications:
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: maxEnemies
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: swarmerInterval
       value: 5
       objectReference: {fileID: 0}
