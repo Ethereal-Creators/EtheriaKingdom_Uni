@@ -25,8 +25,7 @@ public class ContactCrystal : MonoBehaviour
         // Check if the object colliding with the crystal is an enemy
         if (collision.gameObject.CompareTag("ennemie"))
         {
-            // Get the enemy component
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+         
 
             // Optional: Play destruction sound
             if (destructionSound && audioSource)
