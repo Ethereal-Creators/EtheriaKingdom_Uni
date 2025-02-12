@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258135857231589691, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _speed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4258135857231589691, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _screenBorder
@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390666059254498673, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.846415
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7390666059254498673, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.4383
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7390666059254498673, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: m_LocalScale.z
