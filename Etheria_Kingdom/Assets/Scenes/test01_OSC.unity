@@ -677,6 +677,22 @@ PrefabInstance:
       propertyPath: bigSwarmerInterval
       value: 15.73
       objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: maxSwarmerInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: minSwarmerInterval
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: maxBigSwarmerInterval
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: minBigSwarmerInterval
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6100307970236179954, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: m_Name
       value: EnnemieSpawnerFly
@@ -1110,6 +1126,22 @@ PrefabInstance:
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerInterval
       value: 15.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: maxSwarmerInterval
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: minSwarmerInterval
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: maxBigSwarmerInterval
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: minBigSwarmerInterval
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6100307970236179954, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: m_Name
@@ -1751,6 +1783,22 @@ PrefabInstance:
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: bigSwarmerInterval
       value: 19.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: maxSwarmerInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: minSwarmerInterval
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: maxBigSwarmerInterval
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: minBigSwarmerInterval
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2549,7 +2597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1773957624
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2869,7 +2917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1896395750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3594,6 +3642,22 @@ PrefabInstance:
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: bigSwarmerInterval
       value: 19.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: maxSwarmerInterval
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: minSwarmerInterval
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: maxBigSwarmerInterval
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: minBigSwarmerInterval
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: m_LocalPosition.x

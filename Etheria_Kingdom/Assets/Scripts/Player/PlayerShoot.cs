@@ -19,8 +19,11 @@ public class PlayerShoot : MonoBehaviour
 
     private bool isAutoShootActive = false;
 
-    private float bulletLastTime;
-    private bool bulletActive = false;
+    //private float bulletLastTime;
+    private float time = 0.0f;
+    //public float interpolationPeriod = 0.8f;
+    //private bool bulletActive = true;
+    //private bool bulletShoot = false;
 
 
     private void Start()
@@ -31,35 +34,49 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        if (isAutoShootActive == false) {
-            bulletActive = true;
-            if (bulletActive)
-            {
-                FireBullet();
-
-                Debug.Log("Shoot");
-
-                bulletLastTime = Time.time;
-            }
-            else
-            {
-
-                if (Time.time - bulletLastTime > 0.8f)
+        // source code : https://discussions.unity.com/t/execute-code-every-x-seconds-with-update/3626
+        time += Time.deltaTime;
+        if (time >= _timeBetweenShots)
+        {
+            time = 0.0f;
+            FireBullet();
+        }
+            /*
+            if (isAutoShootActive == false) {
+                if (bulletActive)
                 {
-                    Debug.Log("Don't shoot");
-                    bulletActive = false;
+
+
+                    FireBullet();
+                    Debug.Log("Shoot");
+
+                    bulletLastTime = Time.time;
+
                 }
                 else
                 {
-                    Debug.Log("To be set incative");
-                    
+
+
+                    if (Time.time - bulletLastTime > 1f)
+                    {
+
+                        Debug.Log("Don't shoot");
+                        bulletActive = false;
+                    }
+                    else
+                    {
+                        Debug.Log("To be not shoting");
+
+
+                    }
+
+
+
                 }
+            }*/
 
-            }
-        }
-        
 
-        // Any additional logic you might need to check each frame
+            // Any additional logic you might need to check each frame
     }
 
     void OnEnable()
@@ -67,7 +84,7 @@ public class PlayerShoot : MonoBehaviour
         isAutoShootActive = false;
         if (isAutoShootActive == false)
         {
-
+            Debug.Log("auto shoot active");
             isAutoShootActive = true;
 
         }
@@ -75,7 +92,13 @@ public class PlayerShoot : MonoBehaviour
 
     void OnDisable()
     {
-        isAutoShootActive = false;
+        
+        if (isAutoShootActive == true)
+        {
+            Debug.Log("auto shoot stop");
+            isAutoShootActive = false;
+        }
+        
     }
 
     private void FireBullet()
