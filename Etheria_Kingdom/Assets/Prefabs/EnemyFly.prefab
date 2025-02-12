@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.59, y: 5.99, z: 0.10167443}
-  m_LocalScale: {x: 2.2, y: 2, z: 0.85096306}
+  m_LocalScale: {x: 2.70556, y: 2.4596, z: 1.0465144}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.19}
+  m_Size: {x: 0.13, y: 0.18}
   m_EdgeRadius: 0
 --- !u!212 &8991539849472809182
 SpriteRenderer:
@@ -243,7 +243,7 @@ MonoBehaviour:
   _maximumHealth: 10
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
-  deathBlinkCount: 3
+  deathBlinkCount: 0
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -304,7 +304,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.08
+          m_FloatArgument: 0.45
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using extOSC;
 using TMPro;
+using UnityEditor.Rendering;
 
 public class MyOSC : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MyOSC : MonoBehaviour
     public extOSC.OSCReceiver oscReceiver;
     public extOSC.OSCTransmitter oscTransmitter;
     public GameObject myTarget;
+    private float myTargetLastTime;
+    private bool myTargetActive = false;
     public TextMeshProUGUI myTargetTextId;
     public TextMeshProUGUI myTargetTextActive;
     public TextMeshProUGUI myTargetTextX;
@@ -100,13 +103,15 @@ public class MyOSC : MonoBehaviour
 
         if (value == 1) {
             //StartCoroutine(wait());
-            myTarget.gameObject.SetActive(true);
+            myTargetActive = true;
+           
             
             myTargetTextActive.text = value.ToString();
             
         } else if (value == 0) {
+            myTargetActive = false ;
             //StartCoroutine(wait());
-            myTarget.gameObject.SetActive(false);
+            
             //value = oscMessage.Values[0].IntValue;
             myTargetTextActive.text = value.ToString();
             
@@ -547,6 +552,36 @@ public class MyOSC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ( myTargetActive)
+        {
+            
+            if ( ! myTarget.gameObject.activeSelf )
+            {
+                myTarget.gameObject.SetActive(true);
+               
+                Debug.Log("Set Active");
+            }
+            myTargetLastTime = Time.time;
+
+        } else
+        {
+            
+            if (myTarget.gameObject.activeSelf)
+            {
+                
+                if (Time.time - myTargetLastTime > 1.0f)
+                {
+                    Debug.Log("Set Inactive");
+                    myTarget.gameObject.SetActive(false);
+                } else
+                {
+                    Debug.Log("To be set incative");
+                }
+            }
+               
+           
+
+        }
     }
+
 }

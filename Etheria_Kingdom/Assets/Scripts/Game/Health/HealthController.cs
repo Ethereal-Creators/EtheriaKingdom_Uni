@@ -30,6 +30,14 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private ParticleSystem bleedingParticles;
 
+    // Reference to the Rigidbody2D component for movement
+    private Rigidbody2D rigidbody2D;
+
+    // Event declarations
+    public UnityEvent OnDied;
+    public UnityEvent OnDamaged;
+    public UnityEvent OnHealthChanged;
+
     public float RemainingHealthPercentage
     {
         get
@@ -40,14 +48,11 @@ public class HealthController : MonoBehaviour
 
     public bool IsInvincible { get; set; }
 
-    public UnityEvent OnDied;
-    public UnityEvent OnDamaged;
-    public UnityEvent OnHealthChanged;
-
     private void Awake()
     {
-        // Get the SpriteRenderer component
+        // Get the SpriteRenderer and Rigidbody2D components
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float damageAmount)
@@ -87,6 +92,7 @@ public class HealthController : MonoBehaviour
         if (_currentHealth == 0)
         {
             OnDied.Invoke();
+            HandleDeath();  // Handle the death logic here
         }
         else
         {
@@ -129,11 +135,17 @@ public class HealthController : MonoBehaviour
     // This method is called when the object dies
     private void HandleDeath()
     {
+        // Stop movement by disabling Rigidbody2D or movement-related components
+        if (rigidbody2D != null)
+        {
+            rigidbody2D.velocity = Vector2.zero;   // Stop any current movement
+            rigidbody2D.isKinematic = true;        // Disable physics interactions (optional)
+        }
+
         // Start blinking before despawning
         StartCoroutine(BlinkDeathEffect());
 
-        // You can also invoke any other death-related logic here (e.g., playing an animation or sound)
-        
+        // Additional death-related logic can go here (e.g., playing an animation or sound)
     }
 
     private IEnumerator BlinkDeathEffect()
