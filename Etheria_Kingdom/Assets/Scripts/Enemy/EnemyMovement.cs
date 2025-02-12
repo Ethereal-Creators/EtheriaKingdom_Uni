@@ -43,14 +43,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-    // pour detection du crystal//
-       if(target)
-       {
-        Vector3 direction = (target.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        _rigidbody.rotation = angle;
-        moveDirection = direction;
-       }
+        // pour detection du crystal//
+        if (target)
+        {
+            // Get the direction from the enemy to the crystal
+            Vector3 direction = (target.position - transform.position).normalized;
+
+            // Calculate the angle between the enemy's current position and the crystal
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Smoothly rotate the enemy to face the crystal
+            _rigidbody.rotation = Mathf.LerpAngle(_rigidbody.rotation, angle, _rotationSpeed * Time.deltaTime);
+
+            // Set the move direction towards the crystal
+            moveDirection = direction;
+        }
     }
 
     private void FixedUpdate()
