@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
     [SerializeField] private float defaultTime = 10f;
+    [SerializeField] private Animator myAnimator;
     public UnityEvent threeSeconds;
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class Timer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         if(seconds == 3) {
-            threeSeconds.Invoke();
+            //myAnimator.setTrigger("countdown");
         }
     }
 
