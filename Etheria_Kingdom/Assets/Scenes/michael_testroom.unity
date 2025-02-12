@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 211692849}
   - component: {fileID: 211692850}
   - component: {fileID: 211692851}
+  - component: {fileID: 211692852}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -854,7 +855,7 @@ MonoBehaviour:
   _maximumHealth: 100
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 1
-  deathBlinkCount: 20
+  deathBlinkCount: 3
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -887,6 +888,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92d9501e0777242a2756301fddba6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &211692852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211692842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c54973821b98140b71f9d1bfa54201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &228602516
