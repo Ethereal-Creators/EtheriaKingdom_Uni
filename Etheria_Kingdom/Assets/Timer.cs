@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float remainingTime;
     [SerializeField] private float defaultTime = 10f;
     public Animator myAnimator;
+    public Animator myCountdown;
     public UnityEvent threeSeconds;
 
     // Update is called once per frame
@@ -29,7 +30,12 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         
-
+        if(remainingTime == 10) {
+            myCountdown.SetBool("isIntroCountdown", true);
+        }
+        if (remainingTime == 4) {
+            myCountdown.SetBool("isintroCountdown", false);
+        }
         if(seconds == 3) {
             myAnimator.SetFloat("countdown", 1);
         }
