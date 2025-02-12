@@ -7,6 +7,7 @@ TagManager:
   - ennemie
   - Crystal
   - actif
+  - projectile
   layers:
   - Default
   - TransparentFX

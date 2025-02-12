@@ -26,6 +26,13 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private int deathBlinkCount = 3;
 
+
+    // List for the enemy sound hit
+    public List<AudioClip> clips = new List<AudioClip>();
+
+    [SerializeField]
+    public AudioSource source;
+
     // Reference to the bleeding particle system
     [SerializeField]
     private ParticleSystem bleedingParticles;
@@ -37,6 +44,14 @@ public class HealthController : MonoBehaviour
     public UnityEvent OnDied;
     public UnityEvent OnDamaged;
     public UnityEvent OnHealthChanged;
+
+    // charge le son au debut
+    void Start()
+    {
+        //Debug.Log(clips.Count);
+        source = GetComponent<AudioSource>();
+    }
+
 
     public float RemainingHealthPercentage
     {
@@ -55,8 +70,18 @@ public class HealthController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("projectile"))
+        {
+            int randomClipIndex = Random.Range(0, clips.Count);
+            source.PlayOneShot(clips[randomClipIndex]);
+        }
+    }
+
     public void TakeDamage(float damageAmount)
     {
+        
         if (_currentHealth == 0)
         {
             return;
@@ -70,6 +95,7 @@ public class HealthController : MonoBehaviour
         _currentHealth -= damageAmount;
 
         OnHealthChanged.Invoke();
+        
 
         // Play bleeding particles when damage is taken
         if (bleedingParticles != null)
