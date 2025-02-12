@@ -133,6 +133,7 @@ public class HealthController : MonoBehaviour
         StartCoroutine(BlinkDeathEffect());
 
         // You can also invoke any other death-related logic here (e.g., playing an animation or sound)
+        
     }
 
     private IEnumerator BlinkDeathEffect()
