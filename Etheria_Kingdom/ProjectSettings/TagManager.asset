@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ennemie
   - Crystal
+  - actif
   layers:
   - Default
   - TransparentFX
