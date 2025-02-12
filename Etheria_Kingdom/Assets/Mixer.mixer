@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9127786744142130828
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5622d4fd6133b8049bd5012e259ecae8
+  m_EffectName: Attenuation
+  m_MixLevel: c828cbb4fa8cba44f8fbb1bb1b606416
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-2600046086806524190
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: monstre_recoit_coup
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 049dd932028759e4d920806dc71d10fb
+  m_Children: []
+  m_Volume: 4e532d0838773bf45ac6aaf11a45e7ed
+  m_Pitch: dc46448b7a32fab4aad1b68e350cc756
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -9127786744142130828}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -21,6 +54,7 @@ AudioMixerController:
     - bcccdc602dad5ae42af012cb18c21335
     - 90db1654d2a273d4daed64e057e7f97e
     - 4b6325415ba537a42ae2059bdec3e5ba
+    - 049dd932028759e4d920806dc71d10fb
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -126,7 +160,8 @@ AudioMixerGroupController:
   m_Name: Effet sonore
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 4b6325415ba537a42ae2059bdec3e5ba
-  m_Children: []
+  m_Children:
+  - {fileID: -2600046086806524190}
   m_Volume: cab7379f782be6540aaca4d03efe3f1f
   m_Pitch: c8a9a885835c2e045b161de21328100f
   m_Send: 00000000000000000000000000000000
