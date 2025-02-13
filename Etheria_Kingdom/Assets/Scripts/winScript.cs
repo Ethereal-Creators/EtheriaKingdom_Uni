@@ -48,7 +48,7 @@ public class winScript : MonoBehaviour
         //source du code : https://discussions.unity.com/t/how-to-check-if-object-is-active/116705
         if (timeWhenWin <= Time.time)
         {
-            if (crystalIsActive.activeSelf == true)
+            if (crystalIsActive != null)
             {
                 winSlowDown = true;
                 gameWin.Invoke();
@@ -62,7 +62,6 @@ public class winScript : MonoBehaviour
 
 
         }
-
         if (winSlowDown == true)
         {
             timeTilChangeScene -= Time.deltaTime;
