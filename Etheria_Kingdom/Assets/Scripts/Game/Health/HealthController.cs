@@ -26,13 +26,6 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private int deathBlinkCount = 3;
 
-
-    // List for the enemy sound hit
-    public List<AudioClip> clips = new List<AudioClip>();
-
-    [SerializeField]
-    public AudioSource source;
-
     // Reference to the bleeding particle system
     [SerializeField]
     private ParticleSystem bleedingParticles;
@@ -45,14 +38,6 @@ public class HealthController : MonoBehaviour
     public UnityEvent OnDamaged;
     public UnityEvent OnHealthChanged;
 
-    // charge le son au debut
-    void Start()
-    {
-        //Debug.Log(clips.Count);
-        source = GetComponent<AudioSource>();
-    }
-
-
     public float RemainingHealthPercentage
     {
         get
@@ -63,70 +48,47 @@ public class HealthController : MonoBehaviour
 
     public bool IsInvincible { get; set; }
 
-private void Awake()
-{
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    rigidbody2D = GetComponent<Rigidbody2D>();
-    source = GetComponent<AudioSource>(); 
-}
-
-  private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("projectile") && clips.Count > 0)
+    private void Awake()
     {
-        int randomClipIndex = Random.Range(0, clips.Count);
-        source.PlayOneShot(clips[randomClipIndex]);
-    }
-}
-
-   public void TakeDamage(float damageAmount)
-{
-    if (_currentHealth == 0 || IsInvincible) return;
-
-    _currentHealth -= damageAmount;
-    OnHealthChanged.Invoke();
-
-    if (clips.Count > 0 && source != null)
-    {
-        int randomClipIndex = Random.Range(0, clips.Count);
-        source.PlayOneShot(clips[randomClipIndex]);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    if (bleedingParticles != null)
+    public void TakeDamage(float damageAmount)
     {
-        bleedingParticles.transform.position = transform.position;
-        bleedingParticles.Play();
-    }
+        if (_currentHealth == 0 || IsInvincible) return;
 
-    if (spriteRenderer != null)
-    {
-        StartCoroutine(BlinkDamageEffect());
-    }
+        _currentHealth -= damageAmount;
+        OnHealthChanged.Invoke();
 
-    if (_currentHealth <= 0)
-    {
-        _currentHealth = 0;
-        OnDied.Invoke();
-        HandleDeath();
+        if (bleedingParticles != null)
+        {
+            bleedingParticles.transform.position = transform.position;
+            bleedingParticles.Play();
+        }
+
+        if (spriteRenderer != null)
+        {
+            StartCoroutine(BlinkDamageEffect());
+        }
+
+        if (_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            OnDied.Invoke();
+            HandleDeath();
+        }
+        else
+        {
+            OnDamaged.Invoke();
+        }
     }
-    else
-    {
-        OnDamaged.Invoke();
-    }
-}
  
     private IEnumerator BlinkDamageEffect()
     {
-        // Store the original color of the sprite
         Color originalColor = spriteRenderer.color;
-
-        // Change the sprite color to the damaged color
         spriteRenderer.color = damagedColor;
-        
-        // Wait for the specified blink duration
         yield return new WaitForSeconds(blinkDuration);
-
-        // Revert the sprite color back to the original color
         spriteRenderer.color = originalColor;
     }
 
@@ -138,7 +100,6 @@ private void Awake()
         }
 
         _currentHealth += amountToAdd;
-
         OnHealthChanged.Invoke();
 
         if (_currentHealth > _maximumHealth)
@@ -147,43 +108,30 @@ private void Awake()
         }
     }
 
-    // This method is called when the object dies
     private void HandleDeath()
     {
-        // Stop movement by disabling Rigidbody2D or movement-related components
         if (rigidbody2D != null)
         {
-            rigidbody2D.velocity = Vector2.zero;   // Stop any current movement
-            rigidbody2D.isKinematic = true;        // Disable physics interactions (optional)
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.isKinematic = true;
         }
 
         // Start blinking before despawning
         /*StartCoroutine(BlinkDeathEffect());*/
-
-        // Additional death-related logic can go here (e.g., playing an animation or sound)
     }
 
     private IEnumerator BlinkDeathEffect()
     {
-        // Store the original color of the sprite
         Color originalColor = spriteRenderer.color;
 
         for (int i = 0; i < deathBlinkCount; i++)
         {
-            // Change the sprite color to the damaged color (e.g., red)
             spriteRenderer.color = damagedColor;
-
-            // Wait for the blink duration
             yield return new WaitForSeconds(blinkDuration);
-
-            // Revert the sprite color back to the original color
             spriteRenderer.color = originalColor;
-
-            // Wait again before the next blink
             yield return new WaitForSeconds(blinkDuration);
         }
 
-        // After blinking, destroy the object
         Destroy(gameObject);
     }
 }

@@ -100,8 +100,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.15
   deathBlinkCount: 3
-  clips: []
-  source: {fileID: 4350583317670822319}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
