@@ -35,9 +35,9 @@ public class Timer : MonoBehaviour
         if (seconds == 4) {
             myCountdown.SetBool("isIntroCountdown", false);
         }
-        if(seconds == 3) {
+        /*if(seconds == 3) {
             myAnimator.SetFloat("countdown", 1);
-        }
+        }*/
         if(seconds == 6)
         {
             myCountdown.SetBool("isIntroCountdown", true);
