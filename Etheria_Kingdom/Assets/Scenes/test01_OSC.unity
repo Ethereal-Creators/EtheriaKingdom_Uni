@@ -1783,8 +1783,6 @@ MonoBehaviour:
   damagedColor: {r: 0, g: 1, b: 0.7539561, a: 1}
   blinkDuration: 1
   deathBlinkCount: 10
-  clips: []
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -1831,6 +1829,8 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips: []
+  source: {fileID: 0}
 --- !u!50 &843462586
 Rigidbody2D:
   serializedVersion: 4
@@ -3428,8 +3428,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 3
-  clips: []
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -3476,6 +3474,8 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips: []
+  source: {fileID: 0}
 --- !u!114 &1773957628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3730,7 +3730,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.94}
+  m_Offset: {x: 0, y: 1.04}
   serializedVersion: 2
   m_Radius: 0.3
 --- !u!114 &1896395753
@@ -3750,8 +3750,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 3
-  clips: []
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -3798,6 +3796,8 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips: []
+  source: {fileID: 0}
 --- !u!114 &1896395754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,7 +3868,7 @@ MonoBehaviour:
   OnScoreChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1575160847}
+      - m_Target: {fileID: 1399560955}
         m_TargetAssemblyTypeName: ScoreUI, Assembly-CSharp
         m_MethodName: UpdateScore
         m_Mode: 2
@@ -5263,7 +5263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8001766464676002079, guid: 50f29cc298385514e9deac306ac67e93, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8037433495689049173, guid: 50f29cc298385514e9deac306ac67e93, type: 3}
       propertyPath: m_fontSize
