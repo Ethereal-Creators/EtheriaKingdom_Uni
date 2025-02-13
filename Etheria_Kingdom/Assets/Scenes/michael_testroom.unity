@@ -252,8 +252,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 3
-  clips: []
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -300,6 +298,8 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips: []
+  source: {fileID: 0}
 --- !u!114 &84837480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6891,6 +6891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 135759158681189212, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1370315086160374457, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_Name
       value: EnemyFly
@@ -7922,8 +7926,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 3
-  clips: []
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -7970,6 +7972,8 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips: []
+  source: {fileID: 0}
 --- !u!114 &1586203991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13722,6 +13726,10 @@ PrefabInstance:
     - target: {fileID: 1795312624850593594, guid: d73d9614842e04f499e32b94682c3f0b, type: 3}
       propertyPath: m_Name
       value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494683138369425862, guid: d73d9614842e04f499e32b94682c3f0b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5652636868444386205, guid: d73d9614842e04f499e32b94682c3f0b, type: 3}
       propertyPath: m_LocalPosition.x

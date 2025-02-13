@@ -5,70 +5,38 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+    [Header("------- Health Variables -------")]
     [SerializeField]
     private float _currentHealth;
 
     [SerializeField]
     private float _maximumHealth;
 
-    // Reference to the sprite renderer
+    [Header("------- Component references -------")]
     private SpriteRenderer spriteRenderer;
-
-    // The damaged color to blink
-    [SerializeField]
-    private Color damagedColor = Color.red;
-
-    // Duration for the blink effect
-    [SerializeField]
-    private float blinkDuration = 0.2f;
-
-    // Number of blinks before death
-    [SerializeField]
-    private int deathBlinkCount = 3;
-
-    // Reference to the bleeding particle system
-    [SerializeField]
-    private ParticleSystem bleedingParticles;
-
-    // Reference to the Rigidbody2D component for movement
     private Rigidbody2D rigidbody2D;
 
-    // Event declarations
-    public UnityEvent OnDied;
-    public UnityEvent OnDamaged;
-    public UnityEvent OnHealthChanged;
-
-    public List<AudioClip> clips = new List<AudioClip>();
+    [Header("------- Visual and Audio Effects -------")]
+    [SerializeField]
+    private Color damagedColor = Color.red;
+    
+    [SerializeField]
+    private float blinkDuration = 0.2f;
+    
+    [SerializeField]
+    private int deathBlinkCount = 3;
+    
+    [SerializeField]
+    private ParticleSystem bleedingParticles;
 
     [SerializeField]
     private AudioSource source;
 
-    void Start()
-    {
-        //Debug.Log(clips.Count);
-        source = GetComponent<AudioSource>();
-    }
+    public List<AudioClip> clips = new List<AudioClip>();
 
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("projectile") /*&& clips.Count > 0*/)
-        {
-            //Debug.Log("collision 2d healt + projectile");
-            int randomClipIndex = Random.Range(0, clips.Count);
-            source.PlayOneShot(clips[randomClipIndex]);
-        }
-    }
-
-    public float RemainingHealthPercentage
-    {
-        get
-        {
-            return _currentHealth / _maximumHealth;
-        }
-    }
-
-    public bool IsInvincible { get; set; }
+    public UnityEvent OnDied;
+    public UnityEvent OnDamaged;
+    public UnityEvent OnHealthChanged;
 
     private void Awake()
     {
@@ -76,6 +44,26 @@ public class HealthController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
     }
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("projectile"))
+        {
+            Debug.Log("collision 2d health + projectile");
+            if (clips.Count > 0)
+            {
+                int randomClipIndex = Random.Range(0, clips.Count);
+                source.PlayOneShot(clips[randomClipIndex]);
+            }
+        }
+    }
+    public float RemainingHealthPercentage => _currentHealth / _maximumHealth;
+    public bool IsInvincible { get; set; }
 
     public void TakeDamage(float damageAmount)
     {
@@ -107,20 +95,9 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    private IEnumerator BlinkDamageEffect()
-    {
-        Color originalColor = spriteRenderer.color;
-        spriteRenderer.color = damagedColor;
-        yield return new WaitForSeconds(blinkDuration);
-        spriteRenderer.color = originalColor;
-    }
-
     public void AddHealth(float amountToAdd)
     {
-        if (_currentHealth == _maximumHealth)
-        {
-            return;
-        }
+        if (_currentHealth == _maximumHealth) return;
 
         _currentHealth += amountToAdd;
         OnHealthChanged.Invoke();
@@ -131,16 +108,12 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    private void HandleDeath()
+    private IEnumerator BlinkDamageEffect()
     {
-        if (rigidbody2D != null)
-        {
-            rigidbody2D.velocity = Vector2.zero;
-            rigidbody2D.isKinematic = true;
-        }
-
-        // Start blinking before despawning
-        /*StartCoroutine(BlinkDeathEffect());*/
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = damagedColor;
+        yield return new WaitForSeconds(blinkDuration);
+        spriteRenderer.color = originalColor;
     }
 
     private IEnumerator BlinkDeathEffect()
@@ -156,5 +129,17 @@ public class HealthController : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void HandleDeath()
+    {
+        if (rigidbody2D != null)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.isKinematic = true;
+        }
+
+        // Start blinking before despawning
+        // StartCoroutine(BlinkDeathEffect());
     }
 }
