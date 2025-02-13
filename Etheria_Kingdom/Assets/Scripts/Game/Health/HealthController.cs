@@ -41,7 +41,7 @@ public class HealthController : MonoBehaviour
     public List<AudioClip> clips = new List<AudioClip>();
 
     [SerializeField]
-    public AudioSource source;
+    private AudioSource source;
 
     void Start()
     {
@@ -49,12 +49,12 @@ public class HealthController : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
 
-        if (other.gameObject.CompareTag("projectile") /*&& clips.Count > 0*/)
+        if (collision.gameObject.CompareTag("projectile") /*&& clips.Count > 0*/)
         {
-            Debug.Log("collision 2d healt + projectile");
+            //Debug.Log("collision 2d healt + projectile");
             int randomClipIndex = Random.Range(0, clips.Count);
             source.PlayOneShot(clips[randomClipIndex]);
         }
