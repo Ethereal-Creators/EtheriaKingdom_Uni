@@ -30,7 +30,7 @@ public class HealthController : MonoBehaviour
     private ParticleSystem bleedingParticles;
 
     [SerializeField]
-    public AudioSource source;
+    private AudioSource source;
 
     public List<AudioClip> clips = new List<AudioClip>();
 
