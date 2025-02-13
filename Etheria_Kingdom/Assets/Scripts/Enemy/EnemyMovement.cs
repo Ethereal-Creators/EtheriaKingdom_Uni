@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateTargetDirection();
-        RotateTowardsTarget();
+        //RotateTowardsTarget();
         SetVelocity();
         // pour detection du crystal//
         if(target)
@@ -118,13 +118,13 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void RotateTowardsTarget()
+   /* private void RotateTowardsTarget()
     {
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, _targetDirection);
         Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
 
         _rigidbody.SetRotation(rotation);
-    }
+    }*/
 
     private void SetVelocity()
     {
