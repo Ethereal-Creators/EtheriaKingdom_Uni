@@ -29,7 +29,7 @@ public class failScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (crystalIsActive.activeSelf == false && failPanel.activeSelf == true)
+        if (crystalIsActive == null && failPanel.activeSelf == true)
         {
             countDown.text = "Fail";
             timeTilFail -= Time.deltaTime;

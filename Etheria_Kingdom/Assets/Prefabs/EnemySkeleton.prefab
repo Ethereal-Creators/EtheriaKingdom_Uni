@@ -101,6 +101,9 @@ MonoBehaviour:
   blinkDuration: 0.15
   deathBlinkCount: 3
   bleedingParticles: {fileID: 0}
+  source: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -166,13 +169,22 @@ MonoBehaviour:
         m_CallState: 2
   OnDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7048578218279404640}
+        m_TargetAssemblyTypeName: HealthController, Assembly-CSharp
+        m_MethodName: soundWhenDameged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
-  clips:
-  - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
-  source: {fileID: 0}
 --- !u!50 &3312556076419846430
 Rigidbody2D:
   serializedVersion: 4
@@ -354,7 +366,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2600046086806524190, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

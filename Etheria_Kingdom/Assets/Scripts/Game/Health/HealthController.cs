@@ -19,13 +19,13 @@ public class HealthController : MonoBehaviour
     [Header("------- Visual and Audio Effects -------")]
     [SerializeField]
     private Color damagedColor = Color.red;
-    
+
     [SerializeField]
     private float blinkDuration = 0.2f;
-    
+
     [SerializeField]
     private int deathBlinkCount = 3;
-    
+
     [SerializeField]
     private ParticleSystem bleedingParticles;
 
@@ -50,6 +50,7 @@ public class HealthController : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
+    /*
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("projectile"))
@@ -61,7 +62,10 @@ public class HealthController : MonoBehaviour
                 source.PlayOneShot(clips[randomClipIndex]);
             }
         }
-    }
+    }*/
+
+
+
     public float RemainingHealthPercentage => _currentHealth / _maximumHealth;
     public bool IsInvincible { get; set; }
 
@@ -141,5 +145,16 @@ public class HealthController : MonoBehaviour
 
         // Start blinking before despawning
         // StartCoroutine(BlinkDeathEffect());
+    }
+
+    public void soundWhenDameged()
+    {
+        Debug.Log("Dameged");
+        if (source != null)
+        {
+            // Set a random pitch between 0.8f and 1.2f (you can adjust these values as needed)
+            int randomClipIndex = Random.Range(0, clips.Count);
+            source.PlayOneShot(clips[randomClipIndex]);
+        }
     }
 }
