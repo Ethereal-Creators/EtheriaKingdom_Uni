@@ -17,6 +17,8 @@ public class failScript : MonoBehaviour
 
     public TextMeshProUGUI countDown;
 
+    // POUR AJOUTER FAIL ===> public Animator failCountdown;
+
     [SerializeField] UnityEvent gameFail;
     // Start is called before the first frame update
     void Start()
@@ -31,10 +33,12 @@ public class failScript : MonoBehaviour
         {
             countDown.text = "Fail";
             timeTilFail -= Time.deltaTime;
+            // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", true);
             if (timeTilFail < 0)
             {
                 gameFail.Invoke();
                 Debug.Log("Fail return to start.");
+                // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", false);
             }
             /*if (timeWhenFail <= Time.time)
             {

@@ -29,18 +29,16 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         
-        if(remainingTime == 10) {
-            
-        }
-        if (seconds == 4) {
-            myCountdown.SetBool("isIntroCountdown", false);
-        }
         /*if(seconds == 3) {
             myAnimator.SetFloat("countdown", 1);
         }*/
-        if(seconds == 6)
+        if(seconds == 5)
         {
             myCountdown.SetBool("isIntroCountdown", true);
+        }
+        if(seconds == 0)
+        {
+            myCountdown.SetBool("isIntroCountdown", false);
         }
     }
 
