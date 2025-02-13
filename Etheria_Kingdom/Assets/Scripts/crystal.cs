@@ -25,7 +25,7 @@ public class ContactCrystal : MonoBehaviour
         // Check if the object colliding with the crystal is an enemy
         if (collision.gameObject.CompareTag("ennemie"))
         {
-         
+
 
             // Optional: Play destruction sound
             if (destructionSound && audioSource)
@@ -39,7 +39,7 @@ public class ContactCrystal : MonoBehaviour
                 Instantiate(destructionEffectPrefab, collision.transform.position, Quaternion.identity);
             }
 
-           
+
 
             // Destroy the enemy after a short delay
             Destroy(collision.gameObject, destructionDelay);
