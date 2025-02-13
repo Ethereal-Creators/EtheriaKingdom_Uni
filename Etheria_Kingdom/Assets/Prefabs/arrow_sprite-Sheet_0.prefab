@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  damageSound: {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
+  damageSound: {fileID: 8300000, guid: f5a17f35ad1af6d41be88deedba5fc38, type: 3}
 --- !u!114 &-3705429115771274497
 MonoBehaviour:
   m_ObjectHideFlags: 0
