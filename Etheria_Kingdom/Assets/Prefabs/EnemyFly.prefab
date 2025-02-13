@@ -98,7 +98,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.01}
@@ -245,9 +245,6 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 0
-  clips:
-  - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
-  source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
     m_PersistentCalls:
@@ -318,6 +315,9 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  clips:
+  - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
+  source: {fileID: 7135610144876543555}
 --- !u!114 &4105664023254028885
 MonoBehaviour:
   m_ObjectHideFlags: 0

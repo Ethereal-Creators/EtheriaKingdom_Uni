@@ -21,6 +21,9 @@ public class MyOSC : MonoBehaviour
     public TextMeshProUGUI myTargetTextY;
     public TextMeshProUGUI myTargetTextAngle;
     public GameObject myTargetTwo;
+
+    private float myTargetTwoLastTime;
+    private bool myTargetTwoActive = false;
     public GameObject myTargetThree;
     public float multiplierXY;
     public float multiplierY;
@@ -40,10 +43,6 @@ public class MyOSC : MonoBehaviour
         return Mathf.Clamp(((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin), outputMin, outputMax);
     }
 
-    IEnumerator wait(){
-        yield return new WaitForSeconds(1);
-    }
-
     // Object #1
 
     void IdTraiterMessageOSC(OSCMessage oscMessage)
@@ -55,28 +54,35 @@ public class MyOSC : MonoBehaviour
         } else {
             myTarget.gameObject.SetActive(true);
         }*/
-        
+
         float value;
         if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
-            if (oscMessage.Values[0].FloatValue == idNumberOne) {
+            if (oscMessage.Values[0].FloatValue == idNumberOne)
+            {
                 myTarget.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTarget.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].FloatValue;
             myTarget.gameObject.SetActive(true);
             myTargetTextId.text = value.ToString();
 
-        } else if (oscMessage.Values[0].Type == OSCValueType.Int)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
-            if (oscMessage.Values[0].IntValue == idNumberOne) {
+            if (oscMessage.Values[0].IntValue == idNumberOne)
+            {
                 myTarget.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTarget.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].IntValue;
-            
+
             myTargetTextId.text = value.ToString();
         }
         else
@@ -89,32 +95,37 @@ public class MyOSC : MonoBehaviour
     void ActiveTraiterMessageOSC(OSCMessage oscMessage)
     {
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
 
-        if (value == 1) {
+        if (value == 1)
+        {
             //StartCoroutine(wait());
             myTargetActive = true;
-           
-            
+
+
             myTargetTextActive.text = value.ToString();
-            
-        } else if (value == 0) {
-            myTargetActive = false ;
+
+        }
+        else if (value == 0)
+        {
+            myTargetActive = false;
             //StartCoroutine(wait());
-            
+
             //value = oscMessage.Values[0].IntValue;
             myTargetTextActive.text = value.ToString();
-            
+
         }
     }
 
@@ -123,25 +134,27 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float negatedValue = value - (value * 2);
         myTargetTextAngle.text = negatedValue.ToString();
-        
+
         // Appliquer la rotation au GameObject ciblé :
-        myTarget.transform.eulerAngles = new Vector3(0,0,value);
+        myTarget.transform.eulerAngles = new Vector3(0, 0, value);
     }
 
     void YTraiterMessageOSC(OSCMessage oscMessage)
@@ -149,25 +162,27 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPosition[1] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierY - AddToY + removeFromY;
         float negatedValue = augmentedValue - (augmentedValue * 2);
         myTargetTextY.text = negatedValue.ToString();
-        
+
         // Appliquer la rotation au GameObject ciblé :
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
         newPosition[1] = negatedValue;
@@ -179,19 +194,21 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPosition[0] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - removeFromX + AddToX;
@@ -199,7 +216,7 @@ public class MyOSC : MonoBehaviour
         myTargetTextX.text = negatedValue.ToString();
 
         // Appliquer la rotation au GameObject ciblé :
-         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
+        //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
         newPosition[0] = negatedValue;
         myTarget.transform.position = newPosition;
     }
@@ -210,42 +227,52 @@ public class MyOSC : MonoBehaviour
     {
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
-        if (oscMessage == null) {
+        if (oscMessage == null)
+        {
             myTargetTwo.gameObject.SetActive(false);
-        } else {
+        }
+        else
+        {
             myTargetTwo.gameObject.SetActive(true);
         }
-        
+
         float value;
         if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
-            if (oscMessage.Values[0].FloatValue == idNumberTwo) {
+            if (oscMessage.Values[0].FloatValue == idNumberTwo)
+            {
                 myTargetTwo.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTargetTwo.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].FloatValue;
             myTargetTwo.gameObject.SetActive(true);
-        } else if (oscMessage.Values[0].Type == OSCValueType.Int)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
-            if (oscMessage.Values[0].IntValue == idNumberTwo) {
+            if (oscMessage.Values[0].IntValue == idNumberTwo)
+            {
                 myTargetTwo.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTargetTwo.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].IntValue;
-            
+
         }
         else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         //float rotation = ScaleValue(value, 0, 360, 45, 315);
         //float negatedValue = value - (value * 2);
-        
+
         // Appliquer la rotation au GameObject ciblé :
         //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
     }
@@ -253,30 +280,37 @@ public class MyOSC : MonoBehaviour
     void TwoActiveTraiterMessageOSC(OSCMessage oscMessage)
     {
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
 
-        if (value == 1) {
+        if (value == 1)
+        {
             //StartCoroutine(wait());
-            myTargetTwo.gameObject.SetActive(true);
-            
+            //myTargetTwo.gameObject.SetActive(true);
+            myTargetTwoActive = true;
+
             //myTargetTextActive.text = value.ToString();
-            
-        } else if (value == 0) {
+
+        }
+        else if (value == 0)
+        {
             //StartCoroutine(wait());
-            myTargetTwo.gameObject.SetActive(false);
+            myTargetTwoActive = false;
+            //myTargetTwo.gameObject.SetActive(false);
             //value = oscMessage.Values[0].IntValue;
             //myTargetTextActive.text = value.ToString();
-            
+
         }
     }
 
@@ -285,24 +319,26 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float negatedValue = value - (value * 2);
-        
+
         // Appliquer la rotation au GameObject ciblé :
-        myTargetTwo.transform.eulerAngles = new Vector3(0,0,value);
+        myTargetTwo.transform.eulerAngles = new Vector3(0, 0, value);
     }
 
     void TwoYTraiterMessageOSC(OSCMessage oscMessage)
@@ -310,19 +346,21 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPositionTwo[1] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierY - AddToY + removeFromY;
@@ -339,26 +377,28 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPositionTwo[0] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - removeFromX + AddToX;
         float negatedValue = augmentedValue - (augmentedValue * 2);
 
         // Appliquer la rotation au GameObject ciblé :
-         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
+        //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
         newPositionTwo[0] = negatedValue;
         myTargetTwo.transform.position = newPositionTwo;
     }
@@ -369,42 +409,52 @@ public class MyOSC : MonoBehaviour
     {
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
-        if (oscMessage == null) {
+        if (oscMessage == null)
+        {
             myTargetThree.gameObject.SetActive(false);
-        } else {
+        }
+        else
+        {
             myTargetThree.gameObject.SetActive(true);
         }
-        
+
         float value;
         if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
-            if (oscMessage.Values[0].FloatValue == idNumberThree) {
+            if (oscMessage.Values[0].FloatValue == idNumberThree)
+            {
                 myTargetThree.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTargetThree.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].FloatValue;
             myTargetThree.gameObject.SetActive(true);
-        } else if (oscMessage.Values[0].Type == OSCValueType.Int)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
-            if (oscMessage.Values[0].IntValue == idNumberThree) {
+            if (oscMessage.Values[0].IntValue == idNumberThree)
+            {
                 myTargetThree.gameObject.SetActive(true);
-            } else {
+            }
+            else
+            {
                 myTargetThree.gameObject.SetActive(false);
             }
             value = oscMessage.Values[0].IntValue;
-            
+
         }
         else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         //float rotation = ScaleValue(value, 0, 360, 45, 315);
         //float negatedValue = value - (value * 2);
-        
+
         // Appliquer la rotation au GameObject ciblé :
         //myTarget.transform.eulerAngles = new Vector3(0,0,negatedValue);
     }
@@ -412,30 +462,35 @@ public class MyOSC : MonoBehaviour
     void ThreeActiveTraiterMessageOSC(OSCMessage oscMessage)
     {
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
 
-        if (value == 1) {
+        if (value == 1)
+        {
             //StartCoroutine(wait());
             myTargetThree.gameObject.SetActive(true);
-            
+
             //myTargetTextActive.text = value.ToString();
-            
-        } else if (value == 0) {
+
+        }
+        else if (value == 0)
+        {
             //StartCoroutine(wait());
             myTargetThree.gameObject.SetActive(false);
             //value = oscMessage.Values[0].IntValue;
             //myTargetTextActive.text = value.ToString();
-            
+
         }
     }
 
@@ -444,24 +499,26 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float negatedValue = value - (value * 2);
-        
+
         // Appliquer la rotation au GameObject ciblé :
-        myTargetThree.transform.eulerAngles = new Vector3(0,0,value);
+        myTargetThree.transform.eulerAngles = new Vector3(0, 0, value);
     }
 
     void ThreeYTraiterMessageOSC(OSCMessage oscMessage)
@@ -469,19 +526,21 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPositionThree[1] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierY - AddToY + removeFromY;
@@ -498,26 +557,28 @@ public class MyOSC : MonoBehaviour
         // Récupérer une valeur numérique en tant que float
         // même si elle est de type float ou int :
         float value;
-        if (oscMessage.Values[0].Type == OSCValueType.Int )
+        if (oscMessage.Values[0].Type == OSCValueType.Int)
         {
             value = oscMessage.Values[0].IntValue;
-        } else if (oscMessage.Values[0].Type == OSCValueType.Float)
+        }
+        else if (oscMessage.Values[0].Type == OSCValueType.Float)
         {
             value = oscMessage.Values[0].FloatValue;
-        } else
+        }
+        else
         {
             // Si la valeur n'est ni un foat ou int, on quitte la méthode :
             newPositionThree[0] = 35;
             return;
         }
-        
+
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - removeFromX + AddToX;
         float negatedValue = augmentedValue - (augmentedValue * 2);
 
         // Appliquer la rotation au GameObject ciblé :
-         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
+        //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
         newPositionThree[0] = negatedValue;
         myTargetThree.transform.position = newPositionThree;
     }
@@ -543,43 +604,74 @@ public class MyOSC : MonoBehaviour
         oscReceiver.Bind("/angle" + idNumberThree + "_0", ThreeTraiterMessageOSC);
         oscReceiver.Bind("/x" + idNumberThree + "_0", ThreeXTraiterMessageOSC);
         oscReceiver.Bind("/y" + idNumberThree + "_0", ThreeYTraiterMessageOSC);
-        
+
 
     }
 
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        if ( myTargetActive)
+        if (myTargetActive)
         {
-            
-            if ( ! myTarget.gameObject.activeSelf )
+
+            if (!myTarget.gameObject.activeSelf)
             {
                 myTarget.gameObject.SetActive(true);
-               
+
                 Debug.Log("Set Active");
             }
             myTargetLastTime = Time.time;
 
-        } else
+        }
+        else
         {
-            
+
             if (myTarget.gameObject.activeSelf)
             {
-                
+
                 if (Time.time - myTargetLastTime > 1.0f)
                 {
                     Debug.Log("Set Inactive");
                     myTarget.gameObject.SetActive(false);
-                } else
+                }
+                else
                 {
-                    Debug.Log("To be set incative");
+                    //Debug.Log("To be set incative");
                 }
             }
-               
-           
+
+        }
+
+        if (myTargetTwoActive)
+        {
+
+            if (!myTargetTwo.gameObject.activeSelf)
+            {
+                myTargetTwo.gameObject.SetActive(true);
+
+                Debug.Log("Set Active target two");
+            }
+            myTargetTwoLastTime = Time.time;
+
+        }
+        else
+        {
+
+            if (myTargetTwo.gameObject.activeSelf)
+            {
+
+                if (Time.time - myTargetTwoLastTime > 1.0f)
+                {
+                    Debug.Log("Set Inactive target two");
+                    myTargetTwo.gameObject.SetActive(false);
+                }
+                else
+                {
+                    //Debug.Log("To be set incative target two");
+                }
+            }
 
         }
     }

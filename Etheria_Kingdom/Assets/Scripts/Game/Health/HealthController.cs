@@ -38,6 +38,28 @@ public class HealthController : MonoBehaviour
     public UnityEvent OnDamaged;
     public UnityEvent OnHealthChanged;
 
+    public List<AudioClip> clips = new List<AudioClip>();
+
+    [SerializeField]
+    public AudioSource source;
+
+    void Start()
+    {
+        //Debug.Log(clips.Count);
+        source = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("projectile") /*&& clips.Count > 0*/)
+        {
+            Debug.Log("collision 2d healt + projectile");
+            int randomClipIndex = Random.Range(0, clips.Count);
+            source.PlayOneShot(clips[randomClipIndex]);
+        }
+    }
+
     public float RemainingHealthPercentage
     {
         get
@@ -52,6 +74,7 @@ public class HealthController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(float damageAmount)
@@ -83,7 +106,7 @@ public class HealthController : MonoBehaviour
             OnDamaged.Invoke();
         }
     }
- 
+
     private IEnumerator BlinkDamageEffect()
     {
         Color originalColor = spriteRenderer.color;

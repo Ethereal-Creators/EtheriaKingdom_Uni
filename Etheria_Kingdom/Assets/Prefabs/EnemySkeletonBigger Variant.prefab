@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 598388191085430148}
+    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _currentHealth
       value: 20
       objectReference: {fileID: 0}
@@ -109,6 +113,11 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 1291995001547377892}
   m_SourcePrefab: {fileID: 100100000, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+--- !u!82 &598388191085430148 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3418790647812034941, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+  m_PrefabInstance: {fileID: 2827166657735824633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4923694649543945561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7163088640835516832, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
