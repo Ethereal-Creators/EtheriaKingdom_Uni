@@ -100,7 +100,8 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.15
   deathBlinkCount: 3
-  clips: []
+  clips:
+  - {fileID: 0}
   source: {fileID: 4350583317670822319}
   bleedingParticles: {fileID: 0}
   OnDied:
@@ -351,7 +352,7 @@ AudioSource:
   m_GameObject: {fileID: 7163088640835516832}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2600046086806524190, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -398,7 +399,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

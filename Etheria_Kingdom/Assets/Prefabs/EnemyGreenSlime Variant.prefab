@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -468953367182066667, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2600046086806524190, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
+    - target: {fileID: -468953367182066667, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 605644852189746969, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_Color.b
       value: 0.100451775
