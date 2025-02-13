@@ -63,68 +63,57 @@ public class HealthController : MonoBehaviour
 
     public bool IsInvincible { get; set; }
 
-    private void Awake()
+private void Awake()
+{
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    rigidbody2D = GetComponent<Rigidbody2D>();
+    source = GetComponent<AudioSource>(); 
+}
+
+  private void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("projectile") && clips.Count > 0)
     {
-        // Get the SpriteRenderer and Rigidbody2D components
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        int randomClipIndex = Random.Range(0, clips.Count);
+        source.PlayOneShot(clips[randomClipIndex]);
+    }
+}
+
+   public void TakeDamage(float damageAmount)
+{
+    if (_currentHealth == 0 || IsInvincible) return;
+
+    _currentHealth -= damageAmount;
+    OnHealthChanged.Invoke();
+
+    if (clips.Count > 0 && source != null)
+    {
+        int randomClipIndex = Random.Range(0, clips.Count);
+        source.PlayOneShot(clips[randomClipIndex]);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    if (bleedingParticles != null)
     {
-        if (collision.gameObject.CompareTag("projectile"))
-        {
-            int randomClipIndex = Random.Range(0, clips.Count);
-            source.PlayOneShot(clips[randomClipIndex]);
-        }
+        bleedingParticles.transform.position = transform.position;
+        bleedingParticles.Play();
     }
 
-    public void TakeDamage(float damageAmount)
+    if (spriteRenderer != null)
     {
-        
-        if (_currentHealth == 0)
-        {
-            return;
-        }
-
-        if (IsInvincible)
-        {
-            return;
-        }
-
-        _currentHealth -= damageAmount;
-
-        OnHealthChanged.Invoke();
-        
-
-        // Play bleeding particles when damage is taken
-        if (bleedingParticles != null)
-        {
-            bleedingParticles.transform.position = transform.position;
-            bleedingParticles.Play();
-        }
-
-        // Trigger the sprite blink effect
-        if (spriteRenderer != null)
-        {
-            StartCoroutine(BlinkDamageEffect());
-        }
-
-        if (_currentHealth < 0)
-        {
-            _currentHealth = 0;
-        }
-
-        if (_currentHealth == 0)
-        {
-            OnDied.Invoke();
-            HandleDeath();  // Handle the death logic here
-        }
-        else
-        {
-            OnDamaged.Invoke();
-        }
+        StartCoroutine(BlinkDamageEffect());
     }
+
+    if (_currentHealth <= 0)
+    {
+        _currentHealth = 0;
+        OnDied.Invoke();
+        HandleDeath();
+    }
+    else
+    {
+        OnDamaged.Invoke();
+    }
+}
  
     private IEnumerator BlinkDamageEffect()
     {

@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 16891403275087737, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+    - target: {fileID: 7258360570811513122, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_FloatArgument
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 7847968319334925703, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.3044643

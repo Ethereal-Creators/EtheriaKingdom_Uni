@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: clips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
+    - target: {fileID: 6253837283309624964, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_FloatArgument
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 8991539849472809182, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: m_Color.b
       value: 0.9528302
