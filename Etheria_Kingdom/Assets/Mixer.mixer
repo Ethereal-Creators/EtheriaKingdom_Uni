@@ -14,6 +14,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-8813159932926934026
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6091abc1732a9eb4aa4b8f52dbdca4d3
+  m_EffectName: Attenuation
+  m_MixLevel: d8a6b7428e5036545b7ec9ac8b8b2ee0
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-4402610447058696144
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -28,6 +42,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-3740253143455748352
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: crystale_domage
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1342576da074c794eade5599df52854c
+  m_Children: []
+  m_Volume: d32f2364a98e25041bc91ff90bee7534
+  m_Pitch: ae50fc8a17a98c644b458c8c92e86d12
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -8813159932926934026}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-2600046086806524190
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -70,6 +103,7 @@ AudioMixerController:
     - 4b6325415ba537a42ae2059bdec3e5ba
     - 049dd932028759e4d920806dc71d10fb
     - 9b19cd05a48a2f74f910080f9ed40a31
+    - 1342576da074c794eade5599df52854c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -199,6 +233,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -2600046086806524190}
   - {fileID: 1204179878550719679}
+  - {fileID: -3740253143455748352}
   m_Volume: cab7379f782be6540aaca4d03efe3f1f
   m_Pitch: c8a9a885835c2e045b161de21328100f
   m_Send: 00000000000000000000000000000000
