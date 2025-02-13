@@ -244,7 +244,8 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 0
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   source: {fileID: 0}
   bleedingParticles: {fileID: 0}
   OnDied:
