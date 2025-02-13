@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -17,14 +16,14 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private float _timeBetweenShots; // Time between each shot (in seconds)
 
+    [SerializeField]
+    private AudioSource _audioSource; // Reference to AudioSource component
+    [SerializeField]
+    private AudioClip _shootSound; // Reference to the shooting sound effect
+
     private bool isAutoShootActive = false;
 
-    //private float bulletLastTime;
     private float time = 0.0f;
-    //public float interpolationPeriod = 0.8f;
-    //private bool bulletActive = true;
-    //private bool bulletShoot = false;
-
 
     private void Start()
     {
@@ -34,49 +33,12 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        // source code : https://discussions.unity.com/t/execute-code-every-x-seconds-with-update/3626
         time += Time.deltaTime;
         if (time >= _timeBetweenShots)
         {
             time = 0.0f;
             FireBullet();
         }
-            /*
-            if (isAutoShootActive == false) {
-                if (bulletActive)
-                {
-
-
-                    FireBullet();
-                    Debug.Log("Shoot");
-
-                    bulletLastTime = Time.time;
-
-                }
-                else
-                {
-
-
-                    if (Time.time - bulletLastTime > 1f)
-                    {
-
-                        Debug.Log("Don't shoot");
-                        bulletActive = false;
-                    }
-                    else
-                    {
-                        Debug.Log("To be not shoting");
-
-
-                    }
-
-
-
-                }
-            }*/
-
-
-            // Any additional logic you might need to check each frame
     }
 
     void OnEnable()
@@ -86,29 +48,35 @@ public class PlayerShoot : MonoBehaviour
         {
             Debug.Log("auto shoot active");
             isAutoShootActive = true;
-
         }
     }
 
     void OnDisable()
     {
-        
         if (isAutoShootActive == true)
         {
             Debug.Log("auto shoot stop");
             isAutoShootActive = false;
         }
-        
     }
 
-    private void FireBullet()
+ private void FireBullet()
+{
+    Debug.Log("Shooting!");
+
+    // Instantiate bullet
+    GameObject bullet = Instantiate(_bulletPrefab, _gunOffset.position, transform.rotation);
+    Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
+    rigidbody.velocity = _bulletSpeed * transform.up;
+
+    // Play the shooting sound effect with random pitch
+    if (_audioSource != null && _shootSound != null)
     {
-        Debug.Log("Shoting!");
-        GameObject bullet = Instantiate(_bulletPrefab, _gunOffset.position, transform.rotation);
-        Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
-
-        rigidbody.velocity = _bulletSpeed * transform.up;
+        // Set a random pitch between 0.8f and 1.2f (you can adjust these values as needed)
+        _audioSource.pitch = Random.Range(0.8f, 1.2f);
+        _audioSource.PlayOneShot(_shootSound);
     }
+}
 
     private IEnumerator AutoShoot()
     {
@@ -120,4 +88,3 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 }
-
