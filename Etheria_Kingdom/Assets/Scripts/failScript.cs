@@ -37,6 +37,7 @@ public class failScript : MonoBehaviour
             if (timeTilFail < 0)
             {
                 gameFail.Invoke();
+                SceneManager.LoadScene("Menu");
                 Debug.Log("Fail return to start.");
                 // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", false);
             }

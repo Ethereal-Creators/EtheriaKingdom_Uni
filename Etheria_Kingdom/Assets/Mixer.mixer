@@ -42,6 +42,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-4393700068615764115
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: a2a3ffc0d99a9584f86305b363e8fc51
+  m_EffectName: Attenuation
+  m_MixLevel: 576294eabadf1ba4bb558467098a6205
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-3740253143455748352
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -104,6 +118,7 @@ AudioMixerController:
     - 049dd932028759e4d920806dc71d10fb
     - 9b19cd05a48a2f74f910080f9ed40a31
     - 1342576da074c794eade5599df52854c
+    - bb0bb59792be4b14dabfc7649db7db9f
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -152,8 +167,11 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: cf24abe28d8414846819c046e3079f91
   m_FloatValues:
-    fa289e392c37c2e45915537cdb57ea69: -2.018035
-    39be2d69cdb52bf4aab4afaf6ab3f31c: -9.631517
+    d32f2364a98e25041bc91ff90bee7534: 7.181763
+    b99862f5d9d08e14bad80b9eae733b5a: 12.340868
+    fa289e392c37c2e45915537cdb57ea69: 3.2656922
+    39be2d69cdb52bf4aab4afaf6ab3f31c: -13.214961
+    cab7379f782be6540aaca4d03efe3f1f: 0.32297122
   m_TransitionOverrides: {}
 --- !u!244 &1120033805785300975
 AudioMixerEffectController:
@@ -234,11 +252,31 @@ AudioMixerGroupController:
   - {fileID: -2600046086806524190}
   - {fileID: 1204179878550719679}
   - {fileID: -3740253143455748352}
+  - {fileID: 8861649174109222515}
   m_Volume: cab7379f782be6540aaca4d03efe3f1f
   m_Pitch: c8a9a885835c2e045b161de21328100f
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 1120033805785300975}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &8861649174109222515
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: placer_figurine
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: bb0bb59792be4b14dabfc7649db7db9f
+  m_Children: []
+  m_Volume: b99862f5d9d08e14bad80b9eae733b5a
+  m_Pitch: 947d2a9b0ae364e4b80c64c439cb5db2
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4393700068615764115}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

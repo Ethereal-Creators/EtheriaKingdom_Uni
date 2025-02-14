@@ -8,7 +8,7 @@ public class startGame : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D obj) {
         Debug.Log("WE COLLIDED MF");
-        SceneManager.LoadScene("TimerManche");
+        SceneManager.LoadScene("test01_OSC");
     }
 
 }

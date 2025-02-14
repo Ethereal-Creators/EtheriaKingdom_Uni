@@ -68,7 +68,7 @@ public class winScript : MonoBehaviour
             if (timeTilChangeScene < 0)
             {
                 // Permet de changer de scenes
-                //SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("Menu");
                 Debug.Log("Win return to start.");
             }
         }

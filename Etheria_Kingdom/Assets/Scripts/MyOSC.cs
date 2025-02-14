@@ -68,7 +68,7 @@ public class MyOSC : MonoBehaviour
             }
             value = oscMessage.Values[0].FloatValue;
             myTarget.gameObject.SetActive(true);
-            myTargetTextId.text = value.ToString();
+            //myTargetTextId.text = value.ToString();
 
         }
         else if (oscMessage.Values[0].Type == OSCValueType.Int)
@@ -83,7 +83,7 @@ public class MyOSC : MonoBehaviour
             }
             value = oscMessage.Values[0].IntValue;
 
-            myTargetTextId.text = value.ToString();
+            //myTargetTextId.text = value.ToString();
         }
         else
         {
@@ -115,7 +115,7 @@ public class MyOSC : MonoBehaviour
             myTargetActive = true;
 
 
-            myTargetTextActive.text = value.ToString();
+            //myTargetTextActive.text = value.ToString();
 
         }
         else if (value == 0)
@@ -124,7 +124,7 @@ public class MyOSC : MonoBehaviour
             //StartCoroutine(wait());
 
             //value = oscMessage.Values[0].IntValue;
-            myTargetTextActive.text = value.ToString();
+            //myTargetTextActive.text = value.ToString();
 
         }
     }
@@ -151,7 +151,7 @@ public class MyOSC : MonoBehaviour
         // Changer l'échelle de la valeur pour l'appliquer à la rotation :
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float negatedValue = value - (value * 2);
-        myTargetTextAngle.text = negatedValue.ToString();
+        //myTargetTextAngle.text = negatedValue.ToString();
 
         // Appliquer la rotation au GameObject ciblé :
         myTarget.transform.eulerAngles = new Vector3(0, 0, value);
@@ -181,7 +181,7 @@ public class MyOSC : MonoBehaviour
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierY - AddToY + removeFromY;
         float negatedValue = augmentedValue - (augmentedValue * 2);
-        myTargetTextY.text = negatedValue.ToString();
+        //myTargetTextY.text = negatedValue.ToString();
 
         // Appliquer la rotation au GameObject ciblé :
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
@@ -213,7 +213,7 @@ public class MyOSC : MonoBehaviour
         float rotation = ScaleValue(value, 0, 360, 45, 315);
         float augmentedValue = value * multiplierXY - removeFromX + AddToX;
         float negatedValue = augmentedValue - (augmentedValue * 2);
-        myTargetTextX.text = negatedValue.ToString();
+        //myTargetTextX.text = negatedValue.ToString();
 
         // Appliquer la rotation au GameObject ciblé :
         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenes Josh/TimerManche.unity
     guid: a362bfbb80b94674794349b67f40cb0c
+  - enabled: 1
+    path: Assets/Scenes/test01_OSC.unity
+    guid: 0a831a818d8413346b46e0f28d62eb87
   m_configObjects: {}
