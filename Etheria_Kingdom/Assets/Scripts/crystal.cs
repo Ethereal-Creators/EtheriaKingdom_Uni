@@ -10,8 +10,8 @@ public class ContactCrystal : MonoBehaviour
     [SerializeField]
     private GameObject destructionEffectPrefab; // Particle effect for enemy destruction (Optional)
 
-    [SerializeField]
-    private AudioClip destructionSound; // Sound effect when an enemy is destroyed
+    //[SerializeField]
+    //private AudioClip destructionSound; // Sound effect when an enemy is destroyed
     
     [SerializeField]
     private AudioSource source;
@@ -37,7 +37,7 @@ public class ContactCrystal : MonoBehaviour
 
 
             // Optional: Play destruction sound
-            if (destructionSound && source)
+            if (/*destructionSound &&*/ source)
             {
                 //audsourceoSource.PlayOneShot(destructionSound); 
                 int randomClipIndex = Random.Range(0, clips.Count);
