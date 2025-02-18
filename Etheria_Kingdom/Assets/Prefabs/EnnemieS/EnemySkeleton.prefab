@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextPrefab: {fileID: 4897039118670476552, guid: 8d5ec3a044b732c48bac541aab9f7da1, type: 3}
+  FloatingTextPrefab: {fileID: 0}
   _currentHealth: 10
   _maximumHealth: 10
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
