@@ -8,6 +8,7 @@ TagManager:
   - Crystal
   - actif
   - projectile
+  - joueur
   layers:
   - Default
   - TransparentFX
