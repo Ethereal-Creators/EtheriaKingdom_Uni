@@ -342,6 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0c7ab6b50008748a542d22bc08f800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkDuration: 1
+  blinkCount: 5
+  destructionSound: {fileID: 0}
 --- !u!114 &-2686608345214024682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killScore: 100
+  _scoreTextPrefab: {fileID: 5878022091984247024, guid: 1b936fbc1b6e5824bbd5eaebb1befaee, type: 3}
+  _scoreDisplayTime: 1.5
+  _scoreMoveSpeed: 1
 --- !u!82 &3418790647812034941
 AudioSource:
   m_ObjectHideFlags: 0

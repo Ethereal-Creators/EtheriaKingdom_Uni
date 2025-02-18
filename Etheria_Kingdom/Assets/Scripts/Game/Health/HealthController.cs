@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+    public GameObject FloatingTextPrefab;
     [Header("------- Health Variables -------")]
     [SerializeField]
     private float _currentHealth;
@@ -82,6 +83,7 @@ public class HealthController : MonoBehaviour
             bleedingParticles.Play();
         }
 
+
         if (spriteRenderer != null)
         {
             StartCoroutine(BlinkDamageEffect());
@@ -97,6 +99,17 @@ public class HealthController : MonoBehaviour
         {
             OnDamaged.Invoke();
         }
+
+        if(FloatingTextPrefab)
+        {
+        ShowFloatingText();
+
+        }
+    }
+
+    void ShowFloatingText()
+    {
+
     }
 
     public void AddHealth(float amountToAdd)
