@@ -13,8 +13,7 @@ public class HealthBarUI : MonoBehaviour
     private Color _lowHealthColor = Color.red; // Color for low health
     [SerializeField]
     private Color _mediumHealthColor = Color.yellow; // Color for medium health
-    [SerializeField]
-    private float _lerpSpeed = 0.05f; // Speed for smooth transition
+    private float _lerpSpeed = 0.05f;
 
     private float _targetHealthPercentage;
 
@@ -40,7 +39,7 @@ public class HealthBarUI : MonoBehaviour
         // Change color based on health
         UpdateHealthBarColor(newHealthPercentage);
     }
-
+    
     private IEnumerator SmoothHealthUpdate(float target)
     {
         // Smoothly transition towards the target health value

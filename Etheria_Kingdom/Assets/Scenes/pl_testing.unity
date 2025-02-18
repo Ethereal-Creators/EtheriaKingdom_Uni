@@ -10495,6 +10495,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769769113931616450, guid: 35db37cfb0d119a4895d1c909fe25e7b, type: 3}
+      propertyPath: _tiltAngle
+      value: 5.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769769113931616450, guid: 35db37cfb0d119a4895d1c909fe25e7b, type: 3}
+      propertyPath: _scaleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769769113931616450, guid: 35db37cfb0d119a4895d1c909fe25e7b, type: 3}
       propertyPath: _scoreUpdateSpeed
       value: 0.18
       objectReference: {fileID: 0}
