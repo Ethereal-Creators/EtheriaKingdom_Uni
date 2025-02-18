@@ -101,7 +101,7 @@ MonoBehaviour:
   blinkDuration: 0.15
   deathBlinkCount: 3
   bleedingParticles: {fileID: 0}
-  source: {fileID: 0}
+  source: {fileID: 3418790647812034941}
   clips:
   - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   OnDied:
