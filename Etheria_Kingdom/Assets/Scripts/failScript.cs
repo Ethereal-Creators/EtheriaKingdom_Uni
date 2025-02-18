@@ -23,7 +23,7 @@ public class failScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeWhenFail = Time.time + timeTilFail;
+        
     }
 
     // Update is called once per frame
@@ -31,6 +31,7 @@ public class failScript : MonoBehaviour
     {
         if (crystalIsActive == null && failPanel.activeSelf == true)
         {
+            timeWhenFail = Time.time + timeTilFail;
             countDown.text = "Fail";
             timeTilFail -= Time.deltaTime;
             // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", true);
