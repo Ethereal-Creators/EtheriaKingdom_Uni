@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+   
     public GameObject FloatingTextPrefab;
     [Header("------- Health Variables -------")]
     [SerializeField]
@@ -109,7 +110,8 @@ public class HealthController : MonoBehaviour
 
     void ShowFloatingText()
     {
-
+        var go =Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = _currentHealth.ToString();
     }
 
     public void AddHealth(float amountToAdd)
