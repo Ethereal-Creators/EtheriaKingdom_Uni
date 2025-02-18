@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawnerY : MonoBehaviour
 {
     [SerializeField]
     private GameObject swarmerPrefab;
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (currentEnemyCount < maxEnemies)
         {
-            GameObject newEnemy = Instantiate(enemy, (new Vector2(Random.Range(-5f, 5f), this.gameObject.transform.position.y)), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, (new Vector2(this.gameObject.transform.position.x, Random.Range(-5f, 5f))), Quaternion.identity);
             currentEnemyCount++;
 
         }
