@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: _maximumHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
+      propertyPath: FloatingTextPrefab
+      value: 
+      objectReference: {fileID: 4897039118670476552, guid: 8d5ec3a044b732c48bac541aab9f7da1, type: 3}
     - target: {fileID: -2686608345214024682, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _killScore
       value: 200

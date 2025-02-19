@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -73,6 +74,7 @@ public class HealthController : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        ShowFloatingText(damageAmount.ToString());
         if (_currentHealth == 0 || IsInvincible) return;
 
         _currentHealth -= damageAmount;
@@ -101,17 +103,19 @@ public class HealthController : MonoBehaviour
             OnDamaged.Invoke();
         }
 
-        if(FloatingTextPrefab)
-        {
-        ShowFloatingText();
+       
+        
 
-        }
+        
     }
 
-    void ShowFloatingText()
+    void ShowFloatingText(string text)
     {
-        var go =Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
-        go.GetComponent<TextMesh>().text = _currentHealth.ToString();
+       if(FloatingTextPrefab)
+        {
+            GameObject prefab = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMeshPro>().text = text;
+        }
     }
 
     public void AddHealth(float amountToAdd)

@@ -36,6 +36,18 @@ PrefabInstance:
       propertyPath: _scoreTextPrefab
       value: 
       objectReference: {fileID: 5878022091984247024, guid: 1b936fbc1b6e5824bbd5eaebb1befaee, type: 3}
+    - target: {fileID: 5778755508913332856, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258360570811513122, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: _currentHealth
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258360570811513122, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: _maximumHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7258360570811513122, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.size
       value: 1
