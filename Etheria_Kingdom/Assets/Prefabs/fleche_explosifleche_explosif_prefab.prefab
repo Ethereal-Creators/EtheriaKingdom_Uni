@@ -202,3 +202,4 @@ MonoBehaviour:
   shootInterval: 1
   bulletLifetime: 3
   SplashArea: 1
+  Damage: 10
