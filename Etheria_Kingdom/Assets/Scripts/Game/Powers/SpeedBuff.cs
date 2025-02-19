@@ -22,6 +22,7 @@ public class SpeedBuff : PowerUpEffect
 
         // Try to find the child object "Archer" and get the SpriteRenderer component
         Transform archerTransform = target.transform.Find("Archer");
+        //private Transform archerTransform = GameObject.FindWithTag("JoueurSprite");
         if (archerTransform != null)
         {
             SpriteRenderer spriteRenderer = archerTransform.GetComponent<SpriteRenderer>();

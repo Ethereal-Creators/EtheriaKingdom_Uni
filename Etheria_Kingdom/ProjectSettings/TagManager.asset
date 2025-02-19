@@ -9,6 +9,7 @@ TagManager:
   - actif
   - projectile
   - joueur
+  - JoueurSprite
   layers:
   - Default
   - TransparentFX
