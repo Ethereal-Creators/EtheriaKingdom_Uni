@@ -2356,7 +2356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionDelay: 0.1
   destructionEffectPrefab: {fileID: 0}
-  destructionSound: {fileID: 0}
+  source: {fileID: 0}
+  clips: []
 --- !u!114 &843462585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,6 +2370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 0}
   _currentHealth: 300
   _maximumHealth: 300
   damagedColor: {r: 0, g: 1, b: 0.7539561, a: 1}
@@ -3519,6 +3521,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef7b691e68cf894dbc154201b4419e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreUpdateSpeed: 0.1
+  _increaseColor: {r: 0, g: 1, b: 0, a: 1}
+  _decreaseColor: {r: 1, g: 0, b: 0, a: 1}
+  _scalePopSize: 1.2
+  _scaleSpeed: 0.1
+  _tiltAngle: 10
+  _tiltSpeed: 0.1
 --- !u!114 &1575160848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4223,6 +4232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 0}
   _currentHealth: 100
   _maximumHealth: 100
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -4789,6 +4799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 0}
   _currentHealth: 100
   _maximumHealth: 100
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -5340,7 +5351,7 @@ GameObject:
   - component: {fileID: 1961879336}
   - component: {fileID: 1961879335}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: bouclierCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5374,6 +5385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProtectionObject: {fileID: 19133471}
+  timeTilEventStop: 2
 --- !u!58 &1961879336
 CircleCollider2D:
   m_ObjectHideFlags: 0
