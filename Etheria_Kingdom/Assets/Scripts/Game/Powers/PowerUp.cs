@@ -6,12 +6,14 @@ public class PowerUp : MonoBehaviour
 {
     public PowerUpEffect powerupEffect;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the collided object has a PlayerMovement component
-        PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
+        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
 
-        if (playerMovement != null) // This means the PlayerMovement component exists on the object
+        var player = collision.gameObject.CompareTag("joueur");
+
+        if (collision.gameObject.tag == "joueur") // This means the PlayerMovement component exists on the object
         {
             powerupEffect.Apply(collision.gameObject);
             Destroy(gameObject); // Destroy the power-up after applying it
