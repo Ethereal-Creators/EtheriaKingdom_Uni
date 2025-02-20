@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShieldCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float damageAmount = 20f; // The damage to apply to the enemy
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        // Check if the collided object has the "Enemy" tag
+        if (collision.CompareTag("ennemie"))
+        {
+            // Try to get the HealthController component from the enemy
+            HealthController healthController = collision.GetComponent<HealthController>();
+
+            if (healthController != null)
+            {
+                // Apply damage to the enemy using the HealthController's TakeDamage method
+                healthController.TakeDamage(damageAmount);
+                Debug.Log("Shield hit enemy, dealing " + damageAmount + " damage.");
+            }
+        }
     }
 }
