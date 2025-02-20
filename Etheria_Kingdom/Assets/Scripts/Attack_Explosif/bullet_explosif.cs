@@ -12,7 +12,7 @@ public class Bullet_explosif : MonoBehaviour
     public float SplashArea = 5f;
     public float Damage = 10;
 
-    private float timeTilAnim = 2f;
+    private float timeTilAnim = 0.5f;
     private float timeWhenAnim;
 
     Animator myAnimator;
@@ -50,8 +50,9 @@ public class Bullet_explosif : MonoBehaviour
                     var distance = Vector3.Distance(closestPoint, transform.position);
 
                     var damagePercent = Mathf.InverseLerp(SplashArea, 0, distance);
-                    healthControllerExplosion.TakeDamage(10);
+                    healthControllerExplosion.TakeDamage(20);
                     myAnimator.SetTrigger("explosion");
+                    this.gameObject.transform.localScale = new Vector3(2f, 2f, 1f);
                     Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
                     rigidbody.velocity *= 0f;
                     //this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
@@ -66,13 +67,13 @@ public class Bullet_explosif : MonoBehaviour
             }
         }
 
-
+        /*
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();
             healthController.TakeDamage(10);
             Destroy(gameObject);
-        }
+        }*/
     }
 
     private void DestroyWhenOffScreen()
