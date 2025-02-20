@@ -42,7 +42,7 @@ public class EnemySpawnerY : MonoBehaviour
 
         if (currentEnemyCount < maxEnemies)
         {
-            GameObject newEnemy = Instantiate(enemy, (new Vector2(this.gameObject.transform.position.x, Random.Range(-5f, 5f))), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, (new Vector2(this.gameObject.transform.position.x, Random.Range(minimumRandom, maximumRandom))), Quaternion.identity);
             currentEnemyCount++;
 
         }
