@@ -35,6 +35,8 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private AudioSource source;
 
+    public Animator myCrystal;
+
     public List<AudioClip> clips = new List<AudioClip>();
 
     public UnityEvent OnDied;
@@ -102,11 +104,23 @@ public class HealthController : MonoBehaviour
         {
             OnDamaged.Invoke();
         }
+    }
 
-       
-        
-
-        
+    public void changementCrystal()
+    {
+        if (myCrystal != null) {
+            if(_currentHealth <= 170)
+            {
+                myCrystal.SetBool("70", true);
+            }
+            if(_currentHealth <= 140)
+            {
+                myCrystal.SetBool("50", true);
+            }
+            if(_currentHealth <= 100) {
+                myCrystal.SetBool("25", true);
+            }
+        }
     }
 
     void ShowFloatingText(string text)
