@@ -31,13 +31,14 @@ public class failScript : MonoBehaviour
     {
         if (crystalIsActive == null && failPanel.activeSelf == true)
         {
+            gameFail.Invoke();
             timeWhenFail = Time.time + timeTilFail;
             countDown.text = "Fail";
             timeTilFail -= Time.deltaTime;
             // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", true);
             if (timeTilFail < 0)
             {
-                gameFail.Invoke();
+                
                 SceneManager.LoadScene("Menu");
                 Debug.Log("Fail return to start.");
                 // POUR AJOUTER FAIL ===> failCountdown.SetBool("isFail", false);
