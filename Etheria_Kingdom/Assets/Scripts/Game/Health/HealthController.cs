@@ -109,15 +109,19 @@ public class HealthController : MonoBehaviour
     public void changementCrystal()
     {
         if (myCrystal != null) {
-            if(_currentHealth <= 170)
+            var percentageHealth = _currentHealth / _maximumHealth * 100;
+            if (percentageHealth <= 70)
             {
+                Debug.Log("less then crystal 70% health");
                 myCrystal.SetBool("70", true);
             }
-            if(_currentHealth <= 140)
+            if(percentageHealth <= 50)
             {
+                Debug.Log("less then crystal 50% health");
                 myCrystal.SetBool("50", true);
             }
-            if(_currentHealth <= 100) {
+            if(percentageHealth <= 25) {
+                Debug.Log("less then crystal 25% health");
                 myCrystal.SetBool("25", true);
             }
         }
