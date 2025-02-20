@@ -14,7 +14,7 @@ AnimatorStateMachine:
     m_Position: {x: 230, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6273052883468017306}
-    m_Position: {x: 290, y: 70, z: 0}
+    m_Position: {x: 340, y: 80, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -562655649690993795}
@@ -35,7 +35,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: New Trigger
+    m_ConditionEvent: explosion
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6273052883468017306}
@@ -60,7 +60,7 @@ AnimatorController:
   m_Name: fleche_explosif_sprite-Sheet_0
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: New Trigger
+  - m_Name: explosion
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
