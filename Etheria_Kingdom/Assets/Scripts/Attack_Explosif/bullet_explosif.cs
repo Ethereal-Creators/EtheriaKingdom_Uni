@@ -17,6 +17,10 @@ public class Bullet_explosif : MonoBehaviour
 
     Animator myAnimator;
 
+    [Header("------- Audio Effects Spawn -------")]
+    public AudioSource source;
+    public List<AudioClip> clipsStart = new List<AudioClip>();
+
     private void Awake()
     {
         _camera = Camera.main;
@@ -27,6 +31,8 @@ public class Bullet_explosif : MonoBehaviour
         // Destroy bullet after a set time
         Destroy(gameObject, bulletLifetime);
         myAnimator = GetComponent<Animator>();
+
+        source = this.gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,36 +42,45 @@ public class Bullet_explosif : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(SplashArea > 0)
+        if (source != null && clipsStart.Count > 0 && collision.gameObject.tag == "ennemie")
         {
-            var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashArea);
-            foreach(var hitCollider in hitColliders)
+            int randomClipIndex = Random.Range(0, clipsStart.Count);
+            source.PlayOneShot(clipsStart[randomClipIndex]);
+        }
+        if (collision.gameObject.tag == "ennemie")
+        {
+            if (SplashArea > 0)
             {
-                //var enemy = hitCollider.GetComponent<HealthController>();
-                var enemyExist = hitCollider.GetComponent<EnemyMovement>();
-                if (enemyExist)
+                var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashArea);
+                foreach (var hitCollider in hitColliders)
                 {
-                    HealthController healthControllerExplosion = hitCollider.GetComponent<HealthController>();
-                    var closestPoint = hitCollider.ClosestPoint(transform.position);
-                    var distance = Vector3.Distance(closestPoint, transform.position);
-
-                    var damagePercent = Mathf.InverseLerp(SplashArea, 0, distance);
-                    healthControllerExplosion.TakeDamage(20);
-                    myAnimator.SetTrigger("explosion");
-                    this.gameObject.transform.localScale = new Vector3(2f, 2f, 1f);
-                    Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
-                    rigidbody.velocity *= 0f;
-                    //this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
-
-                    timeWhenAnim = Time.time + timeTilAnim;
-                    timeTilAnim -= Time.deltaTime;
-                    if (timeTilAnim < 0)
+                    //var enemy = hitCollider.GetComponent<HealthController>();
+                    var enemyExist = hitCollider.GetComponent<EnemyMovement>();
+                    if (enemyExist)
                     {
-                        Destroy(gameObject);
+                        HealthController healthControllerExplosion = hitCollider.GetComponent<HealthController>();
+                        var closestPoint = hitCollider.ClosestPoint(transform.position);
+                        var distance = Vector3.Distance(closestPoint, transform.position);
+
+                        var damagePercent = Mathf.InverseLerp(SplashArea, 0, distance);
+                        healthControllerExplosion.TakeDamage(20);
+                        myAnimator.SetTrigger("explosion");
+                        this.gameObject.transform.localScale = new Vector3(2f, 2f, 1f);
+                        Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
+                        rigidbody.velocity *= 0f;
+                        //this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
+
+                        timeWhenAnim = Time.time + timeTilAnim;
+                        timeTilAnim -= Time.deltaTime;
+                        if (timeTilAnim < 0)
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
             }
         }
+
 
         /*
         if (collision.GetComponent<EnemyMovement>())
