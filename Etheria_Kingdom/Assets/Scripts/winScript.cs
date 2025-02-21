@@ -22,6 +22,12 @@ public class winScript : MonoBehaviour
 
     private bool winSlowDown = false;
 
+    [Header("------- Audio Effects Start -------")]
+    public AudioSource source;
+    public List<AudioClip> clipsStart = new List<AudioClip>();
+
+    private bool hasSoundPlayed = false;
+
     [SerializeField] UnityEvent gameWin;
 
     // Start is called before the first frame update
@@ -29,6 +35,7 @@ public class winScript : MonoBehaviour
     {
         timeWhenWin = Time.time + timeTilSucces;
         timeWhenChangeScene = Time.time + timeTilChangeScene;
+        source = this.gameObject.GetComponent<AudioSource>();
 
         // Set the initial progress bar fill to 0
         if (progressBar != null)
@@ -60,6 +67,12 @@ public class winScript : MonoBehaviour
         {
             if (crystalIsActive != null)
             {
+                if (source != null && clipsStart.Count > 0 && hasSoundPlayed == false)
+                {
+                    int randomClipIndex = Random.Range(0, clipsStart.Count);
+                    source.PlayOneShot(clipsStart[randomClipIndex]);
+                    hasSoundPlayed = true;
+                }
                 winSlowDown = true;
                 gameWin.Invoke();
                 //countDown.text = "Win"; // Removed, as we're using a progress bar now
