@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7af8bbaef1401d4b9a10bd06ee2ff1a
+guid: d94b9a49137b0f5408d7b711d2098023
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -121,7 +108,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/InvincibilityPotion-Sheet.png.meta
     sprites:
     - serializedVersion: 2
       name: InvincibilityPotion-Sheet_0
@@ -138,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d07523f3be81cd488bebb446e025023
-      internalID: 1101309419
+      spriteID: 3c8601a96b0e40142bb20f123326b612
+      internalID: 495494736
       vertices: []
       indices: 
       edges: []
@@ -159,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5fca2f70f6d7b24195011499c80db25
-      internalID: 619841091
+      spriteID: 01e51a73b87ad614a9741563d8f8fe6a
+      internalID: -90197812
       vertices: []
       indices: 
       edges: []
@@ -180,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55bb1980d7ec0cc43a45925fabf7c096
-      internalID: -1239923287
+      spriteID: c731ebac4760f59408cdf5a0cf66d696
+      internalID: 1328491908
       vertices: []
       indices: 
       edges: []
@@ -201,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 588ca0d376707744292132a076a05cbf
-      internalID: 541584171
+      spriteID: 6a28aa5d1c5ade44b95c19f29d4c1d3e
+      internalID: 1094284353
       vertices: []
       indices: 
       edges: []
@@ -222,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223853af0b3184c4abb40aaf8abff871
-      internalID: 1175574896
+      spriteID: 40a6114c9ac0a77448afca0be9825585
+      internalID: -1279145529
       vertices: []
       indices: 
       edges: []
@@ -243,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5c8b7a46d2fc36419163ff837df67f5
-      internalID: 984595892
+      spriteID: d94c1b19d3a9cd54aa2623bf6e2b6666
+      internalID: -75674976
       vertices: []
       indices: 
       edges: []
@@ -264,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87fd48d5dc20b57429a91f7d53b6e58c
-      internalID: 350630482
+      spriteID: b0ef87fcc9c4dbb46b68d0ba0a9f1442
+      internalID: 763593069
       vertices: []
       indices: 
       edges: []
@@ -285,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 996cf9bf7df628d4baecf7d9a75dd931
-      internalID: 1308321335
+      spriteID: 847663168e21bc5468ef4076cd505461
+      internalID: 1659613650
       vertices: []
       indices: 
       edges: []
@@ -306,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36c107c7c8d50764993713d54f6a8441
-      internalID: 700267626
+      spriteID: 0647d3343afe6bb4299924fc2b25b430
+      internalID: -2058643773
       vertices: []
       indices: 
       edges: []
@@ -327,15 +313,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0408e550647cbd34595c7d051d43587f
-      internalID: -1600995506
+      spriteID: 866a4a7f94206c547b4bd49dc3e41a17
+      internalID: 1311445454
       vertices: []
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/InvincibilityPotion-Sheet.png.meta
     outline: []
     physicsShape: []
     bones: []
@@ -346,21 +329,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/InvincibilityPotion-Sheet.png.meta
     nameFileIdTable:
-      InvincibilityPotion-Sheet_0: 1101309419
-      InvincibilityPotion-Sheet_1: 619841091
-      InvincibilityPotion-Sheet_2: -1239923287
-      InvincibilityPotion-Sheet_3: 541584171
-      InvincibilityPotion-Sheet_4: 1175574896
-      InvincibilityPotion-Sheet_5: 984595892
-      InvincibilityPotion-Sheet_6: 350630482
-      InvincibilityPotion-Sheet_7: 1308321335
-      InvincibilityPotion-Sheet_8: 700267626
-      InvincibilityPotion-Sheet_9: -1600995506
-=======
-    nameFileIdTable: {}
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/InvincibilityPotion-Sheet.png.meta
+      InvincibilityPotion-Sheet_0: 495494736
+      InvincibilityPotion-Sheet_1: -90197812
+      InvincibilityPotion-Sheet_2: 1328491908
+      InvincibilityPotion-Sheet_3: 1094284353
+      InvincibilityPotion-Sheet_4: -1279145529
+      InvincibilityPotion-Sheet_5: -75674976
+      InvincibilityPotion-Sheet_6: 763593069
+      InvincibilityPotion-Sheet_7: 1659613650
+      InvincibilityPotion-Sheet_8: -2058643773
+      InvincibilityPotion-Sheet_9: 1311445454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

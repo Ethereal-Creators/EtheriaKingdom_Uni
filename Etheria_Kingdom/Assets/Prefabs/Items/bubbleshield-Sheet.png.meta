@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e06c2224b0d372c4bad29d9a45010d51
+guid: a9a5750516b5cdb40809f079d671ac54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -121,7 +108,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/bubbleshield-Sheet.png.meta
     sprites:
     - serializedVersion: 2
       name: bubbleshield-Sheet_0
@@ -138,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c23ea81bc302df41ae38d3b785c40de
-      internalID: 1850098471
+      spriteID: 556af15873c61ce4896572100ffabb09
+      internalID: 1718242638
       vertices: []
       indices: 
       edges: []
@@ -159,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00255b47147c186438ced3cd99e2c83e
-      internalID: 1502817135
+      spriteID: b706a3142ef3ec74382748dc3ea10ef8
+      internalID: 323664273
       vertices: []
       indices: 
       edges: []
@@ -180,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c94b411e8462ca84599404816e03bf1b
-      internalID: 863299499
+      spriteID: b8cdc0d4118b53548a0317a14383ff4a
+      internalID: 426916322
       vertices: []
       indices: 
       edges: []
@@ -201,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b237d00c2fa0c3e49a2004a8cfaaf64e
-      internalID: -817001812
+      spriteID: 2726e7d011529c84698f4a91a27543ae
+      internalID: -1634503457
       vertices: []
       indices: 
       edges: []
@@ -222,15 +208,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 389fb0e9f54f73244982a4268ff93c3f
-      internalID: -308643612
+      spriteID: 5e6c8ac133dda2344801b66ae88b098b
+      internalID: 940375320
       vertices: []
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/bubbleshield-Sheet.png.meta
     outline: []
     physicsShape: []
     bones: []
@@ -241,16 +224,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/bubbleshield-Sheet.png.meta
     nameFileIdTable:
-      bubbleshield-Sheet_0: 1850098471
-      bubbleshield-Sheet_1: 1502817135
-      bubbleshield-Sheet_2: 863299499
-      bubbleshield-Sheet_3: -817001812
-      bubbleshield-Sheet_4: -308643612
-=======
-    nameFileIdTable: {}
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/bubbleshield-Sheet.png.meta
+      bubbleshield-Sheet_0: 1718242638
+      bubbleshield-Sheet_1: 323664273
+      bubbleshield-Sheet_2: 426916322
+      bubbleshield-Sheet_3: -1634503457
+      bubbleshield-Sheet_4: 940375320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
