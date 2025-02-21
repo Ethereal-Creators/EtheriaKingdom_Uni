@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 7883695692930540462}
   - component: {fileID: 4908178115153499593}
   - component: {fileID: 1245318475300911258}
-  - component: {fileID: 465804558545862557}
-  - component: {fileID: 9037973474959584674}
-  - component: {fileID: 3489757032445105359}
   m_Layer: 0
   m_Name: Paladin
   m_TagString: Untagged
@@ -109,50 +106,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &465804558545862557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161602382509877136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e89876a9b749e489b8c9ca14bb6f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &9037973474959584674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161602382509877136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c54973821b98140b71f9d1bfa54201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3489757032445105359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161602382509877136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealth: 200
-  _maximumHealth: 200
-  OnDied:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []

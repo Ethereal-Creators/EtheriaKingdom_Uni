@@ -186,3 +186,5 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   shootInterval: 0.5
   bulletLifetime: 3
+  minDamage: 10
+  maxDamage: 13
