@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
     private Transform _gunOffset;
 
     [SerializeField]
-    public float _timeBetweenShots; // Time between each shot (in seconds)
+    private float _timeBetweenShots; // Time between each shot (in seconds)
 
     [SerializeField]
     private AudioSource _audioSource; // Reference to AudioSource component

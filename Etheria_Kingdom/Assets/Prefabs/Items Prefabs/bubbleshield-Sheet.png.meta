@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20ad95c853ece8e40b2fa26874808862
+guid: b8d5c173c2bb947439900c1cb0ae176a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_0
+      name: bubbleshield-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 28
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8601a96b0e40142bb20f123326b612
-      internalID: 495494736
+      spriteID: 9b986c43e0722de40ab0c3ea5e1d74a2
+      internalID: 1723953638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_1
+      name: bubbleshield-Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 50
         y: 0
-        width: 16
-        height: 28
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e51a73b87ad614a9741563d8f8fe6a
-      internalID: -90197812
+      spriteID: ec157ee832daa50468d1bbf0d2c8f483
+      internalID: 80720838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_2
+      name: bubbleshield-Sheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 100
         y: 0
-        width: 16
-        height: 28
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c731ebac4760f59408cdf5a0cf66d696
-      internalID: 1328491908
+      spriteID: 61200682a21b2764099e89643cb33554
+      internalID: -1129374873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_3
+      name: bubbleshield-Sheet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 150
         y: 0
-        width: 16
-        height: 28
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a28aa5d1c5ade44b95c19f29d4c1d3e
-      internalID: 1094284353
+      spriteID: f1ba495d4c116e640becc6cc3e5eeec2
+      internalID: -948823684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_4
+      name: bubbleshield-Sheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 200
         y: 0
-        width: 16
-        height: 28
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,113 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a6114c9ac0a77448afca0be9825585
-      internalID: -1279145529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d94c1b19d3a9cd54aa2623bf6e2b6666
-      internalID: -75674976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0ef87fcc9c4dbb46b68d0ba0a9f1442
-      internalID: 763593069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 847663168e21bc5468ef4076cd505461
-      internalID: 1659613650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0647d3343afe6bb4299924fc2b25b430
-      internalID: -2058643773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 866a4a7f94206c547b4bd49dc3e41a17
-      internalID: 1311445454
+      spriteID: b6f38a7d327d47f41bb84733a80fb72d
+      internalID: -1669422333
       vertices: []
       indices: 
       edges: []
@@ -330,16 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InvincibilityPotion-Sheet_0: 495494736
-      InvincibilityPotion-Sheet_1: -90197812
-      InvincibilityPotion-Sheet_2: 1328491908
-      InvincibilityPotion-Sheet_3: 1094284353
-      InvincibilityPotion-Sheet_4: -1279145529
-      InvincibilityPotion-Sheet_5: -75674976
-      InvincibilityPotion-Sheet_6: 763593069
-      InvincibilityPotion-Sheet_7: 1659613650
-      InvincibilityPotion-Sheet_8: -2058643773
-      InvincibilityPotion-Sheet_9: 1311445454
+      bubbleshield-Sheet_0: 1723953638
+      bubbleshield-Sheet_1: 80720838
+      bubbleshield-Sheet_2: -1129374873
+      bubbleshield-Sheet_3: -948823684
+      bubbleshield-Sheet_4: -1669422333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

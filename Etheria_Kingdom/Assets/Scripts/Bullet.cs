@@ -2,14 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+/*public class projectile : MonoBehaviour
+{
+    public GameObject projectiles;
+    public Transform pointProjectile;
+    public float forceProjectile = 20f;
+    public float tirInterval = 1f;
+    
+    private float nextShotTime = 0f;
+
+    void Update()
+    {
+
+        if (Time.time >= nextShotTime)
+        {
+            Tire();
+            nextShotTime = Time.time + tirInterval;
+        }
+    }
+
+    public void Tire()
+    {
+       GameObject tire = Instantiate(projectiles, pointProjectile.position, pointProjectile.rotation);
+       tire.GetComponent<Rigidbody2D>().AddForce(pointProjectile.up * forceProjectile, ForceMode2D.Impulse);
+        Destroy(tire, 0.5f);
+    }
+}*/
+
+
+
+
+
+
 public class Bullet : MonoBehaviour
 {
     private Camera _camera;
     public GameObject bulletPrefab;  // Reference to the bullet prefab
     public float shootInterval = 0.5f; // Time interval between shots (in seconds)
     public float bulletLifetime = 3f; // Lifetime of the bullet before it disappears
-    public int minDamage = 10; // Minimum damage
-    public int maxDamage = 13; // Maximum damage
 
     private void Awake()
     {
@@ -31,14 +63,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.GetComponent<EnemyMovement>())
         {
-            // Generate a random damage value between minDamage and maxDamage as integers
-            int randomDamage = Random.Range(minDamage, maxDamage + 1); // maxDamage + 1 to include maxDamage
-
-            // Apply the random damage to the enemy
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(randomDamage);
-
-            // Destroy the bullet after collision
+            healthController.TakeDamage(10);
             Destroy(gameObject);
         }
     }
@@ -68,3 +94,4 @@ public class Bullet : MonoBehaviour
         }
     }
 }
+

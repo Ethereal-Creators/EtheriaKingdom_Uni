@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20ad95c853ece8e40b2fa26874808862
+guid: 16294d83f5b002640b2279f3990b36f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8601a96b0e40142bb20f123326b612
-      internalID: 495494736
+      spriteID: 465d89a92d4c1ca458b9e2d2affd9be9
+      internalID: -1017567115
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e51a73b87ad614a9741563d8f8fe6a
-      internalID: -90197812
+      spriteID: 98b12bd1b29e86944b4f17d49f606d48
+      internalID: -329966285
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c731ebac4760f59408cdf5a0cf66d696
-      internalID: 1328491908
+      spriteID: 5ff72023c72a09e448965dfaee4ab5c4
+      internalID: -2060436441
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a28aa5d1c5ade44b95c19f29d4c1d3e
-      internalID: 1094284353
+      spriteID: 446ae6c5e0420224ab91073b5760de69
+      internalID: -594379363
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a6114c9ac0a77448afca0be9825585
-      internalID: -1279145529
+      spriteID: 111470f18270c6d4fb6f275f5f3b6fe8
+      internalID: 2100884867
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d94c1b19d3a9cd54aa2623bf6e2b6666
-      internalID: -75674976
+      spriteID: f93abec8d5a13d444ab12f77476657d6
+      internalID: -1077930786
       vertices: []
       indices: 
       edges: []
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ef87fcc9c4dbb46b68d0ba0a9f1442
-      internalID: 763593069
+      spriteID: 72a3d08cf114009419e1a8f8476fb2e7
+      internalID: 1607866421
       vertices: []
       indices: 
       edges: []
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 847663168e21bc5468ef4076cd505461
-      internalID: 1659613650
+      spriteID: 8952e3d246f76a44c8d48e0b7a1b18cb
+      internalID: -1963748217
       vertices: []
       indices: 
       edges: []
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0647d3343afe6bb4299924fc2b25b430
-      internalID: -2058643773
+      spriteID: d45f81e02f1962747aed198ef18fb41a
+      internalID: -1027360889
       vertices: []
       indices: 
       edges: []
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 866a4a7f94206c547b4bd49dc3e41a17
-      internalID: 1311445454
+      spriteID: 3374ab69f1d32a54dbb3bc21d66cc267
+      internalID: 2025873468
       vertices: []
       indices: 
       edges: []
@@ -330,16 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InvincibilityPotion-Sheet_0: 495494736
-      InvincibilityPotion-Sheet_1: -90197812
-      InvincibilityPotion-Sheet_2: 1328491908
-      InvincibilityPotion-Sheet_3: 1094284353
-      InvincibilityPotion-Sheet_4: -1279145529
-      InvincibilityPotion-Sheet_5: -75674976
-      InvincibilityPotion-Sheet_6: 763593069
-      InvincibilityPotion-Sheet_7: 1659613650
-      InvincibilityPotion-Sheet_8: -2058643773
-      InvincibilityPotion-Sheet_9: 1311445454
+      InvincibilityPotion-Sheet_0: -1017567115
+      InvincibilityPotion-Sheet_1: -329966285
+      InvincibilityPotion-Sheet_2: -2060436441
+      InvincibilityPotion-Sheet_3: -594379363
+      InvincibilityPotion-Sheet_4: 2100884867
+      InvincibilityPotion-Sheet_5: -1077930786
+      InvincibilityPotion-Sheet_6: 1607866421
+      InvincibilityPotion-Sheet_7: -1963748217
+      InvincibilityPotion-Sheet_8: -1027360889
+      InvincibilityPotion-Sheet_9: 2025873468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

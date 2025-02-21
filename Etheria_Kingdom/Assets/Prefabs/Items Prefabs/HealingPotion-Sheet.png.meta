@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20ad95c853ece8e40b2fa26874808862
+guid: 0f328149f29bba04695fe78dc136c8a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_0
+      name: HealingPotion-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8601a96b0e40142bb20f123326b612
-      internalID: 495494736
+      spriteID: 37b93f4d1a98ed04db1e517e29fb28db
+      internalID: -1286779403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_1
+      name: HealingPotion-Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 26
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e51a73b87ad614a9741563d8f8fe6a
-      internalID: -90197812
+      spriteID: 991c4c944d2b4b3409401ee717021f78
+      internalID: 126612248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_2
+      name: HealingPotion-Sheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 52
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c731ebac4760f59408cdf5a0cf66d696
-      internalID: 1328491908
+      spriteID: 47cfe56c7c488f846b20e9e2cce95370
+      internalID: -713580943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_3
+      name: HealingPotion-Sheet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 78
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a28aa5d1c5ade44b95c19f29d4c1d3e
-      internalID: 1094284353
+      spriteID: d2290fe520f12e04aab6b7c579a1c23e
+      internalID: 1139176246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_4
+      name: HealingPotion-Sheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 104
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a6114c9ac0a77448afca0be9825585
-      internalID: -1279145529
+      spriteID: 0f621b16c367fe6478113102bec5c6b5
+      internalID: -1211279308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_5
+      name: HealingPotion-Sheet_5
       rect:
         serializedVersion: 2
-        x: 80
+        x: 130
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d94c1b19d3a9cd54aa2623bf6e2b6666
-      internalID: -75674976
+      spriteID: 3756af01fbe6189498d90fb54f754b34
+      internalID: -2125100487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_6
+      name: HealingPotion-Sheet_6
       rect:
         serializedVersion: 2
-        x: 96
+        x: 156
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ef87fcc9c4dbb46b68d0ba0a9f1442
-      internalID: 763593069
+      spriteID: 14ee137919776b74ba72de8ba90680bb
+      internalID: 1959017025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_7
+      name: HealingPotion-Sheet_7
       rect:
         serializedVersion: 2
-        x: 112
+        x: 182
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 847663168e21bc5468ef4076cd505461
-      internalID: 1659613650
+      spriteID: 4342764da2d2acc419eadb707b43b926
+      internalID: 782287180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_8
+      name: HealingPotion-Sheet_8
       rect:
         serializedVersion: 2
-        x: 128
+        x: 208
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0647d3343afe6bb4299924fc2b25b430
-      internalID: -2058643773
+      spriteID: 3e3073fed18173744863ff730073e434
+      internalID: -460569634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvincibilityPotion-Sheet_9
+      name: HealingPotion-Sheet_9
       rect:
         serializedVersion: 2
-        x: 144
+        x: 234
         y: 0
-        width: 16
-        height: 28
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +313,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 866a4a7f94206c547b4bd49dc3e41a17
-      internalID: 1311445454
+      spriteID: 444971993aaacb049969e3444a57adb0
+      internalID: 1782982894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealingPotion-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54febfca3ee53d34f98045427020a896
+      internalID: 1808765734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealingPotion-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dceefdbce1c6d7447811c505a58e79cb
+      internalID: 73779270
       vertices: []
       indices: 
       edges: []
@@ -330,16 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InvincibilityPotion-Sheet_0: 495494736
-      InvincibilityPotion-Sheet_1: -90197812
-      InvincibilityPotion-Sheet_2: 1328491908
-      InvincibilityPotion-Sheet_3: 1094284353
-      InvincibilityPotion-Sheet_4: -1279145529
-      InvincibilityPotion-Sheet_5: -75674976
-      InvincibilityPotion-Sheet_6: 763593069
-      InvincibilityPotion-Sheet_7: 1659613650
-      InvincibilityPotion-Sheet_8: -2058643773
-      InvincibilityPotion-Sheet_9: 1311445454
+      HealingPotion-Sheet_0: -1286779403
+      HealingPotion-Sheet_1: 126612248
+      HealingPotion-Sheet_10: 1808765734
+      HealingPotion-Sheet_11: 73779270
+      HealingPotion-Sheet_2: -713580943
+      HealingPotion-Sheet_3: 1139176246
+      HealingPotion-Sheet_4: -1211279308
+      HealingPotion-Sheet_5: -2125100487
+      HealingPotion-Sheet_6: 1959017025
+      HealingPotion-Sheet_7: 782287180
+      HealingPotion-Sheet_8: -460569634
+      HealingPotion-Sheet_9: 1782982894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

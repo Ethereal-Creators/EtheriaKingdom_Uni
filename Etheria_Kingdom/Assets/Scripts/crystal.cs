@@ -10,23 +10,14 @@ public class ContactCrystal : MonoBehaviour
     [SerializeField]
     private GameObject destructionEffectPrefab; // Particle effect for enemy destruction (Optional)
 
-    //[SerializeField]
-    //private AudioClip destructionSound; // Sound effect when an enemy is destroyed
-    
     [SerializeField]
-    private AudioSource source;
-
-    public List<AudioClip> clips = new List<AudioClip>();
+    private AudioClip destructionSound; // Sound effect when an enemy is destroyed
+    private AudioSource audioSource;
 
     private void Awake()
     {
         // Set up the audio source component
-        source = GetComponent<AudioSource>();
-    }
-
-        void Start()
-    {
-        source = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,11 +28,9 @@ public class ContactCrystal : MonoBehaviour
 
 
             // Optional: Play destruction sound
-            if (/*destructionSound &&*/ source)
+            if (destructionSound && audioSource)
             {
-                //audsourceoSource.PlayOneShot(destructionSound); 
-                int randomClipIndex = Random.Range(0, clips.Count);
-                source.PlayOneShot(clips[randomClipIndex]);
+                audioSource.PlayOneShot(destructionSound);
             }
 
             // Optional: Instantiate particle effect for destruction
@@ -49,6 +38,8 @@ public class ContactCrystal : MonoBehaviour
             {
                 Instantiate(destructionEffectPrefab, collision.transform.position, Quaternion.identity);
             }
+
+
 
             // Destroy the enemy after a short delay
             Destroy(collision.gameObject, destructionDelay);

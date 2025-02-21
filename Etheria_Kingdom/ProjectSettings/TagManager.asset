@@ -8,8 +8,6 @@ TagManager:
   - Crystal
   - actif
   - projectile
-  - joueur
-  - JoueurSprite
   layers:
   - Default
   - TransparentFX
@@ -58,9 +56,6 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2337931035
-    locked: 0
-  - name: Shield
-    uniqueID: 398364795
     locked: 0
   - name: Enemy
     uniqueID: 1672966119
