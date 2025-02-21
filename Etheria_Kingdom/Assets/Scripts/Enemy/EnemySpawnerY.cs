@@ -12,21 +12,25 @@ public class EnemySpawnerY : MonoBehaviour
     [SerializeField]
     private float minSwarmerInterval = 7f;
     [SerializeField]
-    private float maxSwarmerInterval = 7f; 
+    private float maxSwarmerInterval = 7f;
     [SerializeField]
-    private float minBigSwarmerInterval = 7f; 
+    private float minBigSwarmerInterval = 7f;
     [SerializeField]
-    private float maxBigSwarmerInterval = 12f; 
+    private float maxBigSwarmerInterval = 12f;
 
     [SerializeField]
-    private float maximumRandom = 5f; 
+    private float maximumRandom = 5f;
     [SerializeField]
-    private float minimumRandom = -5f; 
+    private float minimumRandom = -5f;
 
     [SerializeField]
-    private int maxEnemies = 10; 
+    private int maxEnemies = 10;
     private int currentEnemyCount = 0;
-    
+
+    [Header("------- Audio Effects Spawn -------")]
+    public AudioSource source;
+    public List<AudioClip> clipsStart = new List<AudioClip>();
+
 
     void Start()
     {
@@ -44,6 +48,12 @@ public class EnemySpawnerY : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(enemy, (new Vector2(this.gameObject.transform.position.x, Random.Range(minimumRandom, maximumRandom))), Quaternion.identity);
             currentEnemyCount++;
+
+            if (source != null && clipsStart.Count > 0)
+            {
+                int randomClipIndex = Random.Range(0, clipsStart.Count);
+                source.PlayOneShot(clipsStart[randomClipIndex]);
+            }
 
         }
         StartCoroutine(spawnEnemy(enemy, minInterval, maxInterval));

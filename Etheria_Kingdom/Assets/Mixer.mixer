@@ -146,6 +146,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-447110470930615245
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: apparition_ennemie
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b5b8409bc8e31574f861fd7c883ef554
+  m_Children: []
+  m_Volume: e37243f056a043a4aa68cf93459b168d
+  m_Pitch: 0715d5f105ca3a947a10247a2b040d61
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5570260155839691102}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-362056982799643841
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -187,6 +206,7 @@ AudioMixerController:
     - bb0bb59792be4b14dabfc7649db7db9f
     - 15e55dcd8cfef7c45a63da1b921cf20a
     - 7489ca8431a7c1d42876c2a4458a8688
+    - b5b8409bc8e31574f861fd7c883ef554
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -235,6 +255,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: cf24abe28d8414846819c046e3079f91
   m_FloatValues:
+    e37243f056a043a4aa68cf93459b168d: -3.3775113
     2012bab25fffe2b4db0a7e7f30d2cc28: -8.938984
     d32f2364a98e25041bc91ff90bee7534: -14.816605
     b99862f5d9d08e14bad80b9eae733b5a: 12.340868
@@ -290,6 +311,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &5570260155839691102
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c3df6c2f5292ff545bb1e8646bb7d673
+  m_EffectName: Attenuation
+  m_MixLevel: 168ea63e8fd46764192d554dcfba5f89
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &5594629274828701248
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -325,6 +360,7 @@ AudioMixerGroupController:
   - {fileID: 8861649174109222515}
   - {fileID: -1464559971367365202}
   - {fileID: -8957501019534192420}
+  - {fileID: -447110470930615245}
   m_Volume: cab7379f782be6540aaca4d03efe3f1f
   m_Pitch: c8a9a885835c2e045b161de21328100f
   m_Send: 00000000000000000000000000000000
