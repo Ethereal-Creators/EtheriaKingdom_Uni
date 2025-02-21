@@ -121,7 +121,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/InvincibilityPotion-Sheet.png.meta
     sprites:
     - serializedVersion: 2
       name: InvincibilityPotion-Sheet_0
@@ -333,9 +332,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/InvincibilityPotion-Sheet.png.meta
     outline: []
     physicsShape: []
     bones: []
@@ -346,7 +342,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/InvincibilityPotion-Sheet.png.meta
     nameFileIdTable:
       InvincibilityPotion-Sheet_0: 1101309419
       InvincibilityPotion-Sheet_1: 619841091
@@ -358,9 +353,6 @@ TextureImporter:
       InvincibilityPotion-Sheet_7: 1308321335
       InvincibilityPotion-Sheet_8: 700267626
       InvincibilityPotion-Sheet_9: -1600995506
-=======
-    nameFileIdTable: {}
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/InvincibilityPotion-Sheet.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

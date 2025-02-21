@@ -121,7 +121,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/bubbleshield-Sheet.png.meta
     sprites:
     - serializedVersion: 2
       name: bubbleshield-Sheet_0
@@ -228,9 +227,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/bubbleshield-Sheet.png.meta
     outline: []
     physicsShape: []
     bones: []
@@ -241,16 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD:Etheria_Kingdom/Assets/Sprites/Items/bubbleshield-Sheet.png.meta
     nameFileIdTable:
       bubbleshield-Sheet_0: 1850098471
       bubbleshield-Sheet_1: 1502817135
       bubbleshield-Sheet_2: 863299499
       bubbleshield-Sheet_3: -817001812
       bubbleshield-Sheet_4: -308643612
-=======
-    nameFileIdTable: {}
->>>>>>> parent of 1ac72ea (oh my lord):Etheria_Kingdom/Assets/Sprites/Items_SpriteSheets/bubbleshield-Sheet.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
