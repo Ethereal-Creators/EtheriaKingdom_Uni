@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+   
+    public GameObject FloatingTextPrefab;
     [Header("------- Health Variables -------")]
     [SerializeField]
     private float _currentHealth;
@@ -31,6 +34,8 @@ public class HealthController : MonoBehaviour
 
     [SerializeField]
     private AudioSource source;
+
+    public Animator myCrystal;
 
     public List<AudioClip> clips = new List<AudioClip>();
 
@@ -71,6 +76,7 @@ public class HealthController : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        ShowFloatingText(damageAmount.ToString());
         if (_currentHealth == 0 || IsInvincible) return;
 
         _currentHealth -= damageAmount;
@@ -81,6 +87,7 @@ public class HealthController : MonoBehaviour
             bleedingParticles.transform.position = transform.position;
             bleedingParticles.Play();
         }
+
 
         if (spriteRenderer != null)
         {
@@ -96,6 +103,36 @@ public class HealthController : MonoBehaviour
         else
         {
             OnDamaged.Invoke();
+        }
+    }
+
+    public void changementCrystal()
+    {
+        if (myCrystal != null) {
+            var percentageHealth = _currentHealth / _maximumHealth * 100;
+            if (percentageHealth <= 70)
+            {
+                Debug.Log("less then crystal 70% health");
+                myCrystal.SetBool("70", true);
+            }
+            if(percentageHealth <= 50)
+            {
+                Debug.Log("less then crystal 50% health");
+                myCrystal.SetBool("50", true);
+            }
+            if(percentageHealth <= 25) {
+                Debug.Log("less then crystal 25% health");
+                myCrystal.SetBool("25", true);
+            }
+        }
+    }
+
+    void ShowFloatingText(string text)
+    {
+       if(FloatingTextPrefab)
+        {
+            GameObject prefab = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMeshPro>().text = text;
         }
     }
 

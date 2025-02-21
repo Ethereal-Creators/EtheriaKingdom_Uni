@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2363648645627755145
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: swarmerPrefab
+      value: 
+      objectReference: {fileID: 1065678063445903600, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: bigSwarmerPrefab
+      value: 
+      objectReference: {fileID: 6721872668030815380, guid: 096690c43ff4fdc4c910a7acd6ce1178, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: bigSwarmerInterval
+      value: 15.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8239093
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.015979737
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375480858944381741, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: m_Name
+      value: EnnemieSpawnerSlime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}

@@ -10,18 +10,22 @@ public class EnemySpawner : MonoBehaviour
     private GameObject bigSwarmerPrefab;
 
     [SerializeField]
-    private float minSwarmerInterval = 2f;
+    private float minSwarmerInterval = 7f;
     [SerializeField]
-    private float maxSwarmerInterval = 5f; 
+    private float maxSwarmerInterval = 7f; 
     [SerializeField]
     private float minBigSwarmerInterval = 7f; 
     [SerializeField]
     private float maxBigSwarmerInterval = 12f; 
 
     [SerializeField]
+    private float maximumRandom = 5f; 
+    [SerializeField]
+    private float minimumRandom = -5f; 
+
+    [SerializeField]
     private int maxEnemies = 10; 
     private int currentEnemyCount = 0;
-
     
 
     void Start()
@@ -38,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (currentEnemyCount < maxEnemies)
         {
-            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5f), Random.Range(-7f, 7f), 0), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, (new Vector2(Random.Range(minimumRandom, maximumRandom), this.gameObject.transform.position.y)), Quaternion.identity);
             currentEnemyCount++;
 
         }
@@ -49,4 +53,28 @@ public class EnemySpawner : MonoBehaviour
     {
         currentEnemyCount--;
     }
+
+
+    /*private float timeUntilSpawn;
+
+    void awake ()
+        {
+            SetTimeUntilSpawn();
+        }
+
+        void Update()
+        {
+            minBigSwarmerInterval -= Time.deltaTime;
+
+            if(minBigSwarmerInterval <= 0)
+            {
+                Instantiate(swarmerPrefab, transform.position, Quaternion.indentity);
+                SetTimeUntilSpawn();
+            }
+        }
+
+        private void SetTimeUntilSpawn()
+        {
+            timeUntilSpawn = Random.Range(minSwarmerInterval, maxSwarmerInterval);
+        }*/
 }

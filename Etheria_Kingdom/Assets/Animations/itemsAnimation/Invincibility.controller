@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+--- !u!1102 &-4802085796327265126
+=======
+--- !u!1107 &-8044081428940049269
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: -7567768673452684618}
+    m_Position: {x: 330, y: 20, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5433576978089137606}
+    m_Position: {x: 300, y: 230, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions:
+  - {fileID: -7742336714506650627}
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: -7567768673452684618}
+--- !u!1109 &-7742336714506650627
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 5433576978089137606}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
+--- !u!1102 &-7567768673452684618
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+  m_Name: invincibility
+=======
+  m_Name: invincibility shut
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+  m_Motion: {fileID: 7400000, guid: c9ab8c1f6db65d04dae35f4588143f31, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: d069f557a6a9875428a4a8ae87c5e821, type: 2}
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Invincibility
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+    m_StateMachine: {fileID: 8653636554422589685}
+=======
+    m_StateMachine: {fileID: -8044081428940049269}
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+--- !u!1107 &8653636554422589685
+AnimatorStateMachine:
+=======
+--- !u!1102 &5433576978089137606
+AnimatorState:
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Etheria_Kingdom/Assets/Animations/itemsNui/Invincibility.controller
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: -4802085796327265126}
+    m_Position: {x: 400, y: 170, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: -4802085796327265126}
+=======
+  m_Name: Strenght
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 095d17fea4420a9499422cd742425426, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+>>>>>>> 879f4b4d82bcc570ba2f8eb187de2a7bb4f2588b:Etheria_Kingdom/Assets/Animations/itemsAnimation/Invincibility.controller
