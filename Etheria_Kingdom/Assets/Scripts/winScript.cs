@@ -4,25 +4,29 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEditor.Rendering;
+using UnityEngine.UI;  // Include this to access the UI Image component
 
 public class winScript : MonoBehaviour
 {
-
-    //private float timetest = 0.0f;
-    public float timeTilSucces;
+    public float timeTilSucces; // Time for success
     private float timeWhenWin;
 
-    public float timeTilChangeScene;
+    public float timeTilChangeScene; // Time until scene change
     private float timeWhenChangeScene;
 
     public GameObject crystalIsActive;
-    public TextMeshProUGUI countDown;
+    public Image progressBar; // UI Image that will serve as the progress bar
 
     private float timeDown = 0.0f;
     private int currentTime = 0;
 
     private bool winSlowDown = false;
+
+    [Header("------- Audio Effects Start -------")]
+    public AudioSource source;
+    public List<AudioClip> clipsStart = new List<AudioClip>();
+
+    private bool hasSoundPlayed = false;
 
     [SerializeField] UnityEvent gameWin;
 
@@ -31,43 +35,57 @@ public class winScript : MonoBehaviour
     {
         timeWhenWin = Time.time + timeTilSucces;
         timeWhenChangeScene = Time.time + timeTilChangeScene;
+        source = this.gameObject.GetComponent<AudioSource>();
+
+        // Set the initial progress bar fill to 0
+        if (progressBar != null)
+        {
+            progressBar.fillAmount = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Time until win (progress bar)
+        float progress = Mathf.InverseLerp(0, timeTilSucces, Time.time - timeWhenWin + timeTilSucces);
+        if (progressBar != null)
+        {
+            progressBar.fillAmount = progress; // Update the progress bar fill
+        }
+
+        // Count down timer is replaced by progress bar, no need for text display
         timeDown += Time.deltaTime;
         if (timeDown >= 1f)
         {
             timeDown = 0.0f;
             currentTime++;
-            countDown.text = currentTime.ToString();
+            //countDown.text = currentTime.ToString();  // Removed
         }
 
-        //time += Time.deltaTime;
-        //source du code : https://discussions.unity.com/t/how-to-check-if-object-is-active/116705
         if (timeWhenWin <= Time.time)
         {
             if (crystalIsActive != null)
             {
+                if (source != null && clipsStart.Count > 0 && hasSoundPlayed == false)
+                {
+                    int randomClipIndex = Random.Range(0, clipsStart.Count);
+                    source.PlayOneShot(clipsStart[randomClipIndex]);
+                    hasSoundPlayed = true;
+                }
                 winSlowDown = true;
                 gameWin.Invoke();
-                countDown.text = "Win";
+                //countDown.text = "Win"; // Removed, as we're using a progress bar now
             }
-
-
-
             timeWhenWin = Time.time + timeTilSucces;
-
-
-
         }
+
         if (winSlowDown == true)
         {
             timeTilChangeScene -= Time.deltaTime;
             if (timeTilChangeScene < 0)
             {
-                // Permet de changer de scenes
+                // Change scene after win
                 SceneManager.LoadScene("Menu");
                 Debug.Log("Win return to start.");
             }

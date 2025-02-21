@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/test01_OSC.unity
     guid: 0a831a818d8413346b46e0f28d62eb87
+  - enabled: 1
+    path: Assets/Scenes/Scene_transition_test/Scene01_transition_test.unity
+    guid: fed015191810ac34c88e0897868d88be
+  - enabled: 1
+    path: Assets/Scenes/Scene_transition_test/Scene02_transition_test.unity
+    guid: 609beceb254912e42a2b96ac0ad145c6
   m_configObjects: {}
