@@ -142,9 +142,6 @@ public class HealthController : MonoBehaviour
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.isKinematic = true;
         }
-
-        // Start blinking before despawning
-        // StartCoroutine(BlinkDeathEffect());
     }
 
     public void soundWhenDameged()
@@ -152,7 +149,7 @@ public class HealthController : MonoBehaviour
         Debug.Log("Dameged");
         if (source != null)
         {
-            // Set a random pitch between 0.8f and 1.2f (you can adjust these values as needed)
+
             int randomClipIndex = Random.Range(0, clips.Count);
             source.PlayOneShot(clips[randomClipIndex]);
         }
