@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa00d57bef012db4388aac1326cfc378, type: 3}
   m_Name: BigSpeedShootingBuff
   m_EditorClassIdentifier: 
-  amount: 0.5
+  amount: 0.15
