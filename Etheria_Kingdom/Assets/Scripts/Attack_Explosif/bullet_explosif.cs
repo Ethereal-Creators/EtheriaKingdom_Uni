@@ -21,6 +21,7 @@ public class Bullet_explosif : MonoBehaviour
     public AudioSource source;
     public List<AudioClip> clipsStart = new List<AudioClip>();
 
+    public GameObject FlameImpact;
     private void Awake()
     {
         _camera = Camera.main;
@@ -74,6 +75,8 @@ public class Bullet_explosif : MonoBehaviour
                         timeTilAnim -= Time.deltaTime;
                         if (timeTilAnim < 0)
                         {
+                            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
                             Destroy(gameObject);
                         }
                     }
