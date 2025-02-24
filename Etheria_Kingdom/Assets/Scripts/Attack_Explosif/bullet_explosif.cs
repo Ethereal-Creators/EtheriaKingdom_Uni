@@ -75,7 +75,7 @@ public class Bullet_explosif : MonoBehaviour
                         timeTilAnim -= Time.deltaTime;
                         if (timeTilAnim < 0)
                         {
-                            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                            Instantiate(FlameImpact, transform.position, Quaternion.identity);
 
                             Destroy(gameObject);
                         }
