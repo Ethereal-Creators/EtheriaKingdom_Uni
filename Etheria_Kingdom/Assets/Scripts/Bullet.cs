@@ -40,10 +40,10 @@ public class Bullet : MonoBehaviour
             HealthController healthController = collision.GetComponent<HealthController>();
             healthController.TakeDamage(randomDamage);
 
+            Instantiate(Blood, transform.position, Quaternion.identity);
             // Destroy the bullet after collision
             Destroy(gameObject);
 
-            Instantiate(Blood, transform.position, Quaternion.identity);
         }
     }
 
