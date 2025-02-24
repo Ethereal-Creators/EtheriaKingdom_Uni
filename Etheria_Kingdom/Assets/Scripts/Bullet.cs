@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     public int minDamage = 10; // Minimum damage
     public int maxDamage = 13; // Maximum damage
 
+    public GameObject Blood;
+
     private void Awake()
     {
         _camera = Camera.main;
@@ -40,6 +42,8 @@ public class Bullet : MonoBehaviour
 
             // Destroy the bullet after collision
             Destroy(gameObject);
+
+            Instantiate(Blood, transform.position, Quaternion.identity);
         }
     }
 

@@ -89,6 +89,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253837283309624964, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      propertyPath: bleedingParticles
+      value: 
+      objectReference: {fileID: 2419893265842639146, guid: 7e8b6dbbab4ebfe41b70dadcc92c12e8, type: 3}
+    - target: {fileID: 6253837283309624964, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}

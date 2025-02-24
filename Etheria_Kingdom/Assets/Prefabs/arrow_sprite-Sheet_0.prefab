@@ -166,6 +166,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 377076157462125739}
   shootInterval: 1.05
   bulletLifetime: 5.03
+  minDamage: 10
+  maxDamage: 13
+  Blood: {fileID: 5415255095770863966, guid: d094b1585a6e49c46a06fda4287c5c39, type: 3}
 --- !u!70 &-2840162529035486822
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

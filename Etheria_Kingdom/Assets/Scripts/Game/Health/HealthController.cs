@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
-   
     public GameObject FloatingTextPrefab;
     [Header("------- Health Variables -------")]
     [SerializeField]
@@ -55,22 +54,6 @@ public class HealthController : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    /*
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("projectile"))
-        {
-            Debug.Log("collision 2d health + projectile");
-            if (clips.Count > 0)
-            {
-                int randomClipIndex = Random.Range(0, clips.Count);
-                source.PlayOneShot(clips[randomClipIndex]);
-            }
-        }
-    }*/
-
-
-
     public float RemainingHealthPercentage => _currentHealth / _maximumHealth;
     public bool IsInvincible { get; set; }
 
@@ -84,10 +67,17 @@ public class HealthController : MonoBehaviour
 
         if (bleedingParticles != null)
         {
-            bleedingParticles.transform.position = transform.position;
+            // Ensure the blood particles are not too far or too close
+            Vector3 randomOffset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0); // Slightly larger range
+            Vector3 particlePosition = transform.position + randomOffset;
+
+            // Debug log to check if the blood particle effect is being positioned correctly
+            Debug.Log("Blood particle effect played at position: " + particlePosition);
+
+            // Set the particle position and play it
+            bleedingParticles.transform.position = particlePosition;
             bleedingParticles.Play();
         }
-
 
         if (spriteRenderer != null)
         {
@@ -108,20 +98,22 @@ public class HealthController : MonoBehaviour
 
     public void changementCrystal()
     {
-        if (myCrystal != null) {
+        if (myCrystal != null)
+        {
             var percentageHealth = _currentHealth / _maximumHealth * 100;
             if (percentageHealth <= 70)
             {
-                Debug.Log("less then crystal 70% health");
+                Debug.Log("less than 70% health");
                 myCrystal.SetBool("70", true);
             }
-            if(percentageHealth <= 50)
+            if (percentageHealth <= 50)
             {
-                Debug.Log("less then crystal 50% health");
+                Debug.Log("less than 50% health");
                 myCrystal.SetBool("50", true);
             }
-            if(percentageHealth <= 25) {
-                Debug.Log("less then crystal 25% health");
+            if (percentageHealth <= 25)
+            {
+                Debug.Log("less than 25% health");
                 myCrystal.SetBool("25", true);
             }
         }
@@ -129,7 +121,7 @@ public class HealthController : MonoBehaviour
 
     void ShowFloatingText(string text)
     {
-       if(FloatingTextPrefab)
+        if (FloatingTextPrefab)
         {
             GameObject prefab = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity);
             prefab.GetComponentInChildren<TextMeshPro>().text = text;
@@ -181,12 +173,11 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void soundWhenDameged()
+    public void soundWhenDamaged()
     {
-        Debug.Log("Dameged");
+        Debug.Log("Damaged");
         if (source != null)
         {
-
             int randomClipIndex = Random.Range(0, clips.Count);
             source.PlayOneShot(clips[randomClipIndex]);
         }

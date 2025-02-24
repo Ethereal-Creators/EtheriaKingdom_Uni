@@ -153,7 +153,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1672966119
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1694405786, guid: fa7481072a3cf564f9c0aea8b2bc466c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -246,8 +246,9 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 0
-  bleedingParticles: {fileID: 0}
+  bleedingParticles: {fileID: 2419893265842639146, guid: 7e8b6dbbab4ebfe41b70dadcc92c12e8, type: 3}
   source: {fileID: 7135610144876543555}
+  myCrystal: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   OnDied:
