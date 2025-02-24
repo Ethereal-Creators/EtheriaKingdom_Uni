@@ -24,7 +24,11 @@ public class MyOSC : MonoBehaviour
 
     private float myTargetTwoLastTime;
     private bool myTargetTwoActive = false;
+
     public GameObject myTargetThree;
+    private float myTargetThreeLastTime;
+    private bool myTargetThreeActive = false;
+
     public float multiplierXY;
     public float multiplierY;
     public float removeFromX;
@@ -479,15 +483,16 @@ public class MyOSC : MonoBehaviour
         if (value == 1)
         {
             //StartCoroutine(wait());
-            myTargetThree.gameObject.SetActive(true);
-
+            //myTargetThree.gameObject.SetActive(true);
+            myTargetThreeActive = true;
             //myTargetTextActive.text = value.ToString();
 
         }
         else if (value == 0)
         {
             //StartCoroutine(wait());
-            myTargetThree.gameObject.SetActive(false);
+            //myTargetThree.gameObject.SetActive(false);
+            myTargetThreeActive = false;
             //value = oscMessage.Values[0].IntValue;
             //myTargetTextActive.text = value.ToString();
 
@@ -666,6 +671,37 @@ public class MyOSC : MonoBehaviour
                 {
                     Debug.Log("Set Inactive target two");
                     myTargetTwo.gameObject.SetActive(false);
+                }
+                else
+                {
+                    //Debug.Log("To be set incative target two");
+                }
+            }
+
+        }
+
+        if (myTargetThreeActive)
+        {
+
+            if (!myTargetThree.gameObject.activeSelf)
+            {
+                myTargetThree.gameObject.SetActive(true);
+
+                Debug.Log("Set Active target two");
+            }
+            myTargetThreeLastTime = Time.time;
+
+        }
+        else
+        {
+
+            if (myTargetThree.gameObject.activeSelf)
+            {
+
+                if (Time.time - myTargetThreeLastTime > 1.0f)
+                {
+                    Debug.Log("Set Inactive target two");
+                    myTargetThree.gameObject.SetActive(false);
                 }
                 else
                 {
