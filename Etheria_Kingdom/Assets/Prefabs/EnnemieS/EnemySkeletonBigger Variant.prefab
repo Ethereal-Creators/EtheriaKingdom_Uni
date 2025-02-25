@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 598388191085430148}
     - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _currentHealth
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: _maximumHealth
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: FloatingTextPrefab

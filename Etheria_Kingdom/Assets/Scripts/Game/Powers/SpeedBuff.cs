@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpeedBuff : PowerUpEffect
 {
     public float amount; // The amount by which to decrease the player's shooting time
+    public GameObject pickupAnimationPrefab; // The prefab of the pickup animation
 
     public override void Apply(GameObject target)
     {
@@ -22,7 +23,6 @@ public class SpeedBuff : PowerUpEffect
 
         // Try to find the child object "Archer" and get the SpriteRenderer component
         Transform archerTransform = target.transform.Find("Archer");
-        //private Transform archerTransform = GameObject.FindWithTag("JoueurSprite");
         if (archerTransform != null)
         {
             SpriteRenderer spriteRenderer = archerTransform.GetComponent<SpriteRenderer>();
@@ -38,6 +38,23 @@ public class SpeedBuff : PowerUpEffect
                 // Speed up the animation by modifying the Animator's speed
                 animator.speed += amount; // You can adjust this logic as per your need
             }
+        }
+
+        // Try to find the player GameObject using the "joueur" tag
+        GameObject player = GameObject.FindGameObjectWithTag("joueur");
+        if (player != null)
+        {
+            // Instantiate the pickup animation prefab at the player's position
+            GameObject animationInstance = GameObject.Instantiate(pickupAnimationPrefab, player.transform.position, Quaternion.identity);
+
+            // Make the animation follow the player's position
+            animationInstance.transform.SetParent(player.transform); // Set the player as the parent of the animation object
+
+            // Optionally, adjust the position relative to the player if needed, e.g., slightly above the player
+            animationInstance.transform.localPosition = new Vector3(0, 1, 0); // Adjust as necessary
+
+            // Destroy the animation after 2 seconds
+            GameObject.Destroy(animationInstance, 2f);
         }
     }
 }
