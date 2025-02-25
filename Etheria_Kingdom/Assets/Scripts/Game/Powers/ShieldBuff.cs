@@ -112,7 +112,7 @@ public class ShieldBuff : PowerUpEffect
             }
         }
 
-        if (crystalShield != null)
+        if (GameObject.Find("ShieldPowerUp") != null)
         {
             /*
             crystalShieldTimer -= Time.deltaTime;
