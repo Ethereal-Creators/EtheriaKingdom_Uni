@@ -14,11 +14,13 @@ public class scriptSoundPlace : MonoBehaviour
     void Start()
     {
         //source = GetComponent<AudioSource>();
+        this.gameObject.GetComponent<AudioSource>().enabled = true;
     }
 
     void OnEnable()
     {
         source = GetComponent<AudioSource>();
+        source.enabled = true;
         Debug.Log("Active sound");
         if (source != null)
         {
@@ -31,6 +33,7 @@ public class scriptSoundPlace : MonoBehaviour
     private void OnDisable()
     {
         source = GetComponent<AudioSource>();
+        source.enabled = true;
         Debug.Log("Active sound");
         if (source != null)
         {

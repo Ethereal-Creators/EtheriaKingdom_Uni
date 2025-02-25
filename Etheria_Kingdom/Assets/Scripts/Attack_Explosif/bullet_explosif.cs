@@ -50,6 +50,7 @@ public class Bullet_explosif : MonoBehaviour
         }
         if (collision.gameObject.tag == "ennemie")
         {
+            Instantiate(FlameImpact, transform.position, Quaternion.identity);
             if (SplashArea > 0)
             {
                 var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashArea);
@@ -75,7 +76,7 @@ public class Bullet_explosif : MonoBehaviour
                         timeTilAnim -= Time.deltaTime;
                         if (timeTilAnim < 0)
                         {
-                            Instantiate(FlameImpact, transform.position, Quaternion.identity);
+                            
 
                             Destroy(gameObject);
                         }
