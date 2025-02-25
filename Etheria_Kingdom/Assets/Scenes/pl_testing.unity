@@ -557,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &133495326
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -948,34 +948,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1487937315}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: soundWhenDameged
-      objectReference: {fileID: 0}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: HealthController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7163088640835516832, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
       propertyPath: m_Name
       value: EnemySkeleton
@@ -2036,17 +2008,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7117260706353049988, guid: 52f872fd9f1a63444b927dd2095034a4, type: 3}
   m_PrefabInstance: {fileID: 1440190943}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1487937315 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7048578218279404640, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-  m_PrefabInstance: {fileID: 520429475}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1523211923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12814,11 +12775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.27
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.z

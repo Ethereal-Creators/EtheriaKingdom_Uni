@@ -33,6 +33,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.GetComponent<EnemyMovement>())
         {
+
+            Instantiate(Blood, transform.position, Quaternion.identity);
             // Generate a random damage value between minDamage and maxDamage as integers
             int randomDamage = Random.Range(minDamage, maxDamage + 1); // maxDamage + 1 to include maxDamage
 
@@ -40,7 +42,7 @@ public class Bullet : MonoBehaviour
             HealthController healthController = collision.GetComponent<HealthController>();
             healthController.TakeDamage(randomDamage);
 
-            Instantiate(Blood, transform.position, Quaternion.identity);
+            
             // Destroy the bullet after collision
             Destroy(gameObject);
 
