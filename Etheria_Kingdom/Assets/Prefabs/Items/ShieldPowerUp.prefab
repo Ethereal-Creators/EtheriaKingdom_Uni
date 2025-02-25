@@ -77,7 +77,11 @@ SpriteRenderer:
   m_SortingLayerID: 398364795
   m_SortingLayer: 5
   m_SortingOrder: 0
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 1850098471, guid: e06c2224b0d372c4bad29d9a45010d51, type: 3}
+=======
+  m_Sprite: {fileID: 1718242638, guid: 32dde2e962d5eca47ba1c1ae568e0e79, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleDuration: 0.4
-  targetScale: {x: 5, y: 5, z: 5}
+  targetScale: {x: 3.01, y: 3.18, z: 2.77}
   initialScale: {x: 5, y: 5, z: 5}
 --- !u!95 &-1635015160796306436
 Animator:
@@ -126,7 +130,7 @@ Animator:
   m_GameObject: {fileID: 3848457116065261395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc39a88bd836052439ddbefb9285dc60, type: 2}
+  m_Controller: {fileID: 9100000, guid: d13d2987156e0154fb0ba0703d9525a4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
