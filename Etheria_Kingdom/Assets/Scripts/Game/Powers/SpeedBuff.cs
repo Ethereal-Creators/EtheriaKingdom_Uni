@@ -21,29 +21,29 @@ public class SpeedBuff : PowerUpEffect
             playerShoot._timeBetweenShots = Mathf.Max(playerShoot._timeBetweenShots, 0.1f);
         }
 
-        // Try to find the child object "Archer" and get the SpriteRenderer component
-        Transform archerTransform = target.transform.Find("Archer");
-        if (archerTransform != null)
+        // Try to find the game object with the "joueur" tag
+        GameObject player = GameObject.FindGameObjectWithTag("joueur");
+        if (player != null)
         {
-            SpriteRenderer spriteRenderer = archerTransform.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+            // Try to get the SpriteRenderer component from the "JoueurSprite" child object
+            GameObject joueurSprite = player.transform.Find("JoueurSprite")?.gameObject;
+            if (joueurSprite != null)
             {
-                spriteRenderer.color = Color.blue; // Change color to blue (or any color you prefer)
+                SpriteRenderer spriteRenderer = joueurSprite.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.color = Color.blue; // Change color to blue (or any color you prefer)
+                }
             }
 
-            // Try to get the Animator component from the "Archer" child
-            Animator animator = archerTransform.GetComponent<Animator>();
+            // Try to get the Animator component from the "joueur" object
+            Animator animator = player.GetComponent<Animator>();
             if (animator != null)
             {
                 // Speed up the animation by modifying the Animator's speed
                 animator.speed += amount; // You can adjust this logic as per your need
             }
-        }
 
-        // Try to find the player GameObject using the "joueur" tag
-        GameObject player = GameObject.FindGameObjectWithTag("joueur");
-        if (player != null)
-        {
             // Instantiate the pickup animation prefab at the player's position
             GameObject animationInstance = GameObject.Instantiate(pickupAnimationPrefab, player.transform.position, Quaternion.identity);
 

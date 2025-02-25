@@ -12843,7 +12843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049049260229398630, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_TagString
-      value: joueur
+      value: JoueurSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
