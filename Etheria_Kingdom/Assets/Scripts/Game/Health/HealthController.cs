@@ -42,6 +42,12 @@ public class HealthController : MonoBehaviour
     public UnityEvent OnDamaged;
     public UnityEvent OnHealthChanged;
 
+    // Health regeneration variables
+    private bool isRegenerating = false;
+    private float regenAmountPerSecond;
+    private float regenDuration;
+    private float regenEndTime;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -67,14 +73,9 @@ public class HealthController : MonoBehaviour
 
         if (bleedingParticles != null)
         {
-            // Ensure the blood particles are not too far or too close
-            Vector3 randomOffset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0); // Slightly larger range
+            Vector3 randomOffset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0);
             Vector3 particlePosition = transform.position + randomOffset;
-
-            // Debug log to check if the blood particle effect is being positioned correctly
             Debug.Log("Blood particle effect played at position: " + particlePosition);
-
-            // Set the particle position and play it
             bleedingParticles.transform.position = particlePosition;
             bleedingParticles.Play();
         }
@@ -181,5 +182,30 @@ public class HealthController : MonoBehaviour
             int randomClipIndex = Random.Range(0, clips.Count);
             source.PlayOneShot(clips[randomClipIndex]);
         }
+    }
+
+    // Health regeneration methods
+    public void StartRegeneratingHealth(float regenAmount, float duration)
+    {
+        if (!isRegenerating)
+        {
+            regenAmountPerSecond = regenAmount / duration;
+            regenDuration = duration;
+            regenEndTime = Time.time + duration;
+            isRegenerating = true;
+            StartCoroutine(RegenerateHealth());
+        }
+    }
+
+    private IEnumerator RegenerateHealth()
+    {
+        while (Time.time < regenEndTime && _currentHealth < _maximumHealth)
+        {
+            _currentHealth += regenAmountPerSecond;
+            _currentHealth = Mathf.Min(_currentHealth, _maximumHealth); // Ensure health does not exceed maximum
+            OnHealthChanged.Invoke();
+            yield return new WaitForSeconds(1f); // Regenerate health every second
+        }
+        isRegenerating = false;
     }
 }

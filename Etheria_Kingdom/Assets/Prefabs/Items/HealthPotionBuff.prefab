@@ -91,7 +91,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81c8348afed87d4cba19c23d5337d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupEffect: {fileID: 0}
+  powerupEffect: {fileID: 11400000, guid: 84f528638c6890945bc510b12114fcec, type: 2}
+  source: {fileID: 0}
+  clipsStart: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  minVolume: 0.8
+  maxVolume: 1
 --- !u!1 &6603356856103531365
 GameObject:
   m_ObjectHideFlags: 0

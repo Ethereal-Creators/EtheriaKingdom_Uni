@@ -1,22 +1,34 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+[CreateAssetMenu(menuName = "Powerups/Health Buff")]
+public class HealthBuff : PowerUpEffect
 {
-    public float maxHealth = 100f;
-    public float currentHealth;
+    public float healthRegenAmount = 50f; // Total health to regenerate
+    public float healthRegenDuration = 5f;    // Duration of the regeneration effect
 
-    private void Start()
+    public override void Apply(GameObject target)
     {
-        currentHealth = maxHealth; // Set the health to max at the start
-    }
+        // Find all game objects with the "Crystal" tag
+        GameObject[] crystals = GameObject.FindGameObjectsWithTag("Crystal");
 
-    public void IncreaseHealth(float amount)
-    {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent going over max health
-    }
+        // Loop through all crystals and apply the health regeneration buff
+        foreach (GameObject crystal in crystals)
+        {
+            // Get the HealthController component of the crystal
+            HealthController crystalHealthController = crystal.GetComponent<HealthController>();
 
-    public void TakeDamage(float amount)
-    {
-        currentHealth = Mathf.Max(currentHealth - amount, 0f); // Prevent going below 0 health
+            if (crystalHealthController != null)
+            {
+                // Log health regen for each crystal
+                Debug.Log("Applying health regen to crystal: " + crystal.name);
+
+                // Start health regeneration for the crystal
+                crystalHealthController.StartRegeneratingHealth(healthRegenAmount, healthRegenDuration);
+            }
+            else
+            {
+                Debug.LogWarning("Crystal does not have a HealthController component attached.");
+            }
+        }
     }
 }
