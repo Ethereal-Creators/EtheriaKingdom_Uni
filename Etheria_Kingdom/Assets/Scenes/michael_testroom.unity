@@ -8806,7 +8806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedcc716e333ab84d8ab244c48fa2936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 6192458798892729925, guid: c9cc28bd4236bb244b39e4d040ff768a, type: 3}
+  _bulletPrefab: {fileID: 6091810971167602947, guid: 32822ca1c1948a74b85b37b9eb09c44d, type: 3}
   _bulletSpeed: 0
   _gunOffset: {fileID: 1225622922}
   _timeBetweenShots: 1

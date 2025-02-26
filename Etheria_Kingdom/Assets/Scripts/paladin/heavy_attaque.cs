@@ -19,7 +19,7 @@ public class bigmelee : MonoBehaviour
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(20);
+            healthController.TakeDamage(15);
         }
     }
 
