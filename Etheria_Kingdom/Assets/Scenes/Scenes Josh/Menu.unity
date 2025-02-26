@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: AddToY
-      value: 2.1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: myTarget
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 778826705}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: multiplierY
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: myTargetTwo
@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: multiplierXY
-      value: 6.8
+      value: 7.9
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: idNumberThree
