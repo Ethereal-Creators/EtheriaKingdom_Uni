@@ -34,10 +34,11 @@ public class LevelLoaderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0) && isStartAnimation == false)
         {
             isStartAnimation = true;
-        }
+        }*/
 
         if (isStartAnimation == true)
         {
@@ -49,6 +50,11 @@ public class LevelLoaderScript : MonoBehaviour
                 LoadNextLevel();
             }
         }
+    }
+
+    public void StartAnimAction()
+    {
+        isStartAnimation = true;
     }
 
     public void LoadNextLevel()
