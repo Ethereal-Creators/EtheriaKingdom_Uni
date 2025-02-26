@@ -11,6 +11,7 @@ TagManager:
   - joueur
   - JoueurSprite
   - Collectable
+  - Box
   layers:
   - Default
   - TransparentFX

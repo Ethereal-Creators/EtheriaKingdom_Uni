@@ -31,10 +31,26 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Box")) // If the bullet collides with the box
+        {
+            // Destroy the box
+            Destroy(collision.gameObject);
+
+            // Spawn a random item after the box is destroyed
+            ItemBox itemBox = collision.GetComponent<ItemBox>();
+            if (itemBox != null)
+            {
+                itemBox.SpawnRandomItem(); // Call the method to spawn an item
+            }
+
+            // Destroy the bullet immediately after the collision with the box
+            Destroy(gameObject);
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
-
             Instantiate(Blood, transform.position, Quaternion.identity);
+
             // Generate a random damage value between minDamage and maxDamage as integers
             int randomDamage = Random.Range(minDamage, maxDamage + 1); // maxDamage + 1 to include maxDamage
 
@@ -42,10 +58,8 @@ public class Bullet : MonoBehaviour
             HealthController healthController = collision.GetComponent<HealthController>();
             healthController.TakeDamage(randomDamage);
 
-            
             // Destroy the bullet after collision
             Destroy(gameObject);
-
         }
     }
 
