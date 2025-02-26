@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa00d57bef012db4388aac1326cfc378, type: 3}
   m_Name: BigSpeedShootingBuff
   m_EditorClassIdentifier: 
-  amount: 0.5
+  amount: 0.15
+  pickupAnimationPrefab: {fileID: 1408575037112802553, guid: 1c81f2c42ad981b4c8ada7925da45f45, type: 3}

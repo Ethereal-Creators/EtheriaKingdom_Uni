@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpeedBuff : PowerUpEffect
 {
     public float amount; // The amount by which to decrease the player's shooting time
+    public GameObject pickupAnimationPrefab; // The prefab of the pickup animation
 
     public override void Apply(GameObject target)
     {
@@ -20,24 +21,40 @@ public class SpeedBuff : PowerUpEffect
             playerShoot._timeBetweenShots = Mathf.Max(playerShoot._timeBetweenShots, 0.1f);
         }
 
-        // Try to find the child object "Archer" and get the SpriteRenderer component
-        Transform archerTransform = target.transform.Find("Archer");
-        //private Transform archerTransform = GameObject.FindWithTag("JoueurSprite");
-        if (archerTransform != null)
+        // Try to find the game object with the "joueur" tag
+        GameObject player = GameObject.FindGameObjectWithTag("joueur");
+        if (player != null)
         {
-            SpriteRenderer spriteRenderer = archerTransform.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+            // Try to get the SpriteRenderer component from the "JoueurSprite" child object
+            GameObject joueurSprite = player.transform.Find("JoueurSprite")?.gameObject;
+            if (joueurSprite != null)
             {
-                spriteRenderer.color = Color.blue; // Change color to blue (or any color you prefer)
+                SpriteRenderer spriteRenderer = joueurSprite.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.color = Color.blue; // Change color to blue (or any color you prefer)
+                }
             }
 
-            // Try to get the Animator component from the "Archer" child
-            Animator animator = archerTransform.GetComponent<Animator>();
+            // Try to get the Animator component from the "joueur" object
+            Animator animator = player.GetComponent<Animator>();
             if (animator != null)
             {
                 // Speed up the animation by modifying the Animator's speed
                 animator.speed += amount; // You can adjust this logic as per your need
             }
+
+            // Instantiate the pickup animation prefab at the player's position
+            GameObject animationInstance = GameObject.Instantiate(pickupAnimationPrefab, player.transform.position, Quaternion.identity);
+
+            // Make the animation follow the player's position
+            animationInstance.transform.SetParent(player.transform); // Set the player as the parent of the animation object
+
+            // Optionally, adjust the position relative to the player if needed, e.g., slightly above the player
+            animationInstance.transform.localPosition = new Vector3(0, 1, 0); // Adjust as necessary
+
+            // Destroy the animation after 2 seconds
+            GameObject.Destroy(animationInstance, 2f);
         }
     }
 }

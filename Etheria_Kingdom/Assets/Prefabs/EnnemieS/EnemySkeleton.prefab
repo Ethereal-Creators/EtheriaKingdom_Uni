@@ -101,8 +101,9 @@ MonoBehaviour:
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.15
   deathBlinkCount: 3
-  bleedingParticles: {fileID: 0}
+  bleedingParticles: {fileID: 2419893265842639146, guid: 7e8b6dbbab4ebfe41b70dadcc92c12e8, type: 3}
   source: {fileID: 3418790647812034941}
+  myCrystal: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
   OnDied:

@@ -207,6 +207,7 @@ MonoBehaviour:
   source: {fileID: 1682709791841109098}
   clipsStart:
   - {fileID: 8300000, guid: 9c65e340a3421be4d85b8ac671cd8280, type: 3}
+  FlameImpact: {fileID: 5415255095770863966, guid: 9d4963bb06ca3554dac5a16bc634c9b5, type: 3}
 --- !u!82 &1682709791841109098
 AudioSource:
   m_ObjectHideFlags: 0

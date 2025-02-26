@@ -21,6 +21,7 @@ public class Bullet_explosif : MonoBehaviour
     public AudioSource source;
     public List<AudioClip> clipsStart = new List<AudioClip>();
 
+    public GameObject FlameImpact;
     private void Awake()
     {
         _camera = Camera.main;
@@ -49,6 +50,7 @@ public class Bullet_explosif : MonoBehaviour
         }
         if (collision.gameObject.tag == "ennemie")
         {
+            Instantiate(FlameImpact, transform.position, Quaternion.identity);
             if (SplashArea > 0)
             {
                 var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashArea);
@@ -74,6 +76,8 @@ public class Bullet_explosif : MonoBehaviour
                         timeTilAnim -= Time.deltaTime;
                         if (timeTilAnim < 0)
                         {
+                            
+
                             Destroy(gameObject);
                         }
                     }
