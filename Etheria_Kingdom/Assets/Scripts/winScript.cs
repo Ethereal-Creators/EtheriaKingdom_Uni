@@ -30,6 +30,10 @@ public class winScript : MonoBehaviour
 
     [SerializeField] UnityEvent gameWin;
 
+    [SerializeField] UnityEvent actionAfterAnimation;
+
+    private bool isActionAfterAnimationDone = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,10 +87,12 @@ public class winScript : MonoBehaviour
         if (winSlowDown == true)
         {
             timeTilChangeScene -= Time.deltaTime;
-            if (timeTilChangeScene < 0)
+            if (timeTilChangeScene < 0 && isActionAfterAnimationDone == false)
             {
+                isActionAfterAnimationDone = true;
+                actionAfterAnimation.Invoke();
                 // Change scene after win
-                SceneManager.LoadScene("Menu");
+                // SceneManager.LoadScene("Menu");
                 Debug.Log("Win return to start.");
             }
         }

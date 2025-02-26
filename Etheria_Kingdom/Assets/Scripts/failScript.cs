@@ -26,6 +26,10 @@ public class failScript : MonoBehaviour
     private bool hasSoundPlayed = false;
 
     [SerializeField] UnityEvent gameFail;
+
+    [SerializeField] UnityEvent actionAfterAnimation;
+
+    private bool isActionAfterAnimationDone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,14 +52,16 @@ public class failScript : MonoBehaviour
                 source.PlayOneShot(clipsStart[randomClipIndex]);
                 hasSoundPlayed = true;
             }
-            Debug.Log("Don't play fail sound!");
+            //Debug.Log("Don't play fail sound!");
 
 
             countDown.text = "Fail";
             timeTilFail -= Time.deltaTime;
-            if (timeTilFail < 0)
+            if (timeTilFail < 0 && isActionAfterAnimationDone == false)
             {
-                SceneManager.LoadScene("Menu");
+                isActionAfterAnimationDone = true;
+                actionAfterAnimation.Invoke();
+                //SceneManager.LoadScene("Menu");
                 Debug.Log("Fail return to start.");
             }
         }

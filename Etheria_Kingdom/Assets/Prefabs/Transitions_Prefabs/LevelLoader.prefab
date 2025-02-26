@@ -46,8 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntileChangeScene: 1
+  LoadingScreen: {fileID: 0}
+  sliderLoadingScreen: {fileID: 0}
   transition: {fileID: 0}
   timeTilChange: 0
+  NextSceneIndex: 0
+  NextSceneName: 
 --- !u!1 &2371767539945368752
 GameObject:
   m_ObjectHideFlags: 0
