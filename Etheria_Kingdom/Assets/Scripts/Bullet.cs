@@ -33,14 +33,14 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Box")) // If the bullet collides with the box
         {
-            // Destroy the box
-            Destroy(collision.gameObject);
+            // Log the hit for debugging
+            Debug.Log("Bullet hit an item box!");
 
-            // Spawn a random item after the box is destroyed
+            // Call OnHit on the ItemBox, which will spawn a random item
             ItemBox itemBox = collision.GetComponent<ItemBox>();
             if (itemBox != null)
             {
-                itemBox.SpawnRandomItem(); // Call the method to spawn an item
+                itemBox.OnHit(); // Trigger item spawning and box destruction
             }
 
             // Destroy the bullet immediately after the collision with the box
