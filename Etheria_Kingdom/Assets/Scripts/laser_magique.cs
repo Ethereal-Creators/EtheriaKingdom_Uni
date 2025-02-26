@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class melee : MonoBehaviour
+public class laser : MonoBehaviour
 {
     private Camera _camera;
     public GameObject bulletPrefab;
@@ -19,7 +19,7 @@ public class melee : MonoBehaviour
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(10);
+            healthController.TakeDamage(50);
         }
     }
 

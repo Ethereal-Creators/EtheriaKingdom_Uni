@@ -10,6 +10,12 @@ public class SpeedBuff : PowerUpEffect
 
     public override void Apply(GameObject target)
     {
+        if (target == null)
+        {
+            Debug.LogError("Target is null. Make sure you're passing the player GameObject.");
+            return;
+        }
+
         // Apply the effect to the PlayerShoot component
         PlayerShoot playerShoot = target.GetComponent<PlayerShoot>();
         if (playerShoot != null)
@@ -21,40 +27,57 @@ public class SpeedBuff : PowerUpEffect
             playerShoot._timeBetweenShots = Mathf.Max(playerShoot._timeBetweenShots, 0.1f);
         }
 
-        // Try to find the game object with the "joueur" tag
-        GameObject player = GameObject.FindGameObjectWithTag("joueur");
-        if (player != null)
+        // Now, use the `target` GameObject directly
+        if (target != null)
         {
-            // Try to get the SpriteRenderer component from the "JoueurSprite" child object
-            GameObject joueurSprite = player.transform.Find("JoueurSprite")?.gameObject;
-            if (joueurSprite != null)
+            // Find the child GameObject with the SpriteRenderer (assumed to be named "JoueurSprite")
+            Transform joueurSpriteTransform = target.transform.Find("JoueurSprite");
+
+            if (joueurSpriteTransform != null)
             {
-                SpriteRenderer spriteRenderer = joueurSprite.GetComponent<SpriteRenderer>();
+                // Change the color of the SpriteRenderer to blue
+                SpriteRenderer spriteRenderer = joueurSpriteTransform.GetComponent<SpriteRenderer>();
                 if (spriteRenderer != null)
                 {
-                    spriteRenderer.color = Color.blue; // Change color to blue (or any color you prefer)
+                    spriteRenderer.color = Color.blue;
+                    Debug.Log("JoueurSprite color changed to blue.");
+                }
+                else
+                {
+                    Debug.LogWarning("SpriteRenderer not found on JoueurSprite.");
+                }
+
+                // Speed up the animation by modifying the Animator's speed
+                Animator spriteAnimator = joueurSpriteTransform.GetComponent<Animator>(); // Get the Animator from JoueurSprite
+                if (spriteAnimator != null)
+                {
+                    spriteAnimator.speed += amount; // You can adjust this logic as needed
+                    Debug.Log("JoueurSprite Animator speed modified.");
+                }
+                else
+                {
+                    Debug.LogWarning("Animator not found on JoueurSprite.");
                 }
             }
-
-            // Try to get the Animator component from the "joueur" object
-            Animator animator = player.GetComponent<Animator>();
-            if (animator != null)
+            else
             {
-                // Speed up the animation by modifying the Animator's speed
-                animator.speed += amount; // You can adjust this logic as per your need
+                Debug.LogWarning("JoueurSprite child not found.");
             }
 
-            // Instantiate the pickup animation prefab at the player's position
-            GameObject animationInstance = GameObject.Instantiate(pickupAnimationPrefab, player.transform.position, Quaternion.identity);
+            // Instantiate the pickup animation prefab at the target's position
+            if (pickupAnimationPrefab != null)
+            {
+                GameObject animationInstance = GameObject.Instantiate(pickupAnimationPrefab, target.transform.position, Quaternion.identity);
 
-            // Make the animation follow the player's position
-            animationInstance.transform.SetParent(player.transform); // Set the player as the parent of the animation object
+                // Make the animation follow the target's position
+                animationInstance.transform.SetParent(target.transform); // Set the target as the parent of the animation object
 
-            // Optionally, adjust the position relative to the player if needed, e.g., slightly above the player
-            animationInstance.transform.localPosition = new Vector3(0, 1, 0); // Adjust as necessary
+                // Optionally, adjust the position relative to the target if needed, e.g., slightly above the target
+                animationInstance.transform.localPosition = new Vector3(0, 1, 0); // Adjust as necessary
 
-            // Destroy the animation after 2 seconds
-            GameObject.Destroy(animationInstance, 2f);
+                // Destroy the animation after 2 seconds
+                GameObject.Destroy(animationInstance, 2f);
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dba7d2d256b6a014786664a7a2b507e3
+guid: f2760f1c5b93b4e41b499d8f60ff7c6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: magic-beam_sprite-Sheet_0
+      name: StrenghtBuffEffect-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 60
+        width: 31
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98cbed02c5086004ea6cc4537e5649ef
-      internalID: -1233320552
+      spriteID: 9a8a23d453bf36943aec3d8ddee2ce19
+      internalID: 625847882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: magic-beam_sprite-Sheet_1
+      name: StrenghtBuffEffect-Sheet_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 31
         y: 0
-        width: 40
-        height: 60
+        width: 31
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb1da49e4461d144b7627d2632b8a39
-      internalID: -1598529278
+      spriteID: 5f6b0eea8f76c79418eb339d372e96d2
+      internalID: -971383145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: magic-beam_sprite-Sheet_2
+      name: StrenghtBuffEffect-Sheet_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 62
         y: 0
-        width: 40
-        height: 60
+        width: 31
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d20166ccffd678f4385f7300989d069f
-      internalID: -297878256
+      spriteID: 38544bed0c20c954c8b59deb85fef12f
+      internalID: -2122868333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: magic-beam_sprite-Sheet_3
+      name: StrenghtBuffEffect-Sheet_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 93
         y: 0
-        width: 40
-        height: 60
+        width: 31
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +174,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e4955ff9454ffc4e829681be1537a9a
-      internalID: -697017072
+      spriteID: 567189fe03d06104c9178bf0c6697ac2
+      internalID: 433524129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrenghtBuffEffect-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25e35fc3138485409ff9887c70d5a67
+      internalID: -1914924639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrenghtBuffEffect-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04556b769b51de43b1883209a7d9e06
+      internalID: 1564707038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrenghtBuffEffect-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb9e59d49b2417448fa0fc4e9009d8e
+      internalID: 1734448790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrenghtBuffEffect-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da28360206bb33a408ffd59ba5454522
+      internalID: 1496510411
       vertices: []
       indices: 
       edges: []
@@ -204,10 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      magic-beam_sprite-Sheet_0: -1233320552
-      magic-beam_sprite-Sheet_1: -1598529278
-      magic-beam_sprite-Sheet_2: -297878256
-      magic-beam_sprite-Sheet_3: -697017072
+      StrenghtBuffEffect-Sheet_0: 625847882
+      StrenghtBuffEffect-Sheet_1: -971383145
+      StrenghtBuffEffect-Sheet_2: -2122868333
+      StrenghtBuffEffect-Sheet_3: 433524129
+      StrenghtBuffEffect-Sheet_4: -1914924639
+      StrenghtBuffEffect-Sheet_5: 1564707038
+      StrenghtBuffEffect-Sheet_6: 1734448790
+      StrenghtBuffEffect-Sheet_7: 1496510411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,7 +26,7 @@ public class HealthBuff : PowerUpEffect
                 // Log health regen for each crystal
                 Debug.Log("Applying health regen to crystal: " + crystal.name);
 
-                // Start health regeneration for the crystal
+                
                 crystalHealthController.StartRegeneratingHealth(healthRegenAmount, healthRegenDuration);
 
                 // Instantiate the animation prefab at the crystal's position with an offset
