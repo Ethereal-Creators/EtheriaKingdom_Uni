@@ -16,6 +16,14 @@ public class melee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //ajout pour BoiteEvenement
+        if (collision.CompareTag("BoiteEvenement"))
+        {
+            var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
+
+            scriptEvent.actionOnCollsion();
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();

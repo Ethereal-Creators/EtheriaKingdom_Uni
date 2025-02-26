@@ -12,6 +12,7 @@ TagManager:
   - JoueurSprite
   - Collectable
   - Box
+  - BoiteEvenement
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,14 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //ajout pour BoiteEvenement
+        if (collision.CompareTag("BoiteEvenement"))
+        {
+            var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
+
+            scriptEvent.actionOnCollsion();
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
             Instantiate(Blood, transform.position, Quaternion.identity);
