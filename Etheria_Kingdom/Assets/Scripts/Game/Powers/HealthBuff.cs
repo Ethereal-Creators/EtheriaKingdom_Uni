@@ -5,7 +5,10 @@ public class HealthBuff : PowerUpEffect
 {
     public float healthRegenAmount = 50f; // Total health to regenerate
     public float healthRegenDuration = 5f;    // Duration of the regeneration effect
-    public string animationTrigger = "BuffCollected";  // Trigger name for the animation
+    public GameObject animationPrefab; // Reference to the animation prefab (e.g., a particle system)
+
+    public Vector3 animationOffset = new Vector3(0f, 1f, 0f); // Offset for animation position relative to the crystal
+    public float animationDuration = 2f; // Duration before the animation prefab is destroyed
 
     public override void Apply(GameObject target)
     {
@@ -18,26 +21,30 @@ public class HealthBuff : PowerUpEffect
             // Get the HealthController component of the crystal
             HealthController crystalHealthController = crystal.GetComponent<HealthController>();
 
-            // Check for Animator component in the crystal
-            Animator crystalAnimator = crystal.GetComponent<Animator>();
-
             if (crystalHealthController != null)
             {
                 // Log health regen for each crystal
                 Debug.Log("Applying health regen to crystal: " + crystal.name);
 
-                // Trigger the animation on the crystal
-                if (crystalAnimator != null)
+                // Start health regeneration for the crystal
+                crystalHealthController.StartRegeneratingHealth(healthRegenAmount, healthRegenDuration);
+
+                // Instantiate the animation prefab at the crystal's position with an offset
+                if (animationPrefab != null)
                 {
-                    crystalAnimator.SetTrigger(animationTrigger);
+                    // Calculate the position with offset relative to the crystal's position
+                    Vector3 animationPosition = crystal.transform.position + animationOffset;
+
+                    // Instantiate the animation prefab at the calculated position and rotation
+                    GameObject animationObject = Instantiate(animationPrefab, animationPosition, crystal.transform.rotation);
+
+                    // Optionally, destroy the animation prefab after a certain time (for particle systems or animations)
+                    Destroy(animationObject, animationDuration);
                 }
                 else
                 {
-                    Debug.LogWarning("Crystal does not have an Animator component attached.");
+                    Debug.LogWarning("No animation prefab assigned to HealthBuff.");
                 }
-
-                // Start health regeneration for the crystal
-                crystalHealthController.StartRegeneratingHealth(healthRegenAmount, healthRegenDuration);
             }
             else
             {

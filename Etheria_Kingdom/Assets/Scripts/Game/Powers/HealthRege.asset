@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: HealthRege
   m_EditorClassIdentifier: 
   healthRegenAmount: 50
-  healthRegenDuration: 5
+  healthRegenDuration: 1
+  animationPrefab: {fileID: 8205907923169662087, guid: 9ceacdbae29638047966a26adadf50c2, type: 3}
+  animationOffset: {x: 0, y: 0, z: 0}
+  animationDuration: 2
