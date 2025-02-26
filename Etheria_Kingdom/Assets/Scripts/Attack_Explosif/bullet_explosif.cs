@@ -43,6 +43,14 @@ public class Bullet_explosif : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //ajout pour BoiteEvenement
+        if (collision.CompareTag("BoiteEvenement"))
+        {
+            var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
+
+            scriptEvent.actionOnCollsion();
+        }
+
         if (source != null && clipsStart.Count > 0 && collision.gameObject.tag == "ennemie")
         {
             int randomClipIndex = Random.Range(0, clipsStart.Count);
