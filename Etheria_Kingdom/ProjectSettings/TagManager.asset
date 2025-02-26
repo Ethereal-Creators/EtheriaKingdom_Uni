@@ -10,6 +10,7 @@ TagManager:
   - projectile
   - joueur
   - JoueurSprite
+  - Collectable
   layers:
   - Default
   - TransparentFX

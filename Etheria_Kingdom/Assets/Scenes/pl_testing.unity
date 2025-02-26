@@ -840,6 +840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthPotionBuff
       objectReference: {fileID: 0}
+    - target: {fileID: 2756505605496798193, guid: 3a2b6b918e376c447ae1d6ddd657bfa2, type: 3}
+      propertyPath: m_TagString
+      value: Collectable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
