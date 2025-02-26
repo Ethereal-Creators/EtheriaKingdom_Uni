@@ -1044,6 +1044,14 @@ PrefabInstance:
       propertyPath: powerupEffect
       value: 
       objectReference: {fileID: 11400000, guid: f6207df27864f274594389f0fc574b1b, type: 2}
+    - target: {fileID: 3699631986640818314, guid: 6ee424990a06a7d4bba532efee76d980, type: 3}
+      propertyPath: clipsStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699631986640818314, guid: 6ee424990a06a7d4bba532efee76d980, type: 3}
+      propertyPath: clipsStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e1ae251de8e8cd448d0f2a4ddd86a2d, type: 3}
     - target: {fileID: 4094444519197056300, guid: 6ee424990a06a7d4bba532efee76d980, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -12981,6 +12989,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1709528263413364316, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: MinDistance
+      value: 1.1890357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709528263413364316, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1204179878550719679, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
@@ -12996,13 +13008,41 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3136158834300327393, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103036267130487673, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_Radius
+      value: 0.11513729
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103036267130487673, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0016063175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103036267130487673, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.032694302
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.738058
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.738058
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.738058
+      objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 5057844559211416628, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13052,10 +13092,42 @@ PrefabInstance:
       propertyPath: m_TagString
       value: joueur
       objectReference: {fileID: 0}
+    - target: {fileID: 7158929805713589272, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158929805713589272, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289869914300797073, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7414456304510170967, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: OnScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 674834228}
+    - target: {fileID: 7687176184638689693, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9698897
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687176184638689693, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9698897
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687176184638689693, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9698897
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687176184638689693, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687176184638689693, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.013
+      objectReference: {fileID: 0}
     - target: {fileID: 8863996347617501722, guid: 0ca186ebe9972584ead1035b767d1588, type: 3}
       propertyPath: m_UseFullKinematicContacts
       value: 1

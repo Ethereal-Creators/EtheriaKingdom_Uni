@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 20
+  shieldDuration: 10
+  fadeDuration: 2
 --- !u!114 &7879641290411975155
 MonoBehaviour:
   m_ObjectHideFlags: 0

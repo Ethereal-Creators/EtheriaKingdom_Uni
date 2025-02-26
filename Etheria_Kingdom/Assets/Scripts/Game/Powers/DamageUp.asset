@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: DamageUp
   m_EditorClassIdentifier: 
   damageBuffAmount: 5
+  animationPrefab: {fileID: 7528915971733805237, guid: 735a616ee1344154897e3812d3ab78d8, type: 3}
+  animationOffset: {x: 0, y: 0, z: 0}
+  animationDuration: 1

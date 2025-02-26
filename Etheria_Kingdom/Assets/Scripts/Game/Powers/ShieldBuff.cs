@@ -37,7 +37,7 @@ public class ShieldBuff : PowerUpEffect
         // Add ShieldScaler component to handle the scaling for the player
         ShieldScaler shieldScaler = playerShield.AddComponent<ShieldScaler>();
         shieldScaler.scaleDuration = 0.6f;
-        shieldScaler.targetScale = new Vector3(1f, 1f, 1f);
+        shieldScaler.targetScale = new Vector3(1.3f, 1.3f, 1.3f);
         shieldScaler.initialScale = new Vector3(0.1f, 0.1f, 0.1f);
 
         // Apply the shield to the crystal (if it exists)
@@ -70,22 +70,22 @@ public class ShieldBuff : PowerUpEffect
         Debug.Log("Player shield duration set to: " + playerShieldTimer + " seconds.");
         Debug.Log("Crystal shield duration set to: " + crystalShieldTimer + " seconds.");
 
-        // Add Collider component to detect enemy collisions (ensure shield prefab has a collider)
-        Collider playerCollider = playerShield.GetComponent<Collider>();
+        // Add Collider2D component to detect enemy collisions (ensure shield prefab has a collider)
+        CircleCollider2D playerCollider = playerShield.GetComponent<CircleCollider2D>();
         if (playerCollider == null)
         {
-            playerCollider = playerShield.AddComponent<SphereCollider>(); // Example, change to your preferred collider
-            //playerCollider.isTrigger = true; // Make sure it's a trigger
+            playerCollider = playerShield.AddComponent<CircleCollider2D>(); // Example, change to your preferred collider
+            playerCollider.isTrigger = true; // Make sure it's a trigger
         }
 
         // Add collider to crystal shield
         if (crystal != null)
         {
-            Collider crystalCollider = crystalShield.GetComponent<Collider>();
+            CircleCollider2D crystalCollider = crystalShield.GetComponent<CircleCollider2D>();
             if (crystalCollider == null)
             {
-                crystalCollider = crystalShield.AddComponent<SphereCollider>(); // Example, change to your preferred collider
-                //crystalCollider.isTrigger = true; // Make sure it's a trigger
+                crystalCollider = crystalShield.AddComponent<CircleCollider2D>(); // Example, change to your preferred collider
+                crystalCollider.isTrigger = true; // Make sure it's a trigger
             }
         }
     }
@@ -112,9 +112,8 @@ public class ShieldBuff : PowerUpEffect
             }
         }
 
-        if (GameObject.Find("ShieldPowerUp") != null)
+        if (crystalShield != null)
         {
-            /*
             crystalShieldTimer -= Time.deltaTime;
 
             // Debug the remaining time on the crystal shield
@@ -124,15 +123,20 @@ public class ShieldBuff : PowerUpEffect
             if (crystalShieldTimer <= 0f)
             {
                 DestroyShield(crystalShield);
-            }*/
-            Debug.Log("Crystal shield time remaining: " + Mathf.Max(crystalShieldTimer, 0f).ToString("F2") + " seconds.");
-
-            timeTilShieldStop -= Time.deltaTime;
-            if (timeTilShieldStop < 0f)
-            {
-                DestroyShield(crystalShield);
             }
+        }
 
+        timeTilShieldStop -= Time.deltaTime;
+        if (timeTilShieldStop <= 0f)
+        {
+            DestroyShield(crystalShield); // Destroy the crystal shield after the powerup duration ends
+        }
+
+        // Check if the shield duration has ended and destroy the scriptable object
+        if (playerShieldTimer <= 0f && crystalShieldTimer <= 0f)
+        {
+            Destroy(this);  // Destroy the ScriptableObject itself
+            Debug.Log("Shield Buff has expired and ScriptableObject is destroyed.");
         }
     }
 
@@ -156,7 +160,6 @@ public class ShieldBuff : PowerUpEffect
         }
     }
 
-    // Public method to dynamically change the shield timer
     public void SetShieldTimer(float newTime)
     {
         shieldDuration = newTime; // Set the new shield duration
