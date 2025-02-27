@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb41ccbc36499b14eae04a29306b4174
+guid: 68f3d2a69af90b14e84f40f6c1dca8b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,43 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_0
+      name: pouvSlash_paladin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da7dc540bc4ed9d44847612bcaa2051a
-      internalID: 1222408234
+      spriteID: 9c868fe58655eb047be55a64fe29bb45
+      internalID: 961122649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_1
+      name: pouvSlash_paladin_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 60
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5429356ccc2965b469c461b87841a483
-      internalID: 2038029428
+      spriteID: 2d8b8364d9ba42d4fa625444bbc8be86
+      internalID: -4645329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_2
+      name: pouvSlash_paladin_2
       rect:
         serializedVersion: 2
-        x: 140
+        x: 120
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f8de591a3d76384aaaf57773681343f
-      internalID: -1526742138
+      spriteID: 9c82c5d80b03e0b45b2c52c4916aac11
+      internalID: 621166077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_3
+      name: pouvSlash_paladin_3
       rect:
         serializedVersion: 2
-        x: 210
+        x: 180
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afbc8da86ba177242a801023274b52e1
-      internalID: 399041260
+      spriteID: 0a3007aac1f79ea499f53c45f42b4c5d
+      internalID: 664261470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_4
+      name: pouvSlash_paladin_4
       rect:
         serializedVersion: 2
-        x: 280
+        x: 240
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4545720ce4278b24bb98a1818e155865
-      internalID: -792749171
+      spriteID: a2685b8e6e5a51346b4c0d110f5c26dc
+      internalID: 1185821354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fleche_explosif_powerup-Sheet_5
+      name: pouvSlash_paladin_5
       rect:
         serializedVersion: 2
-        x: 350
+        x: 300
         y: 0
-        width: 70
-        height: 70
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +216,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7263f7ee9b27c164eaea969c2d86b21f
-      internalID: -2058400458
+      spriteID: bbfc6e30255afc04f8a94842337a908d
+      internalID: 191757629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pouvSlash_paladin_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ad3899fad01ce469743278d9d15205
+      internalID: -564461462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pouvSlash_paladin_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aa7c8c8f3665b4188630c25301102c
+      internalID: -1697329830
       vertices: []
       indices: 
       edges: []
@@ -259,12 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fleche_explosif_powerup-Sheet_0: 1222408234
-      fleche_explosif_powerup-Sheet_1: 2038029428
-      fleche_explosif_powerup-Sheet_2: -1526742138
-      fleche_explosif_powerup-Sheet_3: 399041260
-      fleche_explosif_powerup-Sheet_4: -792749171
-      fleche_explosif_powerup-Sheet_5: -2058400458
+      pouvSlash_paladin_0: 961122649
+      pouvSlash_paladin_1: -4645329
+      pouvSlash_paladin_2: 621166077
+      pouvSlash_paladin_3: 664261470
+      pouvSlash_paladin_4: 1185821354
+      pouvSlash_paladin_5: 191757629
+      pouvSlash_paladin_6: -564461462
+      pouvSlash_paladin_7: -1697329830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
