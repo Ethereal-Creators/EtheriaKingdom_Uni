@@ -54,17 +54,17 @@ public class meleeHeavyAttack : MonoBehaviour
         }
     }
 
-private void FireBullet()
-{
-   Debug.Log("Shooting!");
+    private void FireBullet()
+    {
+        Debug.Log("Shooting!");
 
-    GameObject bullet = Instantiate(_bulletPrefab, _gunOffset.position, _gunOffset.rotation);
-    
-    Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
-    
-    rigidbody.velocity = _bulletSpeed * _gunOffset.up;
+        GameObject bullet = Instantiate(_bulletPrefab, _gunOffset.position, _gunOffset.rotation);
 
-    Destroy(bullet, 1f);
+        Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
+
+        rigidbody.velocity = _bulletSpeed * _gunOffset.up;
+
+        Destroy(bullet, 1f);
 
     if (_audioSource != null && _shootSound != null)
     {
