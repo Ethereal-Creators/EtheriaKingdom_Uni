@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: ShieldPowerUp
   m_EditorClassIdentifier: 
   shieldPrefab: {fileID: 3848457116065261395, guid: c1075c24a65551945aaee8123055e4b6, type: 3}
+  playerShieldOffset: {x: 5, y: 5, z: 5}
+  crystalShieldOffset: {x: 0, y: 1, z: 0}

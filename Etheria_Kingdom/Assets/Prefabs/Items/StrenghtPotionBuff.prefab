@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81c8348afed87d4cba19c23d5337d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupEffect: {fileID: 0}
+  powerupEffect: {fileID: 11400000, guid: f6207df27864f274594389f0fc574b1b, type: 2}
   source: {fileID: 0}
   clipsStart: []
   minPitch: 0.8

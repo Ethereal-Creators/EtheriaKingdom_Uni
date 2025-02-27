@@ -1,17 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     private Camera _camera;
-    public GameObject bulletPrefab;  // Reference to the bullet prefab
-    public float shootInterval = 0.5f; // Time interval between shots (in seconds)
-    public float bulletLifetime = 3f; // Lifetime of the bullet before it disappears
-    public int minDamage = 10; // Minimum damage
-    public int maxDamage = 13; // Maximum damage
+    public GameObject bulletPrefab;
+    public float shootInterval = 0.5f;
+    public float bulletLifetime = 3f;
+    public int minDamage = 10;  // Default minimum damage
+    public int maxDamage = 13;  // Default maximum damage
 
     public GameObject Blood;
+
+    // Method to set or modify the bullet's minDamage and maxDamage
+    public void SetDamage(int min, int max)
+    {
+        minDamage = min;
+        maxDamage = max;
+        Debug.Log("Bullet damage set to: " + minDamage + " - " + maxDamage);  // Log the new damage values
+    }
 
     private void Awake()
     {
@@ -20,8 +26,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        // Destroy bullet after a set time
-        Destroy(gameObject, bulletLifetime);
+        Destroy(gameObject, bulletLifetime);  // Destroy the bullet after the lifetime expires
     }
 
     private void Update()
@@ -31,68 +36,36 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Box")) // If the bullet collides with the box
+        if (collision.CompareTag("Box"))
         {
-            // Log the hit for debugging
-            Debug.Log("Bullet hit an item box!");
-
-            // Call OnHit on the ItemBox, which will spawn a random item
             ItemBox itemBox = collision.GetComponent<ItemBox>();
-            if (itemBox != null)
-            {
-                itemBox.OnHit(); // Trigger item spawning and box destruction
-            }
-
-            // Destroy the bullet immediately after the collision with the box
+            if (itemBox != null) itemBox.OnHit();  // Trigger box hit
             Destroy(gameObject);
         }
 
-        //ajout pour BoiteEvenement
         if (collision.CompareTag("BoiteEvenement"))
         {
             var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
-
-            scriptEvent.actionOnCollsion();
+            scriptEvent.actionOnCollsion();  // Handle event-specific actions
         }
 
         if (collision.GetComponent<EnemyMovement>())
         {
-            Instantiate(Blood, transform.position, Quaternion.identity);
-
-            // Generate a random damage value between minDamage and maxDamage as integers
-            int randomDamage = Random.Range(minDamage, maxDamage + 1); // maxDamage + 1 to include maxDamage
-
-            // Apply the random damage to the enemy
+            Instantiate(Blood, transform.position, Quaternion.identity);  // Spawn blood effect
+            int randomDamage = Random.Range(minDamage, maxDamage + 1);  // Random damage between min and max damage
+            Debug.Log("Bullet hit an enemy. Damage dealt: " + randomDamage);  // Log the damage dealt to the enemy
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(randomDamage);
-
-            // Destroy the bullet after collision
-            Destroy(gameObject);
+            healthController.TakeDamage(randomDamage);  // Apply damage to enemy
+            Destroy(gameObject);  // Destroy bullet after hitting the enemy
         }
     }
 
     private void DestroyWhenOffScreen()
     {
         Vector2 screenPosition = _camera.WorldToScreenPoint(transform.position);
-
-        if (screenPosition.x < 0 ||
-            screenPosition.x > _camera.pixelWidth ||
-            screenPosition.y < 0 ||
-            screenPosition.y > _camera.pixelHeight)
+        if (screenPosition.x < 0 || screenPosition.x > _camera.pixelWidth || screenPosition.y < 0 || screenPosition.y > _camera.pixelHeight)
         {
-            Destroy(gameObject);
-        }
-    }
-
-    private IEnumerator ShootAutomatically()
-    {
-        while (true)
-        {
-            // Shoot a bullet (instantiate at the player's position or any specific point)
-            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
-            // Wait for the specified interval before shooting the next bullet
-            yield return new WaitForSeconds(shootInterval);
+            Destroy(gameObject);  // Destroy bullet if it goes off-screen
         }
     }
 }
