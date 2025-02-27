@@ -180,7 +180,7 @@ MonoBehaviour:
   despawnDelay: 1
   spawnOffset: {x: 0, y: 0, z: 0}
   hitSound: {fileID: 0}
-  destructionEffect: {fileID: 0}
+  destructionEffect: {fileID: 7431062939664127180, guid: 2908cbbdffe18274bb0f3a42fa3cc5b2, type: 3}
   hitEffect: {fileID: 0}
   itemDropChance: 0.75
   scaleShrinkAmount: {x: 0.1, y: 0.1, z: 0.1}
