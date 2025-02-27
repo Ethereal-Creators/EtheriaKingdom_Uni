@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -13,17 +11,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float _screenBorder;
 
-    private Rigidbody2D _rigidbody;
+    protected Rigidbody2D _rigidbody;  // Changed to protected so derived classes can access it
     private PlayerAwarenessController _playerAwarenessController;
-    private Vector2 _targetDirection;
+    protected Vector2 _targetDirection;  // Changed to protected so derived classes can access it
     private float _changeDirectionCooldown;
-    private Camera _camera;
+    protected Camera _camera;  // Changed to protected so derived classes can access it
 
-    // pour detection du crystal//
-    Transform target;
-    Vector2 moveDirection;
+    // For crystal detection
+    protected Transform target;  // Changed to protected so derived classes can access it
+    protected Vector2 moveDirection;  // Changed to protected so derived classes can access it
 
-    private void Awake()
+    // Called when the script is initialized
+    protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerAwarenessController = GetComponent<PlayerAwarenessController>();
@@ -31,54 +30,51 @@ public class EnemyMovement : MonoBehaviour
         _camera = Camera.main;
     }
 
-    // pour detection du crystal//
-    private void Start()
+    // Start is called before the first frame update
+    protected virtual void Start()
     {
-        if (GameObject.Find("Crystal") != null)
+        // Get the Crystal's position
+        GameObject crystal = GameObject.FindGameObjectWithTag("Crystal");
+        if (crystal != null)
         {
-            target = GameObject.Find("Crystal").transform;
+            target = crystal.transform;
         }
-        
-    }
-
-    private void Update()
-    {
-        // pour detection du crystal//
-        if (target)
+        else
         {
-            // Get the direction from the enemy to the crystal
-            Vector3 direction = (target.position - transform.position).normalized;
-
-            // Calculate the angle between the enemy's current position and the crystal
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            // Smoothly rotate the enemy to face the crystal
-            _rigidbody.rotation = Mathf.LerpAngle(_rigidbody.rotation, angle, _rotationSpeed * Time.deltaTime);
-
-            // Set the move direction towards the crystal
-            moveDirection = direction;
+            Debug.LogError("Crystal not found in the scene!");
         }
     }
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    protected virtual void Update()
     {
-        UpdateTargetDirection();
-        //RotateTowardsTarget();
-        SetVelocity();
-        // pour detection du crystal//
-        if(target)
-        {
-            _rigidbody.velocity =new Vector2(moveDirection.x, moveDirection.y) * _speed;
-        }
-    }
-
-    private void UpdateTargetDirection()
-    {
+        // Override in derived classes to provide custom movement logic
         HandleRandomDirectionChange();
         HandlePlayerTargeting();
         HandleEnemyOffScreen();
     }
 
+    // FixedUpdate is called at a fixed time interval
+    protected virtual void FixedUpdate()
+    {
+        // Override in derived classes to modify movement
+        SetVelocity();
+
+        // Handle movement towards the target (if any)
+        if (target)
+        {
+            // Calculate direction towards the target (Crystal)
+            Vector3 direction = (target.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            _rigidbody.rotation = Mathf.LerpAngle(_rigidbody.rotation, angle, _rotationSpeed * Time.deltaTime);
+
+            // Move towards the target (Crystal)
+            moveDirection = direction;
+            _rigidbody.velocity = new Vector2(moveDirection.x, moveDirection.y) * _speed;
+        }
+    }
+
+    // Handle random direction changes
     private void HandleRandomDirectionChange()
     {
         _changeDirectionCooldown -= Time.deltaTime;
@@ -88,11 +84,11 @@ public class EnemyMovement : MonoBehaviour
             float angleChange = Random.Range(-90f, 90f);
             Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
             _targetDirection = rotation * _targetDirection;
-
             _changeDirectionCooldown = Random.Range(1f, 5f);
         }
     }
 
+    // Handle player targeting if the player is within range
     private void HandlePlayerTargeting()
     {
         if (_playerAwarenessController.AwareOfPlayer)
@@ -101,6 +97,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    // Prevent the enemy from going off-screen by reversing its direction when it hits the screen edge
     private void HandleEnemyOffScreen()
     {
         Vector2 screenPosition = _camera.WorldToScreenPoint(transform.position);
@@ -118,16 +115,16 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-   /* private void RotateTowardsTarget()
+    // Set the velocity of the enemy to move towards the target direction
+    protected void SetVelocity()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, _targetDirection);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+        _rigidbody.velocity = _targetDirection * _speed;
+    }
 
-        _rigidbody.SetRotation(rotation);
-    }*/
-
-    private void SetVelocity()
+    // New method to apply knockback when the enemy is hit
+    public void ApplyKnockback(Vector2 direction, float force = 5f)
     {
-        _rigidbody.velocity = transform.up * _speed;
+        // Apply force in the opposite direction of the bullet's impact
+        _rigidbody.AddForce(-direction * force, ForceMode2D.Impulse);
     }
 }

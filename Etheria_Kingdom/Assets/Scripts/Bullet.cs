@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        _camera = Camera.main;
+        _camera = Camera.main;  // Get the main camera
     }
 
     private void Start()
@@ -51,11 +51,20 @@ public class Bullet : MonoBehaviour
 
         if (collision.GetComponent<EnemyMovement>())
         {
-            Instantiate(Blood, transform.position, Quaternion.identity);  // Spawn blood effect
+            // Instantiate blood effect at the bullet's position
+            Instantiate(Blood, transform.position, Quaternion.identity);
+
             int randomDamage = Random.Range(minDamage, maxDamage + 1);  // Random damage between min and max damage
             Debug.Log("Bullet hit an enemy. Damage dealt: " + randomDamage);  // Log the damage dealt to the enemy
+
+            // Apply damage to the enemy's health
             HealthController healthController = collision.GetComponent<HealthController>();
-            healthController.TakeDamage(randomDamage);  // Apply damage to enemy
+            healthController.TakeDamage(randomDamage);
+
+            // Get the direction of the bullet and apply knockback to the enemy
+            Vector2 bulletDirection = (collision.transform.position - transform.position).normalized;
+            collision.GetComponent<EnemyMovement>().ApplyKnockback(bulletDirection);
+
             Destroy(gameObject);  // Destroy bullet after hitting the enemy
         }
     }
