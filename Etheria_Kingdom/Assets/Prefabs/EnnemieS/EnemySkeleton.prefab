@@ -87,6 +87,7 @@ MonoBehaviour:
   _rotationSpeed: 100
   _screenBorder: 1
   _speed: 2
+  _rotationSpeed: 100
 --- !u!114 &5402764252505855872
 MonoBehaviour:
   m_ObjectHideFlags: 0

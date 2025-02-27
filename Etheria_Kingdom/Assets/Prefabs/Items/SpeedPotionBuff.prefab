@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 143754756672224131}
   - component: {fileID: 6844169214815670264}
   - component: {fileID: 8902377351257129369}
-  - component: {fileID: 4226724701052641370}
   - component: {fileID: 1619093238997631271}
   m_Layer: 0
   m_Name: SpeedPotionBuff
@@ -207,33 +206,6 @@ MonoBehaviour:
   maxPitch: 1.2
   minVolume: 0.8
   maxVolume: 1
---- !u!50 &4226724701052641370
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315175195772426677}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!82 &1619093238997631271
 AudioSource:
   m_ObjectHideFlags: 0
