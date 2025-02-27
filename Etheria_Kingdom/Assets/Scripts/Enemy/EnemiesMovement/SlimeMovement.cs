@@ -1,12 +1,11 @@
 using UnityEngine;
-using System.Collections;  // Add this line for IEnumerator and coroutines
+using System.Collections; 
 
 public class SlimeMovement : EnemyMovement
 {
-    [SerializeField] private float _hopSpeed = 5f;         // Speed of the hop
-    [SerializeField] private float _hopInterval = 2f;      // Interval between hops
-    [SerializeField] private float _pauseAfterHop = 1f;    // Pause time after each hop
-
+    [SerializeField] private float _hopSpeed = 3f;         
+    [SerializeField] private float _hopInterval = 2f;     
+    [SerializeField] private float _pauseAfterHop = 1f;   
     private bool _isHopping = false;  // Flag to check if the slime is currently hopping
     private float _timeSinceLastHop = 0f; // Timer to track hop intervals
 
@@ -28,8 +27,6 @@ public class SlimeMovement : EnemyMovement
             StartCoroutine(HopAndPause());
         }
     }
-
-    // Coroutine to handle hopping and the pause afterward
     private IEnumerator HopAndPause()
     {
         _isHopping = true; // Set the flag that the slime is hopping
@@ -43,10 +40,8 @@ public class SlimeMovement : EnemyMovement
         // Stop the movement for a moment after the hop
         _rigidbody.velocity = Vector2.zero;
 
-        // Wait for the pause duration before hopping again
         yield return new WaitForSeconds(_pauseAfterHop);
 
-        // Reset the timer and allow the next hop
         _timeSinceLastHop = 0f;
 
         _isHopping = false; // Reset the hopping flag, ready for the next hop
