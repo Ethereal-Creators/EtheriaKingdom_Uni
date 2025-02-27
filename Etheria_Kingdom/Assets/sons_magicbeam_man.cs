@@ -1,7 +1,7 @@
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 
-public class audio_man_paladin : MonoBehaviour
+public class audio_man_mage : MonoBehaviour
 {
     [Header("------- Audio Source -------")]
     [SerializeField] AudioSource musicSource;

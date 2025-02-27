@@ -21,6 +21,20 @@ public class bigmelee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Box"))
+        {
+            ItemBox itemBox = collision.GetComponent<ItemBox>();
+            if (itemBox != null) itemBox.OnHit();  // Trigger box hit
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("BoiteEvenement"))
+        {
+            var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
+
+            scriptEvent.actionOnCollsion();
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();
@@ -52,12 +66,12 @@ public class bigmelee : MonoBehaviour
                 int randomClipIndex = Random.Range(0, clipsStart.Count);
                 source.pitch = Random.Range(0.8f, 1.2f);
                 source.PlayOneShot(clipsStart[randomClipIndex]);
-                
+
             }
 
             yield return new WaitForSeconds(shootInterval);
         }
 
-        
+
     }
 }
