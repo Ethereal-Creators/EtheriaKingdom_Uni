@@ -16,6 +16,20 @@ public class laser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Box"))
+        {
+            ItemBox itemBox = collision.GetComponent<ItemBox>();
+            if (itemBox != null) itemBox.OnHit();  // Trigger box hit
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("BoiteEvenement"))
+        {
+            var scriptEvent = collision.gameObject.GetComponent<eventContainerScript>();
+
+            scriptEvent.actionOnCollsion();
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();

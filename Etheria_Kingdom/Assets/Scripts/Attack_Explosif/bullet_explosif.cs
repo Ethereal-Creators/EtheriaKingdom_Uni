@@ -43,6 +43,13 @@ public class Bullet_explosif : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Box"))
+        {
+            ItemBox itemBox = collision.GetComponent<ItemBox>();
+            if (itemBox != null) itemBox.OnHit();  // Trigger box hit
+            Destroy(gameObject);
+        }
+
         //ajout pour BoiteEvenement
         if (collision.CompareTag("BoiteEvenement"))
         {

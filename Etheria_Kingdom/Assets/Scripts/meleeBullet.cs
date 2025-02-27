@@ -24,6 +24,13 @@ public class melee : MonoBehaviour
             scriptEvent.actionOnCollsion();
         }
 
+        if (collision.CompareTag("Box"))
+        {
+            ItemBox itemBox = collision.GetComponent<ItemBox>();
+            if (itemBox != null) itemBox.OnHit();  // Trigger box hit
+            Destroy(gameObject);
+        }
+
         if (collision.GetComponent<EnemyMovement>())
         {
             HealthController healthController = collision.GetComponent<HealthController>();
