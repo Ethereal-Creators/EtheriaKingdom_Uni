@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: _maximumHealth
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3453706391884308665, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3547525766882835598, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_Color.b
       value: 0

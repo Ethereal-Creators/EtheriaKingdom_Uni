@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "New Shield Buff", menuName = "Powerups/Shield Buff")]
 public class ShieldBuff : PowerUpEffect
@@ -14,8 +13,19 @@ public class ShieldBuff : PowerUpEffect
     private float timeTilShieldStop = 10f;
     private float timeWhenShieldStop;
 
+    // Offset for the player's shield position
+    public Vector3 playerShieldOffset = new Vector3(0f, 1f, 0f);
+    public Vector3 crystalShieldOffset = Vector3.zero; // Allow customization of crystal shield offset
+
+    // Events for when the shield expires (optional)
+    public delegate void ShieldExpired(GameObject shield);
+    public event ShieldExpired OnShieldExpired;
+
     public override void Apply(GameObject target)
     {
+        // Ensure the target is not null
+        if (target == null) return;
+
         // Find the Crystal object in the scene
         GameObject crystal = GameObject.FindGameObjectWithTag("Crystal");
 
@@ -23,7 +33,7 @@ public class ShieldBuff : PowerUpEffect
         if (playerShield != null)
         {
             Debug.Log("Player shield already applied, destroying previous shield.");
-            Destroy(playerShield); // Remove the previous shield if it exists
+            DestroyShield(playerShield); // Remove the previous shield if it exists
         }
 
         // Instantiate the shield prefab at the player's position
@@ -46,7 +56,7 @@ public class ShieldBuff : PowerUpEffect
             if (crystalShield != null)
             {
                 Debug.Log("Crystal shield already applied, destroying previous shield.");
-                Destroy(crystalShield); // Remove the previous shield on the Crystal
+                DestroyShield(crystalShield); // Remove the previous shield on the Crystal
             }
 
             crystalShield = Instantiate(shieldPrefab, crystal.transform.position, Quaternion.identity);
@@ -97,15 +107,13 @@ public class ShieldBuff : PowerUpEffect
 
     public void Update()
     {
-        // Decrease the timer for each shield independently
+        // Update shield timers only when necessary
         if (playerShield != null)
         {
+            playerShield.transform.position = playerShield.transform.parent.position + playerShieldOffset;
+
+            // Reduce player shield timer
             playerShieldTimer -= Time.deltaTime;
-
-            // Debug the remaining time on the player shield
-            Debug.Log("Player shield time remaining: " + Mathf.Max(playerShieldTimer, 0f).ToString("F2") + " seconds.");
-
-            // Destroy the player shield when time runs out
             if (playerShieldTimer <= 0f)
             {
                 DestroyShield(playerShield);
@@ -114,12 +122,10 @@ public class ShieldBuff : PowerUpEffect
 
         if (crystalShield != null)
         {
+            crystalShield.transform.position = crystalShield.transform.parent.position + crystalShieldOffset;
+
+            // Reduce crystal shield timer
             crystalShieldTimer -= Time.deltaTime;
-
-            // Debug the remaining time on the crystal shield
-            Debug.Log("Crystal shield time remaining: " + Mathf.Max(crystalShieldTimer, 0f).ToString("F2") + " seconds.");
-
-            // Destroy the crystal shield when time runs out
             if (crystalShieldTimer <= 0f)
             {
                 DestroyShield(crystalShield);
@@ -155,6 +161,9 @@ public class ShieldBuff : PowerUpEffect
     {
         if (shield != null)
         {
+            // Optionally, invoke a callback if there are listeners
+            OnShieldExpired?.Invoke(shield);
+
             Destroy(shield); // Destroy the shield
             Debug.Log("Shield destroyed.");
         }

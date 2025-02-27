@@ -22,7 +22,7 @@ public class PlayerAwarenessController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if the GameObject that entered the trigger has the "Player" tag
-        if (other.CompareTag("Cryta"))
+        if (other.CompareTag("Crystal"))
         {
             _player = other.transform;  // Get the player's transform
             UpdateAwareness();          // Update the awareness as soon as player enters the trigger

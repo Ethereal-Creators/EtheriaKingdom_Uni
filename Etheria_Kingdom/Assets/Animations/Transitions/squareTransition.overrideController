@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: squareTransition
+  m_Controller: {fileID: 9100000, guid: d8741bac4e9a2cf4ea1465dccd2c6ea7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 68538aac367835746b508e58ed55a775, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cb02dc52d477f1949b61e56ea9ae0a65, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5d587364e78b08541820f4748db8684d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6067d80dcd8d9054ea7f10171c371421, type: 2}
