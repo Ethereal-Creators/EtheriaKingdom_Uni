@@ -51,6 +51,8 @@ public class ItemBox : MonoBehaviour
     {
         if (boxRenderer != null)
         {
+            BoxCollider2D colliderOfBox = this.gameObject.GetComponent<BoxCollider2D>();
+            colliderOfBox.enabled = false;
             // Play hit sound with random pitch
             PlayHitSound();
 
