@@ -8,12 +8,40 @@ public class eventContainerScript : MonoBehaviour
     public int maxAmountOfHit;
     public int totalOfHit;
 
+    private float timeDown = 0.0f;
+
+    public float frequecyOfCheckup;
+
+    public GameObject sprite;
     [SerializeField] UnityEvent actionOnDesepear;
+
+    private bool isAnimationActive = false;
+
+    public void Update()
+    {
+        timeDown += Time.deltaTime;
+        if (timeDown >= frequecyOfCheckup)
+        {
+            timeDown = 0.0f;
+            if (isAnimationActive == true)
+            {
+                sprite.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                isAnimationActive = false;
+                Debug.Log("Red");
+            }
+            else if (isAnimationActive == false)
+            {
+                sprite.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                Debug.Log("White");
+            }
+        }
+    }
 
     public void actionOnCollsion()
     {
         Debug.Log("Colided with 'BoiteEvenement'");
         totalOfHit++;
+        isAnimationActive = true;
 
         if (maxAmountOfHit <= totalOfHit)
         {

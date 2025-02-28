@@ -7597,6 +7597,18 @@ PrefabInstance:
       value: eventContainer
       objectReference: {fileID: 0}
     - target: {fileID: 3746255320432685743, guid: 92bde43643d1d8d458eab7c3f016c209, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 447891737}
+    - target: {fileID: 3746255320432685743, guid: 92bde43643d1d8d458eab7c3f016c209, type: 3}
+      propertyPath: frequecyOfCheckup
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746255320432685743, guid: 92bde43643d1d8d458eab7c3f016c209, type: 3}
+      propertyPath: frequecyOfCjeckup
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746255320432685743, guid: 92bde43643d1d8d458eab7c3f016c209, type: 3}
       propertyPath: actionOnDesepear.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
