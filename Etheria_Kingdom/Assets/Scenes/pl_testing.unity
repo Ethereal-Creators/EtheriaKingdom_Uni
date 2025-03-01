@@ -12577,12 +12577,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 7431062939664127180, guid: 2908cbbdffe18274bb0f3a42fa3cc5b2, type: 3}
+    - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 905223348}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: despawnDelay
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: blinkDuration
@@ -12614,19 +12618,19 @@ PrefabInstance:
       objectReference: {fileID: 7431062939664127180, guid: 2908cbbdffe18274bb0f3a42fa3cc5b2, type: 3}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: scaleShrinkAmount.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: scaleShrinkAmount.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: scaleShrinkAmount.z
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7132644758868206228, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: scaleShrinkDuration
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7544908207860563307, guid: 6743c86edcb1890478498ee57801c7e9, type: 3}
       propertyPath: m_SortingLayer
