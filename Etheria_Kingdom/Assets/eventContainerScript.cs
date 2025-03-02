@@ -13,6 +13,10 @@ public class eventContainerScript : MonoBehaviour
     public float frequecyOfCheckup;
 
     public GameObject sprite;
+
+    public GameObject InfoCanvas;
+
+    private bool isInfoCanvasActive = false;
     [SerializeField] UnityEvent actionOnDesepear;
 
     private bool isAnimationActive = false;
@@ -34,6 +38,16 @@ public class eventContainerScript : MonoBehaviour
                 sprite.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 Debug.Log("White");
             }
+
+            if (isInfoCanvasActive == true)
+            {
+                isInfoCanvasActive = false;
+                InfoCanvas.SetActive(true);
+            }
+            else if (isInfoCanvasActive == false)
+            {
+                InfoCanvas.SetActive(false);
+            }
         }
     }
 
@@ -43,11 +57,35 @@ public class eventContainerScript : MonoBehaviour
         totalOfHit++;
         isAnimationActive = true;
 
+        isInfoCanvasActive = true;
+
         if (maxAmountOfHit <= totalOfHit)
         {
             actionOnDesepear.Invoke();
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (InfoCanvas != null)
+        {
+            if (InfoCanvas.gameObject.activeSelf == false)
+            {
+                InfoCanvas.SetActive(true);
+            }
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D coll)
+    {
+        if (InfoCanvas != null)
+        {
+            if (InfoCanvas.gameObject.activeSelf == true)
+            {
+                InfoCanvas.SetActive(false);
+            }
         }
     }
 
