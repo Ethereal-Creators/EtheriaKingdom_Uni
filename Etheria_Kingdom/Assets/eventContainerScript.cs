@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class eventContainerScript : MonoBehaviour
 {
+
     public int maxAmountOfHit;
     public int totalOfHit;
 
@@ -23,6 +24,7 @@ public class eventContainerScript : MonoBehaviour
 
     public void Update()
     {
+
         timeDown += Time.deltaTime;
         if (timeDown >= frequecyOfCheckup)
         {
