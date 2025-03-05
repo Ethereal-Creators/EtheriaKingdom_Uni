@@ -59,11 +59,8 @@ public class SkeletonMovement : EnemyMovement
         // Apply the rotation to the object
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle));
 
-        // Update the target direction to move toward the crystal
-        _targetDirection = directionToCrystal;
-
         // Set velocity in the direction of the target
-        _rigidbody.velocity = _targetDirection * _speed;
+        _rigidbody.velocity = directionToCrystal * _speed;
     }
 
     private void PatrolRandomly()
