@@ -4324,7 +4324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: clipsStart.Array.size
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: maxBigSwarmerInterval
@@ -4358,6 +4358,22 @@ PrefabInstance:
       propertyPath: clipsStart.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: 3c9ecdb6895d0f8418d3ddef393ba7a6, type: 3}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: clipsStart.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: f8b512515bb2e4448bda6e1fe3aa0fa8, type: 3}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: clipsStart.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d2e06f5155cd4f4b9f18ed7cc95edf1, type: 3}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: clipsStart.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 876bc11beb07a0b4fb3ff5f355b31525, type: 3}
+    - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
+      propertyPath: clipsStart.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 27e88187286f3014d928fdbec53cd9a2, type: 3}
     - target: {fileID: 6100307970236179954, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: m_Name
       value: EnnemieSpawnerFly (1)
@@ -12718,7 +12734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: clipsStart.Array.size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: maxBigSwarmerInterval
@@ -12748,6 +12764,26 @@ PrefabInstance:
       propertyPath: clipsStart.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: b0d5dbe4fbcaff6469fe6b3ef600ce72, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: clipsStart.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f066db62bad59ed4295feeee5192c10c, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: clipsStart.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd8782bb0ebceb84cb94893ab52729e3, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: clipsStart.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 603873214e10d9a45bd5e918979de470, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: clipsStart.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 12683b7774a36ee4596a157231d6cf7f, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: clipsStart.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: df2186cd5a6d6d64baff06a26d1c0976, type: 3}
     - target: {fileID: 6058958625850477044, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.73

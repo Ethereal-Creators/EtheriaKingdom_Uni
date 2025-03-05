@@ -203,6 +203,15 @@ MonoBehaviour:
   source: {fileID: -8570710487426872915}
   clipsStart:
   - {fileID: 8300000, guid: 1831818df95ac204ab8c9e1d298219d0, type: 3}
+  - {fileID: 8300000, guid: ee48a63614d92594695fb1a5e2c45923, type: 3}
+  - {fileID: 8300000, guid: ce725b27a1fdab240a1d9e86edceb2b2, type: 3}
+  - {fileID: 8300000, guid: 4e1ae251de8e8cd448d0f2a4ddd86a2d, type: 3}
+  - {fileID: 8300000, guid: a25aa76300f6b534aa1db991b6b3ce25, type: 3}
+  - {fileID: 8300000, guid: b70cc7a6e2f26a04ba14bbc3ff659e57, type: 3}
+  - {fileID: 8300000, guid: 23f9153e636517c43822bca43319494c, type: 3}
+  - {fileID: 8300000, guid: e629c72386fc1964399b53a9993e08ad, type: 3}
+  - {fileID: 8300000, guid: f3d0aaf9717dd364688f3a433d19f399, type: 3}
+  - {fileID: 8300000, guid: 3d1081ea42e2f1244ac215f995ce184e, type: 3}
   minPitch: 0.8
   maxPitch: 1.2
   minVolume: 0.8
