@@ -8,6 +8,8 @@ public class collideStartEventScript : MonoBehaviour
 
     public GameObject ProtectionObject;
 
+    public GameObject SelectCharachterThatActivate;
+
     public float timeTilEventStop; // Time until scene change
     private float timeWhenEventStop;
 
@@ -32,8 +34,9 @@ public class collideStartEventScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
-        if (/*coll.gameObject.tag == "ennemie" && coll.gameObject.tag != "projectile" &&*/ coll.gameObject.tag == "joueur")
+        if (/*coll.gameObject.tag == "ennemie" && coll.gameObject.tag != "projectile" &&*/ coll.gameObject.tag == "joueur" && coll.gameObject == SelectCharachterThatActivate.gameObject)
         {
+            Debug.Log("collide with right charachter");
             Debug.Log("Collided with event");
 
             //deactivate gameObject visibiliti and interactibility

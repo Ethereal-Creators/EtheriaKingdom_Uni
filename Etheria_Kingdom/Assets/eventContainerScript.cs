@@ -38,7 +38,7 @@ public class eventContainerScript : MonoBehaviour
             else if (isAnimationActive == false)
             {
                 sprite.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                Debug.Log("White");
+                //Debug.Log("White");
             }
 
             if (isInfoCanvasActive == true)
