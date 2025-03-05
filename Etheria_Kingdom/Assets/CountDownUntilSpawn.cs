@@ -19,6 +19,13 @@ public class CountDownUntilSpawn : MonoBehaviour
 
     private int currentMaxSpawned = 0;
 
+    [Header("------- Audio -------")]
+
+    [SerializeField]
+    private AudioSource source;
+
+    public List<AudioClip> clips = new List<AudioClip>();
+
     //public GameObject[] ListPowerUpBox;
 
     // Update is called once per frame
@@ -45,6 +52,12 @@ public class CountDownUntilSpawn : MonoBehaviour
             if (isFirstDone == false)
             {
                 isFirstDone = true;
+            }
+
+            if (source != null && clips.Count > 0)
+            {
+                int randomClipIndex = Random.Range(0, clips.Count);
+                source.PlayOneShot(clips[randomClipIndex]);
             }
 
             timeDown = 0.0f;

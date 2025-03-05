@@ -22,6 +22,13 @@ public class eventContainerScript : MonoBehaviour
 
     private bool isAnimationActive = false;
 
+    [Header("------- Audio -------")]
+
+    [SerializeField]
+    private AudioSource source;
+
+    public List<AudioClip> clips = new List<AudioClip>();
+
     public void Update()
     {
 
@@ -63,6 +70,11 @@ public class eventContainerScript : MonoBehaviour
 
         if (maxAmountOfHit <= totalOfHit)
         {
+            if (source != null && clips.Count > 0)
+            {
+                int randomClipIndex = Random.Range(0, clips.Count);
+                source.PlayOneShot(clips[randomClipIndex]);
+            }
             actionOnDesepear.Invoke();
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
