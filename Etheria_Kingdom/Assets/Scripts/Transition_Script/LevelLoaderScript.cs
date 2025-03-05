@@ -24,7 +24,7 @@ public class LevelLoaderScript : MonoBehaviour
 
     public int NextSceneIndex;
 
-    public string NextSceneName;
+    private string NextSceneName;
 
     void Start()
     {
@@ -55,6 +55,11 @@ public class LevelLoaderScript : MonoBehaviour
     public void StartAnimAction()
     {
         isStartAnimation = true;
+    }
+
+    public void NextLevelName(string nextLevelName)
+    {
+        NextSceneName = nextLevelName;
     }
 
     public void LoadNextLevel()
