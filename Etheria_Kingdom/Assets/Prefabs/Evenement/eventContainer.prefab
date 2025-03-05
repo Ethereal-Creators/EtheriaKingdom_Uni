@@ -155,7 +155,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   source: {fileID: 8907535545337572970}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: b2bd1186d5d9bf642927ef6e9c5f0854, type: 3}
+  - {fileID: 8300000, guid: 74a3577eacef98c4788594457cf1c195, type: 3}
+  - {fileID: 8300000, guid: 755968d712b85ac4397c4160aea6ff16, type: 3}
+  - {fileID: 8300000, guid: 85d295cce55efec419bfe7aa898bb28f, type: 3}
+  - {fileID: 8300000, guid: 3b430f06ab3c82046989b86454a4d588, type: 3}
+  - {fileID: 8300000, guid: a12f7101f9a902a4c8ab1bc9a14ca56b, type: 3}
+  - {fileID: 8300000, guid: e6b5fc27e3cee3a4183e68fb2cfe395a, type: 3}
+  - {fileID: 8300000, guid: 0d9a8a402a769394f8d2b1eafc314e26, type: 3}
+  - {fileID: 8300000, guid: b61a0f2278d8794448bac5b19fb4ac1b, type: 3}
+  - {fileID: 8300000, guid: 66e489d5cf75bd241912cc5a58a6e172, type: 3}
 --- !u!82 &8907535545337572970
 AudioSource:
   m_ObjectHideFlags: 0
