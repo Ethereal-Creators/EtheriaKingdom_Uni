@@ -3,74 +3,78 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Powerup/StrengthBuff")]
 public class StrengthBuffEffect : PowerUpEffect
 {
-    public int damageBuffAmount = 5;  // Amount to increase the bullet damage by
-    public GameObject animationPrefab;  // Animation effect (like a particle effect)
-    public Vector3 animationOffset = new Vector3(0f, 1f, 0f);  // Position offset for the animation relative to the player
-    public float animationDuration = 2f;  // Duration before the animation prefab is destroyed
-    public float buffDuration = 10f;  // Duration for the strength buff effect
+    public int damageBuffAmount = 5;
+    public GameObject animationPrefab;
+    public Vector3 animationOffset = new Vector3(0f, 1f, 0f);
+    public float animationDuration = 2f;
+    public float buffDuration = 10f;
 
-    private int originalMinDamage;  // To store the original minDamage before the buff
-    private int originalMaxDamage;  // To store the original maxDamage before the buff
-    private float buffTimer;  // Timer to track the buff duration
+    private int originalMinDamage;
+    private int originalMaxDamage;
+    private float buffTimer;
 
     public override void Apply(GameObject target)
     {
-        // Find the PlayerShoot component (assume player has this component)
+        Debug.Log("Applying Strength Buff to: " + target.name);
+
         PlayerShoot playerShoot = target.GetComponent<PlayerShoot>();
         if (playerShoot != null)
         {
-            // Get the player's Bullet component (assuming the player shoots bullets)
             Bullet playerBullet = playerShoot.GetComponentInChildren<Bullet>();
             if (playerBullet != null)
             {
-                // Save the original bullet damage values before the buff
                 originalMinDamage = playerBullet.minDamage;
                 originalMaxDamage = playerBullet.maxDamage;
 
-                // Apply the damage buff to the bullet (increase both minDamage and maxDamage)
                 playerBullet.SetDamage(originalMinDamage + damageBuffAmount, originalMaxDamage + damageBuffAmount);
                 Debug.Log("Strength buff applied: " + damageBuffAmount + " damage added. New damage range: " +
                           playerBullet.minDamage + " - " + playerBullet.maxDamage);
 
-                // Apply the animation (visual effect) at the player’s position
                 ApplyAnimation(target);
 
-                // Start a timer to remove the buff after a certain duration
                 buffTimer = buffDuration;
                 Debug.Log("Buff duration started: " + buffDuration + " seconds.");
             }
+            else
+            {
+                Debug.LogWarning("No Bullet component found on player's shooting mechanism.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("PlayerShoot component not found on target.");
         }
     }
 
     private void ApplyAnimation(GameObject target)
     {
-        // Instantiate the animation prefab at the player's position
+        Debug.Log("Attempting to instantiate animation effect...");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null && animationPrefab != null)
         {
             Vector3 animationPosition = player.transform.position + animationOffset;
             GameObject animationInstance = Instantiate(animationPrefab, animationPosition, Quaternion.identity);
             animationInstance.transform.SetParent(player.transform);
-            animationInstance.transform.localPosition = new Vector3(0, 1, 0);  // Adjust as needed
-            Destroy(animationInstance, animationDuration);  // Destroy animation after the given duration
-            Debug.Log("Animation prefab instantiated at: " + animationPosition);
+            animationInstance.transform.localPosition = new Vector3(0, 1, 0);
+            Destroy(animationInstance, animationDuration);
+            Debug.Log("Animation instantiated at: " + animationPosition);
         }
         else
         {
-            Debug.LogWarning("No animation prefab assigned to StrengthBuffEffect.");
+            Debug.LogWarning("No animation prefab assigned or player not found.");
         }
     }
 
     private void Update()
     {
-        // If buff is active, track the buff timer
         if (buffTimer > 0)
         {
-            buffTimer -= Time.deltaTime;  // Decrease timer based on time passed
+            buffTimer -= Time.deltaTime;
+            Debug.Log("Buff timer counting down: " + buffTimer.ToString("F2") + " seconds remaining.");
 
             if (buffTimer <= 0)
             {
-                // Revert bullet damage back to original values once the buff time expires
+                Debug.Log("Buff timer expired. Reverting damage...");
                 RevertDamage();
             }
         }
@@ -78,18 +82,25 @@ public class StrengthBuffEffect : PowerUpEffect
 
     private void RevertDamage()
     {
-        // Find the PlayerBullet and reset the damage back to its original state
+        Debug.Log("Reverting Strength Buff...");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             Bullet playerBullet = player.GetComponentInChildren<Bullet>();
             if (playerBullet != null)
             {
-                // Revert damage values back to the original
                 playerBullet.SetDamage(originalMinDamage, originalMaxDamage);
                 Debug.Log("Strength buff removed. Damage reverted to: " +
                           originalMinDamage + " - " + originalMaxDamage);
             }
+            else
+            {
+                Debug.LogWarning("No Bullet component found while trying to revert damage.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player object not found while trying to revert damage.");
         }
     }
 }
