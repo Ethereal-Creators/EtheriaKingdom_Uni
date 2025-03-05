@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3496128601721645050}
   - component: {fileID: 2689850987062952640}
   - component: {fileID: 3746255320432685743}
-  - component: {fileID: 2177723569898170624}
   m_Layer: 0
   m_Name: eventContainer
   m_TagString: BoiteEvenement
@@ -44,7 +43,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3744413508183570976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -154,33 +153,6 @@ MonoBehaviour:
   actionOnDesepear:
     m_PersistentCalls:
       m_Calls: []
---- !u!50 &2177723569898170624
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744413508183570976}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6407597220635777191
 GameObject:
   m_ObjectHideFlags: 0

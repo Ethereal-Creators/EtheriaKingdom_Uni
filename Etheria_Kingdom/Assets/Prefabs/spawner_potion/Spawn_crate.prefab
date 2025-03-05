@@ -107,5 +107,15 @@ MonoBehaviour:
   minimumRandomY: -2
   maximumRandomY: 2
   source: {fileID: 0}
-  clipsStart: []
+  clipsStart:
+  - {fileID: 8300000, guid: 7220597cd5834d642b883ab784807c69, type: 3}
+  - {fileID: 8300000, guid: 3170e41e3ea07f84dbdcf1caa41f5f45, type: 3}
+  - {fileID: 8300000, guid: 58dcf97c437a2ee488402d5503c7e0bf, type: 3}
+  - {fileID: 8300000, guid: 22eef4cedabfa944197bbd2f129c2fe7, type: 3}
+  - {fileID: 8300000, guid: 6114400d7eaeb73469d8e5883216b322, type: 3}
+  - {fileID: 8300000, guid: f2bf8e97a377a144ca32d275b9d93203, type: 3}
+  - {fileID: 8300000, guid: 80441d29f42d4cd4293485439f63473d, type: 3}
+  - {fileID: 8300000, guid: cd5511833dbd1ef4caef1cce8b4a19ef, type: 3}
+  - {fileID: 8300000, guid: 0bb3212a17233d344a42b7577c449657, type: 3}
+  - {fileID: 8300000, guid: c488f8a7be62d7340b5f249903e0371a, type: 3}
   ListItems: []
