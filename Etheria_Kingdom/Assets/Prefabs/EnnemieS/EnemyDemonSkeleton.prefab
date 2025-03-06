@@ -124,6 +124,14 @@ MonoBehaviour:
   myCrystal: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 1db11897ae907834b84053676182e427, type: 3}
+  - {fileID: 8300000, guid: cf88cd4acd217c1479afdd17455533ca, type: 3}
+  - {fileID: 8300000, guid: 5352dbf49524dd94f82918bc3682bafe, type: 3}
+  - {fileID: 8300000, guid: e02ca4acf59c7e3468cfea505eb47c50, type: 3}
+  - {fileID: 8300000, guid: d29a9e1f575f06a4e9b9b7c2652ff1bd, type: 3}
+  - {fileID: 8300000, guid: 26ab82f60ebf40442bb116aa95161165, type: 3}
+  - {fileID: 8300000, guid: d526361191831f84995e6b9b6c3f6cda, type: 3}
+  - {fileID: 8300000, guid: edaeb70e469959c44b5f0409dd2aa01f, type: 3}
+  - {fileID: 8300000, guid: ff1fc5e630cd5cf439c26291e989d825, type: 3}
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -189,7 +197,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4027891617334647249}
         m_TargetAssemblyTypeName: HealthController, Assembly-CSharp
-        m_MethodName: soundWhenDameged
+        m_MethodName: soundWhenDamaged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -204,7 +212,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4027891617334647249}
         m_TargetAssemblyTypeName: HealthController, Assembly-CSharp
-        m_MethodName: soundWhenDameged
+        m_MethodName: soundWhenDamaged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

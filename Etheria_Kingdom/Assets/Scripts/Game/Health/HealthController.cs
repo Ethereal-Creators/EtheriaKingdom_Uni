@@ -177,7 +177,7 @@ public class HealthController : MonoBehaviour
     public void soundWhenDamaged()
     {
         Debug.Log("Damaged");
-        if (source != null)
+        if (source != null && clips.Count > 0)
         {
             int randomClipIndex = Random.Range(0, clips.Count);
             source.PlayOneShot(clips[randomClipIndex]);
