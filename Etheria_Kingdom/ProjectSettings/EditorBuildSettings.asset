@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_transition_test/Scene02_transition_test.unity
     guid: 609beceb254912e42a2b96ac0ad145c6
+  - enabled: 1
+    path: Assets/Scenes/Vagues/vague_01_OSC.unity
+    guid: 14a92d09a117bc148802f004778c1150
+  - enabled: 1
+    path: Assets/Scenes/Vagues/vague_03.unity
+    guid: 033743f54526a62458e95c3ae99ad9cf
+  - enabled: 1
+    path: Assets/Scenes/Vagues/vague_05.unity
+    guid: 00d0f7a33fd68604ab547974ab3f0ac7
   m_configObjects: {}
