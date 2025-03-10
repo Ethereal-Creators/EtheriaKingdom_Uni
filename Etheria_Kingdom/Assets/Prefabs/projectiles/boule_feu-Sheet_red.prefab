@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifespan: 5
   damage: 1
+  explosionEffect: {fileID: 5415255095770863966, guid: 752510ddf26079342b76c3199603c897, type: 3}
 --- !u!95 &8755707385996013298
 Animator:
   serializedVersion: 5
