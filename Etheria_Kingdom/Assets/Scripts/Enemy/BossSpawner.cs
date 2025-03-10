@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject bossPrefab;  // Reference to the boss prefab
+    public Vector2 spawnPosition;  // Position to spawn the boss
+    private bool bossSpawned = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Spawn the boss once when it's not spawned yet
+        if (!bossSpawned)
+        {
+            SpawnBoss();
+            bossSpawned = true;
+        }
+    }
+
+    void SpawnBoss()
+    {
+        // Instantiate the boss at the specified position
+        Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
     }
 }
