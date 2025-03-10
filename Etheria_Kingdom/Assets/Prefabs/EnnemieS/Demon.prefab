@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 992907962413844407}
   - component: {fileID: 2113501632991416452}
+  - component: {fileID: 1797882955527541421}
   - component: {fileID: 2556670108437405197}
   - component: {fileID: 5619826918175602309}
+  - component: {fileID: 4534478965471841963}
   - component: {fileID: 7991423697473610596}
   - component: {fileID: 1280882982515174442}
   - component: {fileID: 3613574955551628718}
@@ -36,8 +38,8 @@ Transform:
   m_GameObject: {fileID: 8738061489181289260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.77, y: 4.42, z: 0.049217686}
-  m_LocalScale: {x: 1.8915, y: 1.9818, z: 1}
+  m_LocalPosition: {x: 2.7658, y: 3.9954, z: 0.049217686}
+  m_LocalScale: {x: 0.90212923, y: 0.86743003, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,6 +96,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1797882955527541421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738061489181289260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a6ec75dca0acb4aac9ca9b36d36ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Crystal
+  obstacleTag: Box
+  moveSpeed: 0.3
+  obstacleDetectionRange: 2
+  avoidanceStrength: 5
+  backUpDistance: 2.75
+  backUpDuration: 1
 --- !u!50 &2556670108437405197
 Rigidbody2D:
   serializedVersion: 4
@@ -153,7 +174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.015684187, y: -0.02777195}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,8 +185,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 1.2719663, y: 1.7350175}
   m_EdgeRadius: 0
+--- !u!114 &4534478965471841963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738061489181289260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96880192b45429d4584cbe16cb5ed3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 5494188729679396398, guid: fed4f3ad801974d408ec9f8ee23b3f6d, type: 3}
+  fireballSpawnPoint: {fileID: 992907962413844407}
+  fireballSpeed: 5
+  fireballCooldown: 2
 --- !u!114 &7991423697473610596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005c07311135b8847bf68bb343f5fe5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 0.3
   _rotationSpeed: 100
   _screenBorder: 0
 --- !u!114 &6941101774747387132
@@ -302,7 +339,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.7333014
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
