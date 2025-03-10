@@ -54,11 +54,7 @@ public class CountDownUntilSpawn : MonoBehaviour
                 isFirstDone = true;
             }
 
-            if (source != null && clips.Count > 0)
-            {
-                int randomClipIndex = Random.Range(0, clips.Count);
-                source.PlayOneShot(clips[randomClipIndex]);
-            }
+            
 
             timeDown = 0.0f;
             Debug.Log("hello number : " + currentMaxSpawned);
@@ -66,6 +62,12 @@ public class CountDownUntilSpawn : MonoBehaviour
             {
                 if (ListPowerUpBox[currentMaxSpawned] != null)
                 {
+                    if (source != null && clips.Count > 0)
+                    {
+                        int randomClipIndex = Random.Range(0, clips.Count);
+                        source.PlayOneShot(clips[randomClipIndex]);
+                    }
+
                     ListPowerUpBox[currentMaxSpawned].SetActive(true);
                     currentMaxSpawned++;
                 }
