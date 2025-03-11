@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vagues/vague_08.unity
     guid: df844b79912de774eb62d8c67e604444
+  - enabled: 1
+    path: Assets/Scenes/Vagues/vague_09.unity
+    guid: d1dcf7344e25d8d41ab420e44c5743e2
   m_configObjects: {}
