@@ -4226,11 +4226,11 @@ PrefabInstance:
     - target: {fileID: 5305647674388085622, guid: 9475dbc5bab849549bebba196891150b, type: 3}
       propertyPath: ListPowerUpBox.Array.data[0]
       value: 
-      objectReference: {fileID: 1244948881}
+      objectReference: {fileID: 819751237}
     - target: {fileID: 5305647674388085622, guid: 9475dbc5bab849549bebba196891150b, type: 3}
       propertyPath: ListPowerUpBox.Array.data[1]
       value: 
-      objectReference: {fileID: 819751237}
+      objectReference: {fileID: 1244948881}
     - target: {fileID: 5305647674388085622, guid: 9475dbc5bab849549bebba196891150b, type: 3}
       propertyPath: ListPowerUpBox.Array.data[2]
       value: 
