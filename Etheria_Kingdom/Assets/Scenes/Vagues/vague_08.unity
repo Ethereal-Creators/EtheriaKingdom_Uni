@@ -3027,7 +3027,7 @@ PrefabInstance:
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerPrefab
       value: 
-      objectReference: {fileID: 1018288979265334731, guid: 09c5d3dd791bc144dadc81db7f69a11d, type: 3}
+      objectReference: {fileID: 2007748770767794558, guid: 096690c43ff4fdc4c910a7acd6ce1178, type: 3}
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerInterval
       value: 15.73
@@ -4576,7 +4576,7 @@ PrefabInstance:
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: swarmerPrefab
       value: 
-      objectReference: {fileID: 1370315086160374457, guid: 4f527056b1da5a94cb04af0bf5c25734, type: 3}
+      objectReference: {fileID: 2007748770767794558, guid: 096690c43ff4fdc4c910a7acd6ce1178, type: 3}
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerPrefab
       value: 
@@ -8062,6 +8062,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: swarmerPrefab
+      value: 
+      objectReference: {fileID: 2007748770767794558, guid: 096690c43ff4fdc4c910a7acd6ce1178, type: 3}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: swarmerInterval
       value: 5
       objectReference: {fileID: 0}
@@ -8708,7 +8712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15e7bda460f23b744beee7d6d1d2427f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57add5d9b0f825e41bcaaa94bda2aaa4, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13247,6 +13251,10 @@ PrefabInstance:
       propertyPath: swarmerInterval
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
+      propertyPath: bigSwarmerPrefab
+      value: 
+      objectReference: {fileID: 2007748770767794558, guid: 096690c43ff4fdc4c910a7acd6ce1178, type: 3}
     - target: {fileID: 843899931508728596, guid: 57e34a22196c4004fbd45e7e0fef7872, type: 3}
       propertyPath: bigSwarmerInterval
       value: 19.47

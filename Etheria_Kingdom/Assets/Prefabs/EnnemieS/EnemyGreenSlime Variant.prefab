@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1806117826898474165, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: _currentHealth
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1806117826898474165, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: _maximumHealth
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1806117826898474165, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.040607214
       objectReference: {fileID: 0}
+    - target: {fileID: 4111057581402383160, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111057581402383160, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4568435609483971548, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: _scoreTextPrefab
       value: 
@@ -79,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 5778755508913332856, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970788247952333487, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+      propertyPath: _damageAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7258360570811513122, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: _currentHealth

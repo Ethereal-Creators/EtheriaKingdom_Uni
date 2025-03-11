@@ -39,7 +39,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.59, y: 2.26, z: -0.01597974}
-  m_LocalScale: {x: 2.70556, y: 2.4596, z: 1.0465144}
+  m_LocalScale: {x: 3, y: 3, z: 1.0465144}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408daea35811c1040aab7aba323b5153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 5
+  _damageAmount: 15
 --- !u!114 &1827007147707681512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 4897039118670476552, guid: 8d5ec3a044b732c48bac541aab9f7da1, type: 3}
-  _currentHealth: 10
-  _maximumHealth: 10
+  _currentHealth: 20
+  _maximumHealth: 20
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.2
   deathBlinkCount: 0
