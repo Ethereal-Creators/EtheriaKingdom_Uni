@@ -66,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4111057581402383160, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4111057581402383160, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4568435609483971548, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
       propertyPath: _scoreTextPrefab
