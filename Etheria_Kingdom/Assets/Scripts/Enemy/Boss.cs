@@ -7,6 +7,8 @@ public class Boss : MonoBehaviour
     public float fireballSpeed = 5f;
     public float fireballCooldown = 2f;
 
+    public Vector2 fireballOffset = new Vector2(0, 0);  // Offset for the spawn position of the fireball
+
     private bool isShootingEnabled = true;  // Flag to control whether the boss is shooting
     private float fireballTimer = 0f;
 
@@ -25,8 +27,11 @@ public class Boss : MonoBehaviour
 
     void ShootFireball()
     {
-        // Logic to shoot a fireball
-        GameObject fireball = Instantiate(fireballPrefab, fireballSpawnPoint.position, Quaternion.identity);
+        // Apply the offset to the fireball spawn position
+        Vector3 spawnPosition = fireballSpawnPoint.position + (Vector3)fireballOffset;
+
+        // Instantiate the fireball at the new spawn position
+        GameObject fireball = Instantiate(fireballPrefab, spawnPosition, Quaternion.identity);
         Rigidbody2D rb = fireball.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * fireballSpeed;
     }

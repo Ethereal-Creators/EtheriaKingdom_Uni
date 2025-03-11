@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1672966119
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -932530428, guid: d988d0188d8763d48b9a47d98fb1d730, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -202,10 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96880192b45429d4584cbe16cb5ed3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireballPrefab: {fileID: 5494188729679396398, guid: fed4f3ad801974d408ec9f8ee23b3f6d, type: 3}
+  fireballPrefab: {fileID: 8092963801589073036, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
   fireballSpawnPoint: {fileID: 992907962413844407}
   fireballSpeed: 5
-  fireballCooldown: 2
+  fireballCooldown: 5
+  fireballOffset: {x: 0.42, y: 0}
 --- !u!114 &7991423697473610596
 MonoBehaviour:
   m_ObjectHideFlags: 0
