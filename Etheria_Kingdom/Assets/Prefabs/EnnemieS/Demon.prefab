@@ -38,8 +38,8 @@ Transform:
   m_GameObject: {fileID: 8738061489181289260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7658, y: 3.9954, z: 0.049217686}
-  m_LocalScale: {x: 0.90212923, y: 0.86743003, z: 1}
+  m_LocalPosition: {x: 3.2011, y: 3.5786, z: 0.049217686}
+  m_LocalScale: {x: 0.5538622, y: 0.5339899, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +115,9 @@ MonoBehaviour:
   avoidanceStrength: 5
   backUpDistance: 2.75
   backUpDuration: 1
+  circleRadius: 0.25
+  circleSpeed: 1
+  verticalAvoidanceDistance: 5
 --- !u!50 &2556670108437405197
 Rigidbody2D:
   serializedVersion: 4

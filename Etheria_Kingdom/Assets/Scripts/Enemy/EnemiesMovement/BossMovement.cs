@@ -9,6 +9,9 @@ public class BossMovement : MonoBehaviour
     public float avoidanceStrength = 3f;  // Strength of the avoidance (how much it will move around the obstacle)
     public float backUpDistance = 2f;  // Distance to back up when colliding with the crystal
     public float backUpDuration = 1f;  // Duration for the backup movement
+    public float circleRadius = 5f; // Radius around the crystal that the boss will move in
+    public float circleSpeed = 1f; // Speed at which the boss moves around the crystal
+    public float verticalAvoidanceDistance = 5f; // The height at which the boss will move to avoid the box
 
     private Transform target;  // The target the boss is moving towards (e.g., the crystal)
     private bool isCollidingWithBox = false;  // Flag to check if the boss collided with the Box
@@ -48,75 +51,26 @@ public class BossMovement : MonoBehaviour
             return;  // Skip the movement towards the target while backing up
         }
 
-        // If a target exists, move towards it
+        // If a target exists, move around it
         if (target != null)
         {
-            MoveTowardsTarget();
+            MoveAroundTarget();
         }
     }
 
-    void MoveTowardsTarget()
+    void MoveAroundTarget()
     {
-        Vector2 direction = (target.position - transform.position).normalized;  // Direction to the target (crystal)
+        // Calculate the direction to move around the crystal in a circular path
+        Vector3 directionToTarget = target.position - transform.position;
+        Vector3 perpendicularDirection = Vector3.Cross(directionToTarget, Vector3.forward).normalized;
 
-        // Check if there is an obstacle directly in front of the boss
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, obstacleDetectionRange);
+        // Move along the perpendicular direction (circle around the target)
+        transform.Translate(perpendicularDirection * circleSpeed * Time.deltaTime, Space.World);
 
-        if (hit.collider != null)
-        {
-            // If the hit object is tagged "Box", avoid it
-            if (hit.collider.CompareTag(obstacleTag))
-            {
-                AvoidObstacle(hit.collider, direction);
-            }
-            else
-            {
-                // If it's another object, move forward (or stop based on your needs)
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
-            }
-        }
-        else
-        {
-            // No obstacle detected, move directly towards the target
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
-        }
-    }
-
-    void AvoidObstacle(Collider2D obstacle, Vector2 originalDirection)
-    {
-        // Simple avoidance logic: if an obstacle is detected, try moving around it
-        Vector2 avoidanceDirection = Vector2.zero;
-
-        // Raycast to the left and right of the boss to find an open path
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, (Vector2)transform.up + new Vector2(-1, 0), obstacleDetectionRange);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, (Vector2)transform.up + new Vector2(1, 0), obstacleDetectionRange);
-
-        // If there's an open space to the left, avoid to the left
-        if (hitLeft.collider == null)
-        {
-            avoidanceDirection = new Vector2(-1, 0);  // Move left
-        }
-        // If there's an open space to the right, avoid to the right
-        else if (hitRight.collider == null)
-        {
-            avoidanceDirection = new Vector2(1, 0);  // Move right
-        }
-
-        // If there is space to avoid, move around the obstacle
-        if (avoidanceDirection != Vector2.zero)
-        {
-            // Move the boss to the side (left or right)
-            transform.Translate(avoidanceDirection * avoidanceStrength * Time.deltaTime);
-
-            // After avoiding, continue moving toward the target (adjust as needed)
-            transform.Translate(originalDirection * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            // If no avoidance direction is found, simply stop (or use other fallback logic)
-            // For now, the boss will stop in front of the obstacle
-            transform.Translate(originalDirection * 0f * Time.deltaTime);
-        }
+        // Keep facing the crystal while moving
+        Vector3 directionToFace = target.position - transform.position;
+        float angle = Mathf.Atan2(directionToFace.y, directionToFace.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     // Method to stop shooting fireballs (called when the boss collides with the "Box")
@@ -225,6 +179,30 @@ public class BossMovement : MonoBehaviour
         else
         {
             // If no avoidance direction is found, move back slightly or continue your logic
+            transform.Translate(Vector2.zero);
+        }
+    }
+
+    // Adjust the avoidance logic to move above the box instead of around it
+    void AvoidObstacle(Collider2D obstacle)
+    {
+        // Check if the boss is not blocked vertically (above or below the box)
+        RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, Vector2.up, verticalAvoidanceDistance);
+        RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, Vector2.down, verticalAvoidanceDistance);
+
+        if (hitAbove.collider == null)
+        {
+            // No obstacle above, move upwards to avoid the box
+            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+        }
+        else if (hitBelow.collider == null)
+        {
+            // No obstacle below, move downwards to avoid the box
+            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            // If blocked vertically, handle it with other logic, like stopping or trying a different approach
             transform.Translate(Vector2.zero);
         }
     }

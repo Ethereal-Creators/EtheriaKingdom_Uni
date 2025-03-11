@@ -37,9 +37,9 @@ public class FireballBoss : MonoBehaviour
             // Destroy the fireball after the collision and effect
             Destroy(gameObject);
         }
-        else
+        else if (!collision.gameObject.CompareTag("Box"))
         {
-            // Optionally handle other types of collisions, e.g., with walls or enemies
+            // Optionally handle other types of collisions (for example, with walls or enemies)
             Destroy(gameObject);
         }
     }
