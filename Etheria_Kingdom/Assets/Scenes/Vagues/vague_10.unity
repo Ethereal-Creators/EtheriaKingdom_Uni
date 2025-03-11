@@ -13288,7 +13288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossPrefab: {fileID: 8738061489181289260, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
-  spawnPosition: {x: 0.44, y: 12.41}
+  spawnPosition: {x: 0.17, y: 12.41}
 --- !u!1001 &7844439306731949621
 PrefabInstance:
   m_ObjectHideFlags: 0
