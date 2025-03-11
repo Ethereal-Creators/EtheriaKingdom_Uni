@@ -12963,8 +12963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa60c7c2316fd6043b6f57df4a572747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swarmerPrefab: {fileID: 7163088640835516832, guid: a2319144c110aff4d84e59eed82cb3cb, type: 3}
-  bigSwarmerPrefab: {fileID: 4923694649543945561, guid: c9a31415e22cf40468f399f0ab1c8876, type: 3}
+  swarmerPrefab: {fileID: 5214635930998781210, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
+  bigSwarmerPrefab: {fileID: 5214635930998781210, guid: 0417a85904cb7914f83ff1f4be4c2ef3, type: 3}
   minSwarmerInterval: 11
   maxSwarmerInterval: 14
   minBigSwarmerInterval: 17
@@ -12973,7 +12973,17 @@ MonoBehaviour:
   minimumRandom: -5
   maxEnemies: 10
   source: {fileID: 2105150292}
-  clipsStart: []
+  clipsStart:
+  - {fileID: 8300000, guid: 6af6f63db066d2d428d876d03ef02941, type: 3}
+  - {fileID: 8300000, guid: cd600930bb97a9f4394201df569f33a0, type: 3}
+  - {fileID: 8300000, guid: 504291d4ea58d0d428205bab1154fc10, type: 3}
+  - {fileID: 8300000, guid: 176142dbc7f1e7d4db94329f120b1976, type: 3}
+  - {fileID: 8300000, guid: 8e4e4fc09d0de414aaaa62a17054ddf6, type: 3}
+  - {fileID: 8300000, guid: 1029477b38f7af645a2c9042ebc7456a, type: 3}
+  - {fileID: 8300000, guid: 0d6f8640d8bd4b147a8ef303f4e52c81, type: 3}
+  - {fileID: 8300000, guid: 6f93a8ddc0346ac4c9b3fc0d7f0486e0, type: 3}
+  - {fileID: 8300000, guid: eaa2e94638dc3c4498d1bc06a28b2477, type: 3}
+  - {fileID: 8300000, guid: 23a8d7ab09720ba40835d21d3f3d49ad, type: 3}
 --- !u!82 &2105150292
 AudioSource:
   m_ObjectHideFlags: 0

@@ -4283,7 +4283,7 @@ PrefabInstance:
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerPrefab
       value: 
-      objectReference: {fileID: 1065678063445903600, guid: 11c817527d22496488c486cab7c02082, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4126563349212571083, guid: eea3d871ca9582f4f8780127b30f4ca0, type: 3}
       propertyPath: bigSwarmerInterval
       value: 15.73
