@@ -41,6 +41,11 @@ public class MyOSC : MonoBehaviour
     private Vector3 newPosition;
     private Vector3 newPositionTwo;
     private Vector3 newPositionThree;
+    /*
+    private float LeftX = -3.56f;
+    private float RightX = 3.55f;
+    private float TopY = 1.97f + 1f;
+    private float BottomY = -2.01f - 1f;*/
 
     public static float ScaleValue(float value, float inputMin, float inputMax, float outputMin, float outputMax)
     {
@@ -191,6 +196,15 @@ public class MyOSC : MonoBehaviour
         //Vector3 newPositionY; = new Vector3(transform.position.x, augmentedValue, transform.position.z);
         newPosition[1] = negatedValue;
         myTarget.transform.position = newPosition;
+        /*
+        if (BottomY != 0 && TopY != 0)
+        {
+            float newValue = ScaleValue(value, 0, 1, BottomY, TopY);
+            float newNegatedValue = newValue - (newValue * 2);
+            newPosition[1] = newNegatedValue;
+            myTarget.transform.position = newPosition;
+        }*/
+
     }
 
     void XTraiterMessageOSC(OSCMessage oscMessage)
@@ -223,6 +237,14 @@ public class MyOSC : MonoBehaviour
         //= new Vector3(augmentedValue, transform.position.y, transform.position.z);
         newPosition[0] = negatedValue;
         myTarget.transform.position = newPosition;
+        /*
+        if (RightX != 0 && LeftX != 0)
+        {
+            float newValue = ScaleValue(value, 0, 1, LeftX, RightX);
+            float newNegatedValue = newValue - (newValue * 2);
+            newPosition[0] = newNegatedValue;
+            myTarget.transform.position = newPosition;
+        }*/
     }
 
     // Object #2

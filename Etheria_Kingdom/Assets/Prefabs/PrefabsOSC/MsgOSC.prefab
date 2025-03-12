@@ -100,10 +100,11 @@ MonoBehaviour:
   myTargetTwo: {fileID: 0}
   myTargetThree: {fileID: 0}
   multiplierXY: 550
+  multiplierY: 0
   removeFromX: 100
   AddToX: 0
   removeFromY: 0
   AddToY: 75
   idNumberOne: 10
   idNumberTwo: 11
-  idNumberThree: 1
+  idNumberThree: 13
