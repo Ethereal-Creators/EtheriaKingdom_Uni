@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: idNumberThree
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1631252276304263125, guid: 37cb2521dd1eb694faf1d4a03bcb4776, type: 3}
       propertyPath: myTargetTextX
