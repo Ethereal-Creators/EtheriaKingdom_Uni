@@ -25,7 +25,12 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void ShootFireball()
+    public void Start()
+    {
+        StartShooting();
+    }
+
+    private void ShootFireball()
     {
         // Apply the offset to the fireball spawn position
         Vector3 spawnPosition = fireballSpawnPoint.position + (Vector3)fireballOffset;

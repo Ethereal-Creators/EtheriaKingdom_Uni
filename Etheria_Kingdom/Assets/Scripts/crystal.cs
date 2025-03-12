@@ -32,7 +32,7 @@ public class ContactCrystal : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the object colliding with the crystal is an enemy
-        if (collision.gameObject.CompareTag("ennemie"))
+        if (collision.gameObject.CompareTag("ennemie") && collision.gameObject.name != "Demon")
         {
 
 

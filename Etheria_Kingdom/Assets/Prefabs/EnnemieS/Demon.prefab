@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 5374852583290510313}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: Untagged
+  m_TagString: ennemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
