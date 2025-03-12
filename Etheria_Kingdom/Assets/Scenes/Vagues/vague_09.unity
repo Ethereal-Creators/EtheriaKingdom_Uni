@@ -11509,11 +11509,11 @@ PrefabInstance:
       objectReference: {fileID: 877041925}
     - target: {fileID: 2765452430707759461, guid: 0ab1eb1da046e0d4f9b4336374182293, type: 3}
       propertyPath: _currentHealth
-      value: 255
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2765452430707759461, guid: 0ab1eb1da046e0d4f9b4336374182293, type: 3}
       propertyPath: _maximumHealth
-      value: 255
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2765452430707759461, guid: 0ab1eb1da046e0d4f9b4336374182293, type: 3}
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.size
@@ -12981,7 +12981,7 @@ Transform:
   m_GameObject: {fileID: 657532940514912118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -5.8, z: -0.027688138}
+  m_LocalPosition: {x: -6.72, y: 3.23, z: -0.027688138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13125,7 +13125,7 @@ Transform:
   m_GameObject: {fileID: 7822516961092797075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -5.8, z: -0.027688138}
+  m_LocalPosition: {x: -11.65, y: -0.25, z: -0.027688138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
