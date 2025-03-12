@@ -42,6 +42,7 @@ public class collideStartEventScript : MonoBehaviour
             //deactivate gameObject visibiliti and interactibility
             this.gameObject.GetComponent<Collider2D>().enabled = false;
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.SetActive(true);
 
             //Plays a sound on contact
             if (source != null && clipsStart.Count > 0)
