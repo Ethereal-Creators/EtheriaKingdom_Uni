@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
 
 public class RandomDecorSpawner : MonoBehaviour
 {
@@ -16,3 +17,4 @@ public class RandomDecorSpawner : MonoBehaviour
         
     }
 }
+*/
