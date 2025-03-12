@@ -4,6 +4,7 @@ public class BossMovement : MonoBehaviour
 {
     public string targetTag = "Crystal";  // Tag of the target (e.g., the crystal)
     public string obstacleTag = "Box";  // Tag of the obstacle (Box)
+    public string obstacleCoffreTag = "BoiteEvenement";
     public float moveSpeed = 3f;  // Speed at which the boss moves
     public float obstacleDetectionRange = 2f;  // Range to detect obstacles ahead
     public float avoidanceStrength = 3f;  // Strength of the avoidance (how much it will move around the obstacle)
@@ -119,9 +120,10 @@ public class BossMovement : MonoBehaviour
     // Method to handle collision with Box (called when collision occurs)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(obstacleTag))
+        if (collision.gameObject.CompareTag(obstacleTag)  || collision.gameObject.CompareTag(obstacleCoffreTag))
         {
             // Boss collided with a Box, stop shooting, teleport and prevent multiple teleports
+           
             isCollidingWithBox = true;
         }
 
