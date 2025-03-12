@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: distanceTextY
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3108342185552586087, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
+      propertyPath: distanceTextXAdd
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 3835837505564069401, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1655,6 +1659,10 @@ PrefabInstance:
       propertyPath: distanceTextY
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3108342185552586087, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
+      propertyPath: distanceTextXAdd
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 3835837505564069401, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2747,6 +2755,10 @@ PrefabInstance:
     - target: {fileID: 3108342185552586087, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
       propertyPath: distanceTextY
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108342185552586087, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
+      propertyPath: distanceTextXAdd
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3835837505564069401, guid: 2ba7d83e44162934eae3349305cbc13f, type: 3}
       propertyPath: m_Pivot.x
