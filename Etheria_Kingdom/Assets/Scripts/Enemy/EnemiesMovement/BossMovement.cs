@@ -45,13 +45,6 @@ public class BossMovement : MonoBehaviour
             return; // Prevent the boss from moving towards the target or detecting obstacles
         }
 
-        // If the boss is colliding with the Crystal, back up and avoid the crystal
-        if (isBackingUp)
-        {
-            BackUpFromCrystal();
-            return;  // Skip the movement towards the target while backing up
-        }
-
         // If a target exists, move around it while keeping a distance
         if (target != null)
         {
@@ -143,59 +136,8 @@ public class BossMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag(targetTag))
         {
-            // Boss collided with the Crystal, start backing up
-            isBackingUp = true;
-            backUpTimer = 0f;  // Reset the backup timer
-        }
-    }
-
-    // Method to handle the backup behavior when colliding with the Crystal
-    void BackUpFromCrystal()
-    {
-        if (backUpTimer < backUpDuration)
-        {
-            // Back up by moving in the opposite direction from the target
-            Vector2 backUpDirection = (transform.position - target.position).normalized;
-            transform.Translate(backUpDirection * moveSpeed * Time.deltaTime);
-            backUpTimer += Time.deltaTime;
-        }
-        else
-        {
-            // After backing up, start moving around the crystal
-            isBackingUp = false;
-            AvoidCrystal();
-        }
-    }
-
-    // Method to move around the Crystal
-    void AvoidCrystal()
-    {
-        Vector2 avoidanceDirection = Vector2.zero;
-
-        // Raycast to the left and right to find an open path around the crystal
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, (Vector2)transform.up + new Vector2(-1, 0), obstacleDetectionRange);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, (Vector2)transform.up + new Vector2(1, 0), obstacleDetectionRange);
-
-        // If there's an open space to the left, move left
-        if (hitLeft.collider == null)
-        {
-            avoidanceDirection = new Vector2(-1, 0);  // Move left
-        }
-        // If there's an open space to the right, move right
-        else if (hitRight.collider == null)
-        {
-            avoidanceDirection = new Vector2(1, 0);  // Move right
-        }
-
-        if (avoidanceDirection != Vector2.zero)
-        {
-            // Move around the crystal
-            transform.Translate(avoidanceDirection * avoidanceStrength * Time.deltaTime);
-        }
-        else
-        {
-            // If no avoidance direction is found, move back slightly or continue your logic
-            transform.Translate(Vector2.zero);
+            // Boss collided with the Crystal, teleport away
+            TeleportToRandomSide();
         }
     }
 

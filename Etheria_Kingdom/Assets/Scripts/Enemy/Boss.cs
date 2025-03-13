@@ -14,15 +14,15 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        if (isShootingEnabled)
-        {
+        
+       
             fireballTimer += Time.deltaTime;
             if (fireballTimer >= fireballCooldown)
             {
                 ShootFireball();
                 fireballTimer = 0f;
-            }
-        }
+           }
+        
     }
 
     public void Start()
