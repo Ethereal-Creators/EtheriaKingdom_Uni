@@ -73,7 +73,7 @@ public class winScript : MonoBehaviour
 
 
 
-        if (currentTime == (timeTilSucces - 11))
+        if (currentTime == (timeTilSucces - 11) && crystalIsActive != null)
         {
             if (sourceTimer != null && clipsTimerSound.Count > 0)
             {
