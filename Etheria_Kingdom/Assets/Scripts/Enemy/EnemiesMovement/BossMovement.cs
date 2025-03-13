@@ -52,7 +52,7 @@ public class BossMovement : MonoBehaviour
             return;  // Skip the movement towards the target while backing up
         }
 
-        // If a target exists, move around it
+        // If a target exists, move around it while keeping a distance
         if (target != null)
         {
             MoveAroundTarget();
@@ -61,12 +61,27 @@ public class BossMovement : MonoBehaviour
 
     void MoveAroundTarget()
     {
-        // Calculate the direction to move around the crystal in a circular path
+        // Get the direction to the target (crystal)
         Vector3 directionToTarget = target.position - transform.position;
-        Vector3 perpendicularDirection = Vector3.Cross(directionToTarget, Vector3.forward).normalized;
 
-        // Move along the perpendicular direction (circle around the target)
-        transform.Translate(perpendicularDirection * circleSpeed * Time.deltaTime, Space.World);
+        // Calculate the distance from the boss to the target (crystal)
+        float distanceToTarget = directionToTarget.magnitude;
+
+        // If the boss is too close to the crystal, move back slightly to maintain the desired distance
+        if (distanceToTarget < circleRadius)
+        {
+            // Move away from the target to maintain distance
+            Vector3 moveDirection = directionToTarget.normalized;
+            transform.Translate(-moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        }
+        else
+        {
+            // Otherwise, move around the target in a circular path, keeping the desired radius
+            Vector3 perpendicularDirection = Vector3.Cross(directionToTarget, Vector3.forward).normalized;
+
+            // Move in a circle around the target, maintaining the desired distance
+            transform.Translate(perpendicularDirection * circleSpeed * Time.deltaTime, Space.World);
+        }
 
         // Keep facing the crystal while moving
         Vector3 directionToFace = target.position - transform.position;
@@ -81,7 +96,7 @@ public class BossMovement : MonoBehaviour
         Boss bossScript = GetComponent<Boss>();
         if (bossScript != null)
         {
-            bossScript.StopShooting();  // Call StopShooting on the Boss script
+            bossScript.SetShootingEnabled(false);  // Call the new method to disable shooting
         }
     }
 
@@ -120,10 +135,9 @@ public class BossMovement : MonoBehaviour
     // Method to handle collision with Box (called when collision occurs)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(obstacleTag)  || collision.gameObject.CompareTag(obstacleCoffreTag))
+        if (collision.gameObject.CompareTag(obstacleTag) || collision.gameObject.CompareTag(obstacleCoffreTag))
         {
             // Boss collided with a Box, stop shooting, teleport and prevent multiple teleports
-           
             isCollidingWithBox = true;
         }
 
@@ -181,30 +195,6 @@ public class BossMovement : MonoBehaviour
         else
         {
             // If no avoidance direction is found, move back slightly or continue your logic
-            transform.Translate(Vector2.zero);
-        }
-    }
-
-    // Adjust the avoidance logic to move above the box instead of around it
-    void AvoidObstacle(Collider2D obstacle)
-    {
-        // Check if the boss is not blocked vertically (above or below the box)
-        RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, Vector2.up, verticalAvoidanceDistance);
-        RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, Vector2.down, verticalAvoidanceDistance);
-
-        if (hitAbove.collider == null)
-        {
-            // No obstacle above, move upwards to avoid the box
-            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-        }
-        else if (hitBelow.collider == null)
-        {
-            // No obstacle below, move downwards to avoid the box
-            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            // If blocked vertically, handle it with other logic, like stopping or trying a different approach
             transform.Translate(Vector2.zero);
         }
     }

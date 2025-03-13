@@ -42,14 +42,14 @@ public class Boss : MonoBehaviour
     }
 
     // This method stops the boss from shooting fireballs
-    public void StopShooting()
+    public void SetShootingEnabled(bool enabled)
     {
-        isShootingEnabled = false;  // Set flag to false to stop shooting
+        isShootingEnabled = enabled;  // Set flag to enable or disable shooting
     }
 
     // Optionally, you could also implement a method to restart shooting if needed
     public void StartShooting()
     {
-        isShootingEnabled = true;  // Set flag to true to enable shooting again
+        SetShootingEnabled(true);  // Set flag to true to enable shooting again
     }
 }
