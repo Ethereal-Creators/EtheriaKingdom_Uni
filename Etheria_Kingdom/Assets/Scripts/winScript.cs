@@ -24,6 +24,8 @@ public class winScript : MonoBehaviour
 
     [Header("------- Audio Effects Start -------")]
     public AudioSource source;
+
+    public AudioSource sourceTimer;
     public List<AudioClip> clipsStart = new List<AudioClip>();
     public List<AudioClip> clipsTimerSound = new List<AudioClip>();
 
@@ -70,10 +72,10 @@ public class winScript : MonoBehaviour
 
         if (currentTime == 9)
         {
-            if (source != null && clipsTimerSound.Count > 0)
+            if (sourceTimer != null && clipsTimerSound.Count > 0)
             {
                 int randomClipIndex = Random.Range(0, clipsTimerSound.Count);
-                source.PlayOneShot(clipsTimerSound[randomClipIndex]);
+                sourceTimer.PlayOneShot(clipsTimerSound[randomClipIndex]);
             }
         }
 
