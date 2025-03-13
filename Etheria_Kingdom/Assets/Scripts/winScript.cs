@@ -68,7 +68,7 @@ public class winScript : MonoBehaviour
             //countDown.text = currentTime.ToString();  // Removed
         }
 
-        if (currentTime == 10)
+        if (timeWhenWin == 10f)
         {
             if (source != null && clipsTimerSound.Count > 0)
             {
