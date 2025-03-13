@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1723391363733823486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12462585, y: 0.023253549, z: 0.04962473}
+  m_LocalPosition: {x: -0.12462585, y: 0.023253549, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52,7 +52,6 @@ MonoBehaviour:
   transition: {fileID: 5975250265508386517}
   timeTilChange: 0
   NextSceneIndex: 0
-  NextSceneName: 
 --- !u!1 &2371767539945368752
 GameObject:
   m_ObjectHideFlags: 0

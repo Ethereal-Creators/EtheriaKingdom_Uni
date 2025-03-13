@@ -132,9 +132,9 @@ MonoBehaviour:
         m_CallState: 2
   source: {fileID: 6107064112954558154}
   clipsEnter:
-  - {fileID: 8300000, guid: 196882742a40ae64eb522e75677c1169, type: 3}
+  - {fileID: 8300000, guid: a25aa76300f6b534aa1db991b6b3ce25, type: 3}
   clipsExit:
-  - {fileID: 8300000, guid: b11470a6bf4aefc40983f7eb43da06ec, type: 3}
+  - {fileID: 8300000, guid: f3d0aaf9717dd364688f3a433d19f399, type: 3}
 --- !u!61 &5555625947876662040
 BoxCollider2D:
   m_ObjectHideFlags: 0
