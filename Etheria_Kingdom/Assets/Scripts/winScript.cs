@@ -18,7 +18,7 @@ public class winScript : MonoBehaviour
     public Image progressBar; // UI Image that will serve as the progress bar
 
     private float timeDown = 0.0f;
-    private int currentTime = 0;
+    public int currentTime = 0;
 
     private bool winSlowDown = false;
 
