@@ -19,6 +19,8 @@ public class SpawnerBossNotProjectile : MonoBehaviour
 
     private bool isSreamSoundPlayed = false;
 
+    private bool stopSpawning = false;
+
     [Header("------- Audio Effects Spawn -------")]
     public AudioSource sourceBoss;
 
@@ -44,7 +46,11 @@ public class SpawnerBossNotProjectile : MonoBehaviour
         if (timeUntilSpawn >= timeBetweenSpawn)
         {
             timeUntilSpawn = 0.0f;
-            SpawnEnnemy(Spawner);
+            if (stopSpawning == false)
+            {
+                SpawnEnnemy(Spawner);
+            }
+
         }
 
     }
@@ -71,5 +77,10 @@ public class SpawnerBossNotProjectile : MonoBehaviour
             GameObject newEnemyTwo = Instantiate(enemyTwo, (new Vector2(objectSpawner.gameObject.transform.position.x, objectSpawner.gameObject.transform.position.y)), Quaternion.identity);
         }*/
 
+    }
+
+    public void StopSpawnigEnnemy()
+    {
+        stopSpawning = true;
     }
 }
