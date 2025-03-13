@@ -11,7 +11,17 @@ public class eventAllPlayerPlaced : MonoBehaviour
     public bool isPlayerTwoPlaced = false;
     public bool isPlayerThreePlaced = false;
 
+    public float timeTilChangeScene; // Time until scene change
+    private float timeWhenChangeScene;
+
     [SerializeField] UnityEvent actionAfterAnimation;
+
+    private bool isActionAfterAnimationDone = false;
+
+    void Start()
+    {
+        timeWhenChangeScene = Time.time + timeTilChangeScene;
+    }
 
     // Update is called once per frame
     void Update()
