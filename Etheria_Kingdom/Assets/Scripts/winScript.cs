@@ -44,8 +44,6 @@ public class winScript : MonoBehaviour
         timeWhenChangeScene = Time.time + timeTilChangeScene;
         source = this.gameObject.GetComponent<AudioSource>();
 
-        float timeToGetTo = timeTilSucces - 10;
-
         // Set the initial progress bar fill to 0
         if (progressBar != null)
         {
@@ -74,7 +72,7 @@ public class winScript : MonoBehaviour
 
 
 
-        if (currentTime == timeToGetTo)
+        if (currentTime == (timeTilSucces - 10))
         {
             if (sourceTimer != null && clipsTimerSound.Count > 0)
             {
