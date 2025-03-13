@@ -9297,6 +9297,10 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 998429186094267493, guid: 94592fb0e59a28c4da73c6efa79d4365, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1672966119
+      objectReference: {fileID: 0}
     - target: {fileID: 1929476085091214420, guid: 94592fb0e59a28c4da73c6efa79d4365, type: 3}
       propertyPath: m_Name
       value: LoadingScreen
@@ -14149,7 +14153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3335414770019794751, guid: 2241631f3f11c8641a1acc95a0ab668a, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 1672966119
       objectReference: {fileID: 0}
     - target: {fileID: 4488215883191005285, guid: 2241631f3f11c8641a1acc95a0ab668a, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -14911,7 +14915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808999058861692892, guid: 7e834c07828cc65429ba019b716d2c31, type: 3}
       propertyPath: actionAfterAnimation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Menu
+      value: scene_transition
       objectReference: {fileID: 0}
     - target: {fileID: 1808999058861692892, guid: 7e834c07828cc65429ba019b716d2c31, type: 3}
       propertyPath: gameFail.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
