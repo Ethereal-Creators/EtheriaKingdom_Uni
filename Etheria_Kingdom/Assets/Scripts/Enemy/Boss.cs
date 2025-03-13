@@ -12,16 +12,17 @@ public class Boss : MonoBehaviour
     private bool isShootingEnabled = true;  // Flag to control whether the boss is shooting
     private float fireballTimer = 0f;
 
-    public AudioClip shootSound;  // Sound to play when shooting a fireball
-    private AudioSource audioSource;  // Reference to the AudioSource component
+    public AudioSource shootAudioSource;  // Reference to the AudioSource component for the shoot sound
 
     void Start()
     {
-        // Get the AudioSource component attached to this GameObject
-        audioSource = GetComponent<AudioSource>();
+        // Ensure the AudioSource is assigned in the inspector
+        if (shootAudioSource == null)
+        {
+            shootAudioSource = GetComponent<AudioSource>();  // Try to get the AudioSource if not assigned
+        }
 
-        // Ensure the audio source is not null
-        if (audioSource == null)
+        if (shootAudioSource == null)
         {
             Debug.LogWarning("No AudioSource component found on the Boss object.");
         }
@@ -51,10 +52,10 @@ public class Boss : MonoBehaviour
         Rigidbody2D rb = fireball.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * fireballSpeed;
 
-        // Play the shooting sound effect if available
-        if (audioSource != null && shootSound != null)
+        // Play the shooting sound effect if the AudioSource is available
+        if (shootAudioSource != null)
         {
-            audioSource.PlayOneShot(shootSound);  // Play the sound effect
+            shootAudioSource.Play();  // Play the sound using the AudioSource
         }
     }
 
