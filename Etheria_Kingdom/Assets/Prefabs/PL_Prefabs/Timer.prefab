@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 0.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2396731006598016817
@@ -209,6 +209,13 @@ MonoBehaviour:
   timeTilChangeScene: 5
   crystalIsActive: {fileID: 0}
   progressBar: {fileID: 1435327911131610180}
+  source: {fileID: 0}
+  clipsStart: []
+  clipsTimerSound:
+  - {fileID: 8300000, guid: f33732d6c775f14438163cc706c085e8, type: 3}
   gameWin:
+    m_PersistentCalls:
+      m_Calls: []
+  actionAfterAnimation:
     m_PersistentCalls:
       m_Calls: []
