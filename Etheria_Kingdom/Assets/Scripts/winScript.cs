@@ -25,6 +25,7 @@ public class winScript : MonoBehaviour
     [Header("------- Audio Effects Start -------")]
     public AudioSource source;
     public List<AudioClip> clipsStart = new List<AudioClip>();
+    public List<AudioClip> clipsTimerSound = new List<AudioClip>();
 
     private bool hasSoundPlayed = false;
 
@@ -65,6 +66,15 @@ public class winScript : MonoBehaviour
             timeDown = 0.0f;
             currentTime++;
             //countDown.text = currentTime.ToString();  // Removed
+        }
+
+        if (currentTime == 10)
+        {
+            if (source != null && clipsTimerSound.Count > 0)
+            {
+                int randomClipIndex = Random.Range(0, clipsTimerSound.Count);
+                source.PlayOneShot(clipsTimerSound[randomClipIndex]);
+            }
         }
 
         if (timeWhenWin <= Time.time)
