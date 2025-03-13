@@ -85,7 +85,7 @@ public class winScript : MonoBehaviour
         {
             if (crystalIsActive != null)
             {
-                if (source != null && clipsStart.Count > 0 && hasSoundPlayed == false)
+                if (source != null && clipsStart.Count > 0 /*&& hasSoundPlayed == false*/)
                 {
                     int randomClipIndex = Random.Range(0, clipsStart.Count);
                     source.PlayOneShot(clipsStart[randomClipIndex]);
