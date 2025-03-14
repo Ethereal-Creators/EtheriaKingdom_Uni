@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BossDeathEvents : MonoBehaviour
@@ -10,7 +11,8 @@ public class BossDeathEvents : MonoBehaviour
     public Animator animator;  // Reference to the boss's Animator component
     public BossMovement bossMovement;  // Reference to the BossMovement script
 
-    public AudioClip[] explosionSounds;  // Array of explosion sounds to play
+    public List<AudioClip> explosionSounds = new List<AudioClip>();
+    //public AudioClip[] explosionSounds;  // Array of explosion sounds to play
 
     private bool isDead = false; // Flag to check if the boss is dead
 
@@ -82,14 +84,17 @@ public class BossDeathEvents : MonoBehaviour
             // Ensure the explosion prefab has an AudioSource
             AudioSource audioSource = explosion.GetComponent<AudioSource>();
 
-            if (audioSource != null && explosionSounds.Length > 0)
+            if (audioSource != null && explosionSounds.Count > 0)
             {
                 // Choose a random sound from the explosionSounds array
-                AudioClip selectedSound = explosionSounds[Random.Range(0, explosionSounds.Length)];
+                //AudioClip selectedSound = explosionSounds[Random.Range(0, explosionSounds.Count)];
+
+                int randomClipIndex = Random.Range(0, explosionSounds.Count);
+                audioSource.PlayOneShot(explosionSounds[randomClipIndex]);
 
                 // Set the clip and play the sound
-                audioSource.clip = selectedSound;
-                audioSource.Play();  // Play the selected explosion sound
+                //audioSource.clip = selectedSound;
+                //audioSource.Play();  // Play the selected explosion sound
             }
             else
             {
