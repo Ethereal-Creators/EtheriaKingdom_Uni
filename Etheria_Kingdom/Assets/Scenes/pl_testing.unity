@@ -1253,6 +1253,7 @@ MonoBehaviour:
   explosionSounds:
   - {fileID: 8300000, guid: 9c65e340a3421be4d85b8ac671cd8280, type: 3}
   - {fileID: 8300000, guid: dfdd6047b681b734b9445689f7816e95, type: 3}
+  fadeDuration: 2
 --- !u!1001 &1111007993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13351,6 +13352,14 @@ PrefabInstance:
     - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
       value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName

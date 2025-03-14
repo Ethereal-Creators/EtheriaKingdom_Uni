@@ -42,7 +42,7 @@ public class BossDeathEvents : MonoBehaviour
         StartCoroutine(SpawnExplosions());
     }
 
-    private void StopMovement()
+    public void StopMovement()
     {
         // Disable the BossMovement script to stop movement
         if (bossMovement != null)
@@ -51,7 +51,7 @@ public class BossDeathEvents : MonoBehaviour
         }
     }
 
-    private void StopAnimation()
+    public void StopAnimation()
     {
         // Stop the boss's animation by setting the animator's speed to zero
         if (animator != null)
