@@ -7111,11 +7111,11 @@ PrefabInstance:
       objectReference: {fileID: 1166679934}
     - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: _currentHealth
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: _maximumHealth
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: explosionPrefab
