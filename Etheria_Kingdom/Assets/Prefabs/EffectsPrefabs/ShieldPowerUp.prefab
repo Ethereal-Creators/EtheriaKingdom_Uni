@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleDuration: 0.4
-  targetScale: {x: 5, y: 5, z: 5}
+  targetScale: {x: 6, y: 6, z: 6}
   initialScale: {x: 5, y: 5, z: 5}
 --- !u!95 &-1635015160796306436
 Animator:
