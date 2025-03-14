@@ -50,17 +50,17 @@ public class ShieldCollision : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the shield is still active (timer > 0)
         if (shieldTimer > 0)
         {
             // Check if the collided object has the "Enemy" tag
-            if (collision.gameObject.CompareTag("ennemie"))
+            if (collision.CompareTag("ennemie"))
             {
-                Debug.Log("sheild colider with " + collision.gameObject.name);
+                Debug.Log("sheild colider with " + collision.name);
                 // Try to get the HealthController component from the enemy
-                HealthController healthController = collision.gameObject.GetComponent<HealthController>();
+                HealthController healthController = collision.GetComponent<HealthController>();
 
                 if (healthController != null)
                 {
