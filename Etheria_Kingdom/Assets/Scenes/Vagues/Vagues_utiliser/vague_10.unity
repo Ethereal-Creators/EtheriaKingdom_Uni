@@ -2284,6 +2284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  explosionCount: 5
+  explosionDelay: 0.1
   _currentHealth: 0
   _maximumHealth: 0
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -5757,6 +5760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  explosionCount: 5
+  explosionDelay: 0.1
   _currentHealth: 300
   _maximumHealth: 300
   damagedColor: {r: 0, g: 1, b: 0.7539561, a: 1}
@@ -7130,7 +7136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992907962413844407, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.316125
+      value: -4.11
       objectReference: {fileID: 0}
     - target: {fileID: 992907962413844407, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7261,6 +7267,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4534478965471841963, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534478965471841963, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: fireballCooldown
       value: 4
       objectReference: {fileID: 0}
@@ -7274,7 +7284,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 992907962413844407, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1378140323}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
 --- !u!82 &1166679934 stripped
@@ -8703,6 +8716,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1535bf2d3670778499defbd5f399cd87, type: 3}
+--- !u!4 &1378140323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+  m_PrefabInstance: {fileID: 1592179307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1399560955 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4769769113931616450, guid: 35db37cfb0d119a4895d1c909fe25e7b, type: 3}
@@ -9657,6 +9675,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575160845}
   m_CullTransparentMesh: 1
+--- !u!1001 &1592179307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1880221094}
+    m_Modifications:
+    - target: {fileID: 2030202498748605440, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: timeUntilSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7222013
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.74907786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.049217686
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473579870470080543, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815827926594951318, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
+      propertyPath: m_Name
+      value: spawnerBoss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9ca4d25b4056aa449dead9154123637, type: 3}
 --- !u!1 &1593833591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4693680746944596686, guid: ed88e929db66b7945a3dc5b49acbc1e2, type: 3}
@@ -10941,6 +11028,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  explosionCount: 5
+  explosionDelay: 0.1
   _currentHealth: 100
   _maximumHealth: 100
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -12212,6 +12302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b054eb2fead336b48aa0c21c9e35d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1880221094 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 992907962413844407, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+  m_PrefabInstance: {fileID: 1166679933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1891236903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12432,6 +12527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  explosionCount: 5
+  explosionDelay: 0.1
   _currentHealth: 100
   _maximumHealth: 100
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
