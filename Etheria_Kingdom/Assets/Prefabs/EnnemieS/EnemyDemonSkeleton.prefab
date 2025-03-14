@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 4897039118670476552, guid: 8d5ec3a044b732c48bac541aab9f7da1, type: 3}
-  _currentHealth: 10
-  _maximumHealth: 10
+  _currentHealth: 25
+  _maximumHealth: 25
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.15
   deathBlinkCount: 3
