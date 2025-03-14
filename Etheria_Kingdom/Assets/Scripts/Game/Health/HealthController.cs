@@ -6,11 +6,7 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
-    public GameObject FloatingTextPrefab;  // Reference to the FloatingTextPrefab (for damage numbers)
-    public GameObject explosionPrefab;  // Reference to the explosion prefab
-    public int explosionCount = 5;  // Number of explosions to create
-    public float explosionDelay = 0.1f;  // Delay between each explosion
-
+    public GameObject FloatingTextPrefab;
     [Header("------- Health Variables -------")]
     [SerializeField]
     private float _currentHealth;
@@ -52,14 +48,6 @@ public class HealthController : MonoBehaviour
     private float regenDuration;
     private float regenEndTime;
 
-    // Explosion timers
-    private float explosionTimer = 0f;
-    private int currentExplosionCount = 0;
-
-    // Blink damage effect variables
-    private float blinkTimer = 0f;
-    private bool isBlinking = false;
-
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -94,7 +82,7 @@ public class HealthController : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            isBlinking = true;  // Start the blinking effect
+            StartCoroutine(BlinkDamageEffect());
         }
 
         if (_currentHealth <= 0)
@@ -154,72 +142,35 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    private void Update()
+    private IEnumerator BlinkDamageEffect()
     {
-        // Handle explosion spawning for the boss when it dies
-        if (_currentHealth <= 0 && gameObject.name == "Demon")
-        {
-            HandleExplosion();
-        }
-
-        // Handle blink effect timing
-        if (isBlinking)
-        {
-            blinkTimer += Time.deltaTime;
-
-            if (blinkTimer <= blinkDuration)
-            {
-                spriteRenderer.color = damagedColor;  // Show damage color
-            }
-            else if (blinkTimer <= blinkDuration * 2)
-            {
-                spriteRenderer.color = Color.white;  // Reset to original color
-            }
-            else
-            {
-                blinkTimer = 0f;  // Reset blink timer
-                isBlinking = false;  // Stop blinking after cycle
-            }
-        }
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = damagedColor;
+        yield return new WaitForSeconds(blinkDuration);
+        spriteRenderer.color = originalColor;
     }
 
-    private void HandleExplosion()
+    private IEnumerator BlinkDeathEffect()
     {
-        // Spawn explosions at regular intervals
-        if (currentExplosionCount < explosionCount)
-        {
-            explosionTimer += Time.deltaTime;
+        Color originalColor = spriteRenderer.color;
 
-            if (explosionTimer >= explosionDelay)
-            {
-                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                explosionTimer = 0f;  // Reset timer
-                currentExplosionCount++;  // Increase explosion count
-            }
-        }
-        else
+        for (int i = 0; i < deathBlinkCount; i++)
         {
-            Destroy(gameObject);  // Destroy the boss after all explosions
+            spriteRenderer.color = damagedColor;
+            yield return new WaitForSeconds(blinkDuration);
+            spriteRenderer.color = originalColor;
+            yield return new WaitForSeconds(blinkDuration);
         }
+
+        Destroy(gameObject);
     }
 
     private void HandleDeath()
     {
-        if (gameObject.name == "Demon")
+        if (rigidbody2D != null)
         {
-            if (rigidbody2D != null)
-            {
-                rigidbody2D.velocity = Vector2.zero;
-                rigidbody2D.isKinematic = true;
-            }
-
-            // Ensure explosions happen on death
-            HandleExplosion();
-        }
-        else
-        {
-            // Handle death normally for other enemies (without explosions)
-            Destroy(gameObject);
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.isKinematic = true;
         }
     }
 
@@ -242,17 +193,18 @@ public class HealthController : MonoBehaviour
             regenDuration = duration;
             regenEndTime = Time.time + duration;
             isRegenerating = true;
-            StartRegeneratingHealth();
+            StartCoroutine(RegenerateHealth());
         }
     }
 
-    private void StartRegeneratingHealth()
+    private IEnumerator RegenerateHealth()
     {
         while (Time.time < regenEndTime && _currentHealth < _maximumHealth)
         {
             _currentHealth += regenAmountPerSecond;
             _currentHealth = Mathf.Min(_currentHealth, _maximumHealth); // Ensure health does not exceed maximum
             OnHealthChanged.Invoke();
+            yield return new WaitForSeconds(1f); // Regenerate health every second
         }
         isRegenerating = false;
     }

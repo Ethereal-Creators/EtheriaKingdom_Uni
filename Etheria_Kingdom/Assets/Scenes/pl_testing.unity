@@ -1195,6 +1195,17 @@ Transform:
   - {fileID: 2106194497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1020778018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1754867077754946328, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+  m_PrefabInstance: {fileID: 7896521992560058351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c07311135b8847bf68bb343f5fe5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1111007993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9805,62 +9816,31 @@ ParticleSystem:
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight:
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      minCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    z:
+    remapY:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 1
+      scalar: 1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: -1
           inSlope: 0
-          outSlope: 0
+          outSlope: 2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
+          value: 1
+          inSlope: 2
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
@@ -9874,7 +9854,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9883,7 +9863,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9893,12 +9873,61 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
-    randomizePerFrame: 0
-  ExternalForcesModule:
-    serializedVersion: 2
-    enabled: 0
-    multiplierCurve:
+    remapZ:
+      serializedVersion: 2
+      minMaxState: 1
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: -1
+          inSlope: 0
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 2
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    remapEnabled: 0
+    positionAmount:
       serializedVersion: 2
       minMaxState: 0
       scalar: 1
@@ -9949,35 +9978,6 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    influenceFilter: 0
-    influenceMask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    influenceList: []
-  ClampVelocityModule:
-    enabled: 1
-    x:
-      serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
-      maxCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-            m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
     rotationAmount:
@@ -11901,6 +11901,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7792421644564782652, guid: faeecefe7a082a44ba210db4e49f8f99, type: 3}
   m_PrefabInstance: {fileID: 4593528113569461319}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1728530733 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6078401693600652641, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
+  m_PrefabInstance: {fileID: 472901209753424176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728530739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4865060607144895235, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
+  m_PrefabInstance: {fileID: 472901209753424176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70049266d7ac395498d34e47d8a79c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1823907013
 GameObject:
   m_ObjectHideFlags: 0
@@ -11963,6 +11979,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1908574125 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 715175579859702097, guid: 074eed6baed1fef459a51bf65e6f87ca, type: 3}
+  m_PrefabInstance: {fileID: 4009591634654208616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2106194497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 143754756672224131, guid: 591b5b0e8b39577449de20dc2225565b, type: 3}
@@ -12033,6 +12054,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4027891617334647249, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027891617334647249, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1728530733}
+    - target: {fileID: 4027891617334647249, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1728530739}
     - target: {fileID: 8092963801589073036, guid: 88f4e3ff9e30b9c43a8ec6bceb271f3c, type: 3}
       propertyPath: m_Name
       value: EnemyDemonSkeleton
@@ -12487,6 +12520,10 @@ PrefabInstance:
     - target: {fileID: 800768723035239246, guid: 8d1c993c8d4c282449562425b02c2a34, type: 3}
       propertyPath: m_Name
       value: EnemyBat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854298808344940845, guid: 8d1c993c8d4c282449562425b02c2a34, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_FloatArgument
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4767023837458116354, guid: 8d1c993c8d4c282449562425b02c2a34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13012,10 +13049,7 @@ PrefabInstance:
       addedObject: {fileID: 1823907014}
     - targetCorrespondingSourceObject: {fileID: 3071944921815861030, guid: 2cd8e5fbba1f4dd4ea50e5513fafc7c0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 582201397}
-    - targetCorrespondingSourceObject: {fileID: 3071944921815861030, guid: 2cd8e5fbba1f4dd4ea50e5513fafc7c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8174944592425989949}
+      addedObject: {fileID: 1908574125}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd8e5fbba1f4dd4ea50e5513fafc7c0, type: 3}
 --- !u!1001 &7895509942730067220
@@ -13138,6 +13172,46 @@ PrefabInstance:
     - target: {fileID: 992907962413844407, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: _currentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: _maximumHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 5849607729884240034, guid: 6fa907396392ce04f8199d19e4f31c4e, type: 3}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1020778018}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StopCoroutine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.MonoBehaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115129124178178325, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
+      propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8738061489181289260, guid: bf286526fb1b4a348964083e6de25f51, type: 3}
       propertyPath: m_Name
@@ -13338,3 +13412,5 @@ SceneRoots:
   - {fileID: 4695267959666135264}
   - {fileID: 1295971693}
   - {fileID: 7896521992560058351}
+  - {fileID: 2282717144148497863}
+  - {fileID: 472901209753424176}
