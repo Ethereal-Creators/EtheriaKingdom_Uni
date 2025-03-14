@@ -58,10 +58,12 @@ public class Bullet_explosif : MonoBehaviour
             scriptEvent.actionOnCollsion();
         }
 
-        if (source != null && clipsStart.Count > 0 && collision.gameObject.tag == "ennemie")
+        if (clipsStart.Count > 0 && collision.gameObject.tag == "ennemie")
         {
+            AudioSource sourceRight = this.gameObject.GetComponent<AudioSource>();
+
             int randomClipIndex = Random.Range(0, clipsStart.Count);
-            source.PlayOneShot(clipsStart[randomClipIndex]);
+            sourceRight.PlayOneShot(clipsStart[randomClipIndex]);
         }
         if (collision.gameObject.tag == "ennemie")
         {
@@ -91,7 +93,7 @@ public class Bullet_explosif : MonoBehaviour
                         timeTilAnim -= Time.deltaTime;
                         if (timeTilAnim < 0)
                         {
-                            
+
 
                             Destroy(gameObject);
                         }

@@ -207,6 +207,9 @@ MonoBehaviour:
   source: {fileID: 1682709791841109098}
   clipsStart:
   - {fileID: 8300000, guid: 9c65e340a3421be4d85b8ac671cd8280, type: 3}
+  - {fileID: 8300000, guid: dfdd6047b681b734b9445689f7816e95, type: 3}
+  - {fileID: 8300000, guid: 72f539daf0961cb4dbdb4eec4c3bd048, type: 3}
+  - {fileID: 8300000, guid: e610bd8d0ad9f844bbea0d1cbb2ce6b2, type: 3}
   FlameImpact: {fileID: 5415255095770863966, guid: 9d4963bb06ca3554dac5a16bc634c9b5, type: 3}
 --- !u!82 &1682709791841109098
 AudioSource:
@@ -217,7 +220,7 @@ AudioSource:
   m_GameObject: {fileID: 1368579986425029209}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1204179878550719679, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
+  OutputAudioMixerGroup: {fileID: -1468421765562937229, guid: e9b9eece6ec437e498f686ade16b1979, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
