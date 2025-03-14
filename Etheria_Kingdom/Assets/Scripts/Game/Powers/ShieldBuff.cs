@@ -68,7 +68,7 @@ public class ShieldBuff : PowerUpEffect
             // Add ShieldScaler component to handle the scaling for the crystal
             ShieldScaler crystalShieldScaler = crystalShield.AddComponent<ShieldScaler>();
             crystalShieldScaler.scaleDuration = 0.6f;
-            crystalShieldScaler.targetScale = new Vector3(0.6f, 0.6f, 0.6f);
+            crystalShieldScaler.targetScale = new Vector3(0.75f, 0.75f, 0.75f);
             crystalShieldScaler.initialScale = new Vector3(0.1f, 0.1f, 0.1f);
         }
 
