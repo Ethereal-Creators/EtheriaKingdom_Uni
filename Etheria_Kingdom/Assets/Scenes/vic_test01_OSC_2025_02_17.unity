@@ -8345,6 +8345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal_Animer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6234055810489738087, guid: 0ab1eb1da046e0d4f9b4336374182293, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
