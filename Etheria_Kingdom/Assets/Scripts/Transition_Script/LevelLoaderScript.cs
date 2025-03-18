@@ -24,7 +24,9 @@ public class LevelLoaderScript : MonoBehaviour
 
     public int NextSceneIndex;
 
-    private string NextSceneName;
+    private string NextSceneName = "";
+
+    private bool hasChangedScene = false;
 
     void Start()
     {
@@ -45,9 +47,10 @@ public class LevelLoaderScript : MonoBehaviour
             transition.SetTrigger("Start");
 
             timeTilChange -= Time.deltaTime;
-            if (timeTilChange < 0)
+            if (timeTilChange < 0 && hasChangedScene == false)
             {
                 LoadNextLevel();
+                hasChangedScene = true;
             }
         }
     }
@@ -65,10 +68,11 @@ public class LevelLoaderScript : MonoBehaviour
     public void LoadNextLevel()
     {
         Debug.Log("animation done!");
+        /*
         if (LoadingScreen != null)
         {
             LoadingScreen.SetActive(true);
-        }
+        }*/
         //LoadLevelNoYield(SceneManager.GetActiveScene().buildIndex + 1);
         //StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         if (NextSceneName != "")
@@ -101,22 +105,18 @@ public class LevelLoaderScript : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
 
-        if (operation != null)
+        LoadingScreen.SetActive(true);
+
+        while (!operation.isDone)
         {
-            while (!operation.isDone)
-            {
-                float progress = Mathf.Clamp01(operation.progress / 9f);
+            float progress = Mathf.Clamp01(operation.progress / .9f);
 
-                if (sliderLoadingScreen != null)
-                {
-                    sliderLoadingScreen.value = progress;
-                }
+            sliderLoadingScreen.value = progress;
 
 
-                Debug.Log("loading progress : " + progress);
+            Debug.Log("loading progress : " + progress);
 
-                yield return null;
-            }
+            yield return null;
         }
     }
 
@@ -124,21 +124,17 @@ public class LevelLoaderScript : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
 
-        if (operation != null)
+        LoadingScreen.SetActive(true);
+
+        while (!operation.isDone)
         {
-            while (!operation.isDone)
-            {
-                float progress = Mathf.Clamp01(operation.progress / 9f);
+            float progress = Mathf.Clamp01(operation.progress / .9f);
 
-                if (sliderLoadingScreen != null)
-                {
-                    sliderLoadingScreen.value = progress;
-                }
+            sliderLoadingScreen.value = progress;
 
-                Debug.Log("loading progress : " + progress);
+            Debug.Log("loading progress : " + progress);
 
-                yield return null;
-            }
+            yield return null;
         }
     }
 
