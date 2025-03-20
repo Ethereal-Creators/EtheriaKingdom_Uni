@@ -10008,6 +10008,10 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 998429186094267493, guid: 94592fb0e59a28c4da73c6efa79d4365, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1672966119
+      objectReference: {fileID: 0}
     - target: {fileID: 1929476085091214420, guid: 94592fb0e59a28c4da73c6efa79d4365, type: 3}
       propertyPath: m_Name
       value: LoadingScreen
