@@ -36,8 +36,15 @@ public class EnemySpawner : MonoBehaviour
     {
         source = this.gameObject.GetComponent<AudioSource>();
 
-        StartCoroutine(spawnEnemy(swarmerPrefab, minSwarmerInterval, maxSwarmerInterval));
-        StartCoroutine(spawnEnemy(bigSwarmerPrefab, minBigSwarmerInterval, maxBigSwarmerInterval));
+        if (swarmerPrefab != null)
+        {
+            StartCoroutine(spawnEnemy(swarmerPrefab, minSwarmerInterval, maxSwarmerInterval));
+        }
+        if (bigSwarmerPrefab != null)
+        {
+            StartCoroutine(spawnEnemy(bigSwarmerPrefab, minBigSwarmerInterval, maxBigSwarmerInterval));
+        }
+        
     }
 
     private IEnumerator spawnEnemy(GameObject enemy, float minInterval, float maxInterval)
